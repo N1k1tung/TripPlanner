@@ -31,25 +31,10 @@ class Configuration: NSObject {
         
         return Static.instance!
     }
-    
-    // fake name
-    class func fakeName() -> String {
-        return self.sharedInstance.dict!["fakeName"] as! String
-    }
-    
-    // fake email
-    class func fakeEmail() -> String {
-        return self.sharedInstance.dict!["fakeEmail"] as! String
-    }
-    
-    // fake username
-    class func fakeUsername() -> String {
-        return self.sharedInstance.dict!["fakeUsername"] as! String
-    }
-    
-    // fake password
-    class func fakePassword() -> String {
-        return self.sharedInstance.dict!["fakePassword"] as! String
+        
+    // firebase URL
+    class func firebaseURL() -> String {
+        return self.sharedInstance.dict!["firebaseURL"] as! String
     }
 
     
