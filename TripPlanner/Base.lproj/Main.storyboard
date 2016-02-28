@@ -309,6 +309,7 @@
                         <outlet property="fullName" destination="shU-c4-vxv" id="fc8-R0-z2k"/>
                         <outlet property="passwordField" destination="ddg-F1-2DG" id="Et0-UG-i5x"/>
                         <outlet property="usernameField" destination="sRH-Te-Dz0" id="9bH-D1-N60"/>
+                        <segue destination="5EZ-8R-3VX" kind="show" identifier="next" id="iEW-Yg-YlZ"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="YOB-4Z-LrA" sceneMemberID="firstResponder"/>
@@ -383,13 +384,13 @@
             </objects>
             <point key="canvasLocation" x="952.5" y="3.5"/>
         </scene>
-        <!--Activity-->
+        <!--Trips-->
         <scene sceneID="1Sy-ZQ-tVm">
             <objects>
-                <viewControllerPlaceholder storyboardName="Activity" id="5EZ-8R-3VX" sceneMemberID="viewController"/>
+                <viewControllerPlaceholder storyboardName="Trips" id="5EZ-8R-3VX" sceneMemberID="viewController"/>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="rff-60-Dh0" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="437.5" y="449"/>
+            <point key="canvasLocation" x="764.5" y="477"/>
         </scene>
     </scenes>
     <resources>
@@ -397,5 +398,6 @@
     </resources>
     <inferredMetricsTieBreakers>
         <segue reference="FDD-Vi-EO1"/>
+        <segue reference="iEW-Yg-YlZ"/>
     </inferredMetricsTieBreakers>
 </document>
