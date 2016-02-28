@@ -7,16 +7,47 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		0C225EDB1C824120005FCD19 /* Composition.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0C225ED51C824120005FCD19 /* Composition.swift */; };
+		0C225EDC1C824120005FCD19 /* Configuration.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0C225ED61C824120005FCD19 /* Configuration.swift */; };
+		0C225EDD1C824120005FCD19 /* Configurations.plist in Resources */ = {isa = PBXBuildFile; fileRef = 0C225ED71C824120005FCD19 /* Configurations.plist */; };
+		0C225EDE1C824120005FCD19 /* HelpfulFunctions.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0C225ED81C824120005FCD19 /* HelpfulFunctions.swift */; };
+		0C225EDF1C824120005FCD19 /* UIExtensions.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0C225ED91C824120005FCD19 /* UIExtensions.swift */; };
+		0C225EE01C824120005FCD19 /* UIViewControllerExt.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0C225EDA1C824120005FCD19 /* UIViewControllerExt.swift */; };
+		0C225EE41C82413E005FCD19 /* FormViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0C225EE11C82413E005FCD19 /* FormViewController.swift */; };
+		0C225EE51C82413E005FCD19 /* LandingViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0C225EE21C82413E005FCD19 /* LandingViewController.swift */; };
+		0C225EE61C82413E005FCD19 /* LoginViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0C225EE31C82413E005FCD19 /* LoginViewController.swift */; };
+		0C225EE91C82417F005FCD19 /* ResetPasswordViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0C225EE71C82417F005FCD19 /* ResetPasswordViewController.swift */; };
+		0C225EEA1C82417F005FCD19 /* SignUpViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0C225EE81C82417F005FCD19 /* SignUpViewController.swift */; };
+		0C225EF31C82422A005FCD19 /* UIComponents.h in Headers */ = {isa = PBXBuildFile; fileRef = 0C225EF21C82422A005FCD19 /* UIComponents.h */; settings = {ATTRIBUTES = (Public, ); }; };
+		0C225EF71C82422A005FCD19 /* UIComponents.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 0C225EF01C82422A005FCD19 /* UIComponents.framework */; };
+		0C225EF81C82422A005FCD19 /* UIComponents.framework in Embed Frameworks */ = {isa = PBXBuildFile; fileRef = 0C225EF01C82422A005FCD19 /* UIComponents.framework */; settings = {ATTRIBUTES = (CodeSignOnCopy, RemoveHeadersOnCopy, ); }; };
+		0C225EFE1C82423A005FCD19 /* UnderlineTextField.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0C225EFD1C82423A005FCD19 /* UnderlineTextField.swift */; };
+		0C225EFF1C824375005FCD19 /* HelpfulFunctions.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0C225ED81C824120005FCD19 /* HelpfulFunctions.swift */; };
+		0C225F001C824386005FCD19 /* UIExtensions.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0C225ED91C824120005FCD19 /* UIExtensions.swift */; };
 		0C4FF3D31C81ABA500EB935F /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0C4FF3D21C81ABA500EB935F /* AppDelegate.swift */; };
-		0C4FF3D51C81ABA500EB935F /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0C4FF3D41C81ABA500EB935F /* ViewController.swift */; };
 		0C4FF3D81C81ABA500EB935F /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 0C4FF3D61C81ABA500EB935F /* Main.storyboard */; };
 		0C4FF3DA1C81ABA500EB935F /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 0C4FF3D91C81ABA500EB935F /* Assets.xcassets */; };
 		0C4FF3DD1C81ABA500EB935F /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 0C4FF3DB1C81ABA500EB935F /* LaunchScreen.storyboard */; };
 		0C4FF3E81C81ABA500EB935F /* TripPlannerUITests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0C4FF3E71C81ABA500EB935F /* TripPlannerUITests.swift */; };
+		0C767C441C83099800484C05 /* DESCRIPTION.en_us.html in Resources */ = {isa = PBXBuildFile; fileRef = 0C767C3C1C83099800484C05 /* DESCRIPTION.en_us.html */; };
+		0C767C451C83099800484C05 /* METADATA.json in Resources */ = {isa = PBXBuildFile; fileRef = 0C767C3D1C83099800484C05 /* METADATA.json */; };
+		0C767C461C83099800484C05 /* OFL.txt in Resources */ = {isa = PBXBuildFile; fileRef = 0C767C3E1C83099800484C05 /* OFL.txt */; };
+		0C767C471C83099800484C05 /* Poppins-Bold.ttf in Resources */ = {isa = PBXBuildFile; fileRef = 0C767C3F1C83099800484C05 /* Poppins-Bold.ttf */; };
+		0C767C481C83099800484C05 /* Poppins-Light.ttf in Resources */ = {isa = PBXBuildFile; fileRef = 0C767C401C83099800484C05 /* Poppins-Light.ttf */; };
+		0C767C491C83099800484C05 /* Poppins-Medium.ttf in Resources */ = {isa = PBXBuildFile; fileRef = 0C767C411C83099800484C05 /* Poppins-Medium.ttf */; };
+		0C767C4A1C83099800484C05 /* Poppins-Regular.ttf in Resources */ = {isa = PBXBuildFile; fileRef = 0C767C421C83099800484C05 /* Poppins-Regular.ttf */; };
+		0C767C4B1C83099800484C05 /* Poppins-SemiBold.ttf in Resources */ = {isa = PBXBuildFile; fileRef = 0C767C431C83099800484C05 /* Poppins-SemiBold.ttf */; };
 		94E88394A25019D0F7604FBF /* Pods_TripPlanner.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 46068CB9476AE3C5555A826A /* Pods_TripPlanner.framework */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
+		0C225EF51C82422A005FCD19 /* PBXContainerItemProxy */ = {
+			isa = PBXContainerItemProxy;
+			containerPortal = 0C4FF3C71C81ABA500EB935F /* Project object */;
+			proxyType = 1;
+			remoteGlobalIDString = 0C225EEF1C82422A005FCD19;
+			remoteInfo = UIComponents;
+		};
 		0C4FF3E41C81ABA500EB935F /* PBXContainerItemProxy */ = {
 			isa = PBXContainerItemProxy;
 			containerPortal = 0C4FF3C71C81ABA500EB935F /* Project object */;
@@ -26,10 +57,38 @@
 		};
 /* End PBXContainerItemProxy section */
 
+/* Begin PBXCopyFilesBuildPhase section */
+		0C225EFC1C82422A005FCD19 /* Embed Frameworks */ = {
+			isa = PBXCopyFilesBuildPhase;
+			buildActionMask = 2147483647;
+			dstPath = "";
+			dstSubfolderSpec = 10;
+			files = (
+				0C225EF81C82422A005FCD19 /* UIComponents.framework in Embed Frameworks */,
+			);
+			name = "Embed Frameworks";
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXCopyFilesBuildPhase section */
+
 /* Begin PBXFileReference section */
+		0C225ED51C824120005FCD19 /* Composition.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Composition.swift; sourceTree = "<group>"; };
+		0C225ED61C824120005FCD19 /* Configuration.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Configuration.swift; sourceTree = "<group>"; };
+		0C225ED71C824120005FCD19 /* Configurations.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; path = Configurations.plist; sourceTree = "<group>"; };
+		0C225ED81C824120005FCD19 /* HelpfulFunctions.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = HelpfulFunctions.swift; sourceTree = "<group>"; };
+		0C225ED91C824120005FCD19 /* UIExtensions.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = UIExtensions.swift; sourceTree = "<group>"; };
+		0C225EDA1C824120005FCD19 /* UIViewControllerExt.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = UIViewControllerExt.swift; sourceTree = "<group>"; };
+		0C225EE11C82413E005FCD19 /* FormViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = FormViewController.swift; sourceTree = "<group>"; };
+		0C225EE21C82413E005FCD19 /* LandingViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = LandingViewController.swift; sourceTree = "<group>"; };
+		0C225EE31C82413E005FCD19 /* LoginViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = LoginViewController.swift; sourceTree = "<group>"; };
+		0C225EE71C82417F005FCD19 /* ResetPasswordViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ResetPasswordViewController.swift; sourceTree = "<group>"; };
+		0C225EE81C82417F005FCD19 /* SignUpViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = SignUpViewController.swift; sourceTree = "<group>"; };
+		0C225EF01C82422A005FCD19 /* UIComponents.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = UIComponents.framework; sourceTree = BUILT_PRODUCTS_DIR; };
+		0C225EF21C82422A005FCD19 /* UIComponents.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = UIComponents.h; sourceTree = "<group>"; };
+		0C225EF41C82422A005FCD19 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		0C225EFD1C82423A005FCD19 /* UnderlineTextField.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = UnderlineTextField.swift; sourceTree = "<group>"; };
 		0C4FF3CF1C81ABA500EB935F /* TripPlanner.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = TripPlanner.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		0C4FF3D21C81ABA500EB935F /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
-		0C4FF3D41C81ABA500EB935F /* ViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ViewController.swift; sourceTree = "<group>"; };
 		0C4FF3D71C81ABA500EB935F /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Main.storyboard; sourceTree = "<group>"; };
 		0C4FF3D91C81ABA500EB935F /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		0C4FF3DC1C81ABA500EB935F /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
@@ -37,16 +96,32 @@
 		0C4FF3E31C81ABA500EB935F /* TripPlannerUITests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = TripPlannerUITests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
 		0C4FF3E71C81ABA500EB935F /* TripPlannerUITests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TripPlannerUITests.swift; sourceTree = "<group>"; };
 		0C4FF3E91C81ABA500EB935F /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		0C767C3C1C83099800484C05 /* DESCRIPTION.en_us.html */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.html; path = DESCRIPTION.en_us.html; sourceTree = "<group>"; };
+		0C767C3D1C83099800484C05 /* METADATA.json */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.json; path = METADATA.json; sourceTree = "<group>"; };
+		0C767C3E1C83099800484C05 /* OFL.txt */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text; path = OFL.txt; sourceTree = "<group>"; };
+		0C767C3F1C83099800484C05 /* Poppins-Bold.ttf */ = {isa = PBXFileReference; lastKnownFileType = file; path = "Poppins-Bold.ttf"; sourceTree = "<group>"; };
+		0C767C401C83099800484C05 /* Poppins-Light.ttf */ = {isa = PBXFileReference; lastKnownFileType = file; path = "Poppins-Light.ttf"; sourceTree = "<group>"; };
+		0C767C411C83099800484C05 /* Poppins-Medium.ttf */ = {isa = PBXFileReference; lastKnownFileType = file; path = "Poppins-Medium.ttf"; sourceTree = "<group>"; };
+		0C767C421C83099800484C05 /* Poppins-Regular.ttf */ = {isa = PBXFileReference; lastKnownFileType = file; path = "Poppins-Regular.ttf"; sourceTree = "<group>"; };
+		0C767C431C83099800484C05 /* Poppins-SemiBold.ttf */ = {isa = PBXFileReference; lastKnownFileType = file; path = "Poppins-SemiBold.ttf"; sourceTree = "<group>"; };
 		46068CB9476AE3C5555A826A /* Pods_TripPlanner.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_TripPlanner.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		75AF2C9EF75917589137EED6 /* Pods-TripPlanner.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-TripPlanner.debug.xcconfig"; path = "Pods/Target Support Files/Pods-TripPlanner/Pods-TripPlanner.debug.xcconfig"; sourceTree = "<group>"; };
 		CE84A0EEF47CDE12FDCC4BF1 /* Pods-TripPlanner.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-TripPlanner.release.xcconfig"; path = "Pods/Target Support Files/Pods-TripPlanner/Pods-TripPlanner.release.xcconfig"; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
+		0C225EEC1C82422A005FCD19 /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
 		0C4FF3CC1C81ABA500EB935F /* Frameworks */ = {
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				0C225EF71C82422A005FCD19 /* UIComponents.framework in Frameworks */,
 				94E88394A25019D0F7604FBF /* Pods_TripPlanner.framework in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -61,11 +136,47 @@
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
+		0C225ED31C8240FE005FCD19 /* ViewControllers */ = {
+			isa = PBXGroup;
+			children = (
+				0C225EE11C82413E005FCD19 /* FormViewController.swift */,
+				0C225EE21C82413E005FCD19 /* LandingViewController.swift */,
+				0C225EE31C82413E005FCD19 /* LoginViewController.swift */,
+				0C225EE71C82417F005FCD19 /* ResetPasswordViewController.swift */,
+				0C225EE81C82417F005FCD19 /* SignUpViewController.swift */,
+			);
+			name = ViewControllers;
+			sourceTree = "<group>";
+		};
+		0C225ED41C824105005FCD19 /* Helpers */ = {
+			isa = PBXGroup;
+			children = (
+				0C225ED51C824120005FCD19 /* Composition.swift */,
+				0C225ED61C824120005FCD19 /* Configuration.swift */,
+				0C225ED71C824120005FCD19 /* Configurations.plist */,
+				0C225ED81C824120005FCD19 /* HelpfulFunctions.swift */,
+				0C225ED91C824120005FCD19 /* UIExtensions.swift */,
+				0C225EDA1C824120005FCD19 /* UIViewControllerExt.swift */,
+			);
+			name = Helpers;
+			sourceTree = "<group>";
+		};
+		0C225EF11C82422A005FCD19 /* UIComponents */ = {
+			isa = PBXGroup;
+			children = (
+				0C225EFD1C82423A005FCD19 /* UnderlineTextField.swift */,
+				0C225EF21C82422A005FCD19 /* UIComponents.h */,
+				0C225EF41C82422A005FCD19 /* Info.plist */,
+			);
+			path = UIComponents;
+			sourceTree = "<group>";
+		};
 		0C4FF3C61C81ABA500EB935F = {
 			isa = PBXGroup;
 			children = (
 				0C4FF3D11C81ABA500EB935F /* TripPlanner */,
 				0C4FF3E61C81ABA500EB935F /* TripPlannerUITests */,
+				0C225EF11C82422A005FCD19 /* UIComponents */,
 				0C4FF3D01C81ABA500EB935F /* Products */,
 				A3138B009A213ED71272BB99 /* Pods */,
 				A771ACEF500C139A1A2C1591 /* Frameworks */,
@@ -77,6 +188,7 @@
 			children = (
 				0C4FF3CF1C81ABA500EB935F /* TripPlanner.app */,
 				0C4FF3E31C81ABA500EB935F /* TripPlannerUITests.xctest */,
+				0C225EF01C82422A005FCD19 /* UIComponents.framework */,
 			);
 			name = Products;
 			sourceTree = "<group>";
@@ -84,8 +196,10 @@
 		0C4FF3D11C81ABA500EB935F /* TripPlanner */ = {
 			isa = PBXGroup;
 			children = (
+				0C225ED41C824105005FCD19 /* Helpers */,
+				0C225ED31C8240FE005FCD19 /* ViewControllers */,
 				0C4FF3D21C81ABA500EB935F /* AppDelegate.swift */,
-				0C4FF3D41C81ABA500EB935F /* ViewController.swift */,
+				0C767C3A1C83099800484C05 /* Fonts */,
 				0C4FF3D61C81ABA500EB935F /* Main.storyboard */,
 				0C4FF3D91C81ABA500EB935F /* Assets.xcassets */,
 				0C4FF3DB1C81ABA500EB935F /* LaunchScreen.storyboard */,
@@ -101,6 +215,29 @@
 				0C4FF3E91C81ABA500EB935F /* Info.plist */,
 			);
 			path = TripPlannerUITests;
+			sourceTree = "<group>";
+		};
+		0C767C3A1C83099800484C05 /* Fonts */ = {
+			isa = PBXGroup;
+			children = (
+				0C767C3B1C83099800484C05 /* poppins */,
+			);
+			path = Fonts;
+			sourceTree = "<group>";
+		};
+		0C767C3B1C83099800484C05 /* poppins */ = {
+			isa = PBXGroup;
+			children = (
+				0C767C3C1C83099800484C05 /* DESCRIPTION.en_us.html */,
+				0C767C3D1C83099800484C05 /* METADATA.json */,
+				0C767C3E1C83099800484C05 /* OFL.txt */,
+				0C767C3F1C83099800484C05 /* Poppins-Bold.ttf */,
+				0C767C401C83099800484C05 /* Poppins-Light.ttf */,
+				0C767C411C83099800484C05 /* Poppins-Medium.ttf */,
+				0C767C421C83099800484C05 /* Poppins-Regular.ttf */,
+				0C767C431C83099800484C05 /* Poppins-SemiBold.ttf */,
+			);
+			path = poppins;
 			sourceTree = "<group>";
 		};
 		A3138B009A213ED71272BB99 /* Pods */ = {
@@ -122,7 +259,36 @@
 		};
 /* End PBXGroup section */
 
+/* Begin PBXHeadersBuildPhase section */
+		0C225EED1C82422A005FCD19 /* Headers */ = {
+			isa = PBXHeadersBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				0C225EF31C82422A005FCD19 /* UIComponents.h in Headers */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXHeadersBuildPhase section */
+
 /* Begin PBXNativeTarget section */
+		0C225EEF1C82422A005FCD19 /* UIComponents */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = 0C225EF91C82422A005FCD19 /* Build configuration list for PBXNativeTarget "UIComponents" */;
+			buildPhases = (
+				0C225EEB1C82422A005FCD19 /* Sources */,
+				0C225EEC1C82422A005FCD19 /* Frameworks */,
+				0C225EED1C82422A005FCD19 /* Headers */,
+				0C225EEE1C82422A005FCD19 /* Resources */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+			);
+			name = UIComponents;
+			productName = UIComponents;
+			productReference = 0C225EF01C82422A005FCD19 /* UIComponents.framework */;
+			productType = "com.apple.product-type.framework";
+		};
 		0C4FF3CE1C81ABA500EB935F /* TripPlanner */ = {
 			isa = PBXNativeTarget;
 			buildConfigurationList = 0C4FF3EC1C81ABA500EB935F /* Build configuration list for PBXNativeTarget "TripPlanner" */;
@@ -133,10 +299,12 @@
 				0C4FF3CD1C81ABA500EB935F /* Resources */,
 				06D91D037819CC425C51F42F /* Embed Pods Frameworks */,
 				69B3189FF9FEF4246C8B897F /* Copy Pods Resources */,
+				0C225EFC1C82422A005FCD19 /* Embed Frameworks */,
 			);
 			buildRules = (
 			);
 			dependencies = (
+				0C225EF61C82422A005FCD19 /* PBXTargetDependency */,
 			);
 			name = TripPlanner;
 			productName = TripPlanner;
@@ -171,6 +339,9 @@
 				LastUpgradeCheck = 0720;
 				ORGANIZATIONNAME = Toptal;
 				TargetAttributes = {
+					0C225EEF1C82422A005FCD19 = {
+						CreatedOnToolsVersion = 7.2.1;
+					};
 					0C4FF3CE1C81ABA500EB935F = {
 						CreatedOnToolsVersion = 7.2.1;
 					};
@@ -195,18 +366,35 @@
 			targets = (
 				0C4FF3CE1C81ABA500EB935F /* TripPlanner */,
 				0C4FF3E21C81ABA500EB935F /* TripPlannerUITests */,
+				0C225EEF1C82422A005FCD19 /* UIComponents */,
 			);
 		};
 /* End PBXProject section */
 
 /* Begin PBXResourcesBuildPhase section */
+		0C225EEE1C82422A005FCD19 /* Resources */ = {
+			isa = PBXResourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
 		0C4FF3CD1C81ABA500EB935F /* Resources */ = {
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				0C767C461C83099800484C05 /* OFL.txt in Resources */,
+				0C767C481C83099800484C05 /* Poppins-Light.ttf in Resources */,
 				0C4FF3DD1C81ABA500EB935F /* LaunchScreen.storyboard in Resources */,
+				0C225EDD1C824120005FCD19 /* Configurations.plist in Resources */,
+				0C767C471C83099800484C05 /* Poppins-Bold.ttf in Resources */,
+				0C767C451C83099800484C05 /* METADATA.json in Resources */,
 				0C4FF3DA1C81ABA500EB935F /* Assets.xcassets in Resources */,
+				0C767C441C83099800484C05 /* DESCRIPTION.en_us.html in Resources */,
+				0C767C4A1C83099800484C05 /* Poppins-Regular.ttf in Resources */,
+				0C767C4B1C83099800484C05 /* Poppins-SemiBold.ttf in Resources */,
 				0C4FF3D81C81ABA500EB935F /* Main.storyboard in Resources */,
+				0C767C491C83099800484C05 /* Poppins-Medium.ttf in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -268,11 +456,30 @@
 /* End PBXShellScriptBuildPhase section */
 
 /* Begin PBXSourcesBuildPhase section */
+		0C225EEB1C82422A005FCD19 /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				0C225F001C824386005FCD19 /* UIExtensions.swift in Sources */,
+				0C225EFF1C824375005FCD19 /* HelpfulFunctions.swift in Sources */,
+				0C225EFE1C82423A005FCD19 /* UnderlineTextField.swift in Sources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
 		0C4FF3CB1C81ABA500EB935F /* Sources */ = {
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				0C4FF3D51C81ABA500EB935F /* ViewController.swift in Sources */,
+				0C225EDB1C824120005FCD19 /* Composition.swift in Sources */,
+				0C225EDE1C824120005FCD19 /* HelpfulFunctions.swift in Sources */,
+				0C225EE91C82417F005FCD19 /* ResetPasswordViewController.swift in Sources */,
+				0C225EDF1C824120005FCD19 /* UIExtensions.swift in Sources */,
+				0C225EDC1C824120005FCD19 /* Configuration.swift in Sources */,
+				0C225EEA1C82417F005FCD19 /* SignUpViewController.swift in Sources */,
+				0C225EE01C824120005FCD19 /* UIViewControllerExt.swift in Sources */,
+				0C225EE41C82413E005FCD19 /* FormViewController.swift in Sources */,
+				0C225EE51C82413E005FCD19 /* LandingViewController.swift in Sources */,
+				0C225EE61C82413E005FCD19 /* LoginViewController.swift in Sources */,
 				0C4FF3D31C81ABA500EB935F /* AppDelegate.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -288,6 +495,11 @@
 /* End PBXSourcesBuildPhase section */
 
 /* Begin PBXTargetDependency section */
+		0C225EF61C82422A005FCD19 /* PBXTargetDependency */ = {
+			isa = PBXTargetDependency;
+			target = 0C225EEF1C82422A005FCD19 /* UIComponents */;
+			targetProxy = 0C225EF51C82422A005FCD19 /* PBXContainerItemProxy */;
+		};
 		0C4FF3E51C81ABA500EB935F /* PBXTargetDependency */ = {
 			isa = PBXTargetDependency;
 			target = 0C4FF3CE1C81ABA500EB935F /* TripPlanner */;
@@ -315,6 +527,51 @@
 /* End PBXVariantGroup section */
 
 /* Begin XCBuildConfiguration section */
+		0C225EFA1C82422A005FCD19 /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				CLANG_ENABLE_MODULES = YES;
+				CURRENT_PROJECT_VERSION = 1;
+				DEFINES_MODULE = YES;
+				DYLIB_COMPATIBILITY_VERSION = 1;
+				DYLIB_CURRENT_VERSION = 1;
+				DYLIB_INSTALL_NAME_BASE = "@rpath";
+				INFOPLIST_FILE = UIComponents/Info.plist;
+				INSTALL_PATH = "$(LOCAL_LIBRARY_DIR)/Frameworks";
+				IPHONEOS_DEPLOYMENT_TARGET = 8.0;
+				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks @loader_path/Frameworks";
+				PRODUCT_BUNDLE_IDENTIFIER = com.toptal.UIComponents;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SKIP_INSTALL = YES;
+				SWIFT_OPTIMIZATION_LEVEL = "-Onone";
+				TARGETED_DEVICE_FAMILY = "1,2";
+				VERSIONING_SYSTEM = "apple-generic";
+				VERSION_INFO_PREFIX = "";
+			};
+			name = Debug;
+		};
+		0C225EFB1C82422A005FCD19 /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				CLANG_ENABLE_MODULES = YES;
+				CURRENT_PROJECT_VERSION = 1;
+				DEFINES_MODULE = YES;
+				DYLIB_COMPATIBILITY_VERSION = 1;
+				DYLIB_CURRENT_VERSION = 1;
+				DYLIB_INSTALL_NAME_BASE = "@rpath";
+				INFOPLIST_FILE = UIComponents/Info.plist;
+				INSTALL_PATH = "$(LOCAL_LIBRARY_DIR)/Frameworks";
+				IPHONEOS_DEPLOYMENT_TARGET = 8.0;
+				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks @loader_path/Frameworks";
+				PRODUCT_BUNDLE_IDENTIFIER = com.toptal.UIComponents;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SKIP_INSTALL = YES;
+				TARGETED_DEVICE_FAMILY = "1,2";
+				VERSIONING_SYSTEM = "apple-generic";
+				VERSION_INFO_PREFIX = "";
+			};
+			name = Release;
+		};
 		0C4FF3EA1C81ABA500EB935F /* Debug */ = {
 			isa = XCBuildConfiguration;
 			buildSettings = {
@@ -401,6 +658,7 @@
 			baseConfigurationReference = 75AF2C9EF75917589137EED6 /* Pods-TripPlanner.debug.xcconfig */;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				EMBEDDED_CONTENT_CONTAINS_SWIFT = YES;
 				INFOPLIST_FILE = TripPlanner/Info.plist;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
 				PRODUCT_BUNDLE_IDENTIFIER = com.toptal.TripPlanner;
@@ -413,6 +671,7 @@
 			baseConfigurationReference = CE84A0EEF47CDE12FDCC4BF1 /* Pods-TripPlanner.release.xcconfig */;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				EMBEDDED_CONTENT_CONTAINS_SWIFT = YES;
 				INFOPLIST_FILE = TripPlanner/Info.plist;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
 				PRODUCT_BUNDLE_IDENTIFIER = com.toptal.TripPlanner;
@@ -447,6 +706,15 @@
 /* End XCBuildConfiguration section */
 
 /* Begin XCConfigurationList section */
+		0C225EF91C82422A005FCD19 /* Build configuration list for PBXNativeTarget "UIComponents" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				0C225EFA1C82422A005FCD19 /* Debug */,
+				0C225EFB1C82422A005FCD19 /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
 		0C4FF3CA1C81ABA500EB935F /* Build configuration list for PBXProject "TripPlanner" */ = {
 			isa = XCConfigurationList;
 			buildConfigurations = (

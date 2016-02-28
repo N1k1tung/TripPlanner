@@ -1,0 +1,14 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE plist PUBLIC "-//Apple//DTD PLIST 1.0//EN" "http://www.apple.com/DTDs/PropertyList-1.0.dtd">
+<plist version="1.0">
+<dict>
+	<key>fakeEmail</key>
+	<string>bakawolf@hoho.haha</string>
+	<key>fakeName</key>
+	<string>Idont Knowmyname</string>
+	<key>fakePassword</key>
+	<string>test</string>
+	<key>fakeUsername</key>
+	<string>test</string>
+</dict>
+</plist>
