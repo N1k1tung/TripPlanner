@@ -20,6 +20,16 @@ class LandingViewController: UIViewController {
     let signUpSegue = "signUp"
     
     /**
+     view did load
+     */
+    override func viewDidLoad() {
+        super.viewDidLoad()
+        // remove the line under navbar
+        self.navigationController?.navigationBar.shadowImage = UIImage()
+        self.navigationController?.navigationBar.setBackgroundImage(UIImage(), forBarPosition: .Any, barMetrics: .Default)
+    }
+    
+    /**
      sign up tap handler
      
      - parameter sender: the button
@@ -27,4 +37,6 @@ class LandingViewController: UIViewController {
     @IBAction func signUpTapHandler(sender: AnyObject) {
         self.performSegueWithIdentifier(signUpSegue, sender: nil)
     }
+    
+    
 }

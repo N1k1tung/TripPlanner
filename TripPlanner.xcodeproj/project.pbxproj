@@ -29,15 +29,15 @@
 		0C4FF3DA1C81ABA500EB935F /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 0C4FF3D91C81ABA500EB935F /* Assets.xcassets */; };
 		0C4FF3DD1C81ABA500EB935F /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 0C4FF3DB1C81ABA500EB935F /* LaunchScreen.storyboard */; };
 		0C4FF3E81C81ABA500EB935F /* TripPlannerUITests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0C4FF3E71C81ABA500EB935F /* TripPlannerUITests.swift */; };
-		0C767C441C83099800484C05 /* DESCRIPTION.en_us.html in Resources */ = {isa = PBXBuildFile; fileRef = 0C767C3C1C83099800484C05 /* DESCRIPTION.en_us.html */; };
-		0C767C451C83099800484C05 /* METADATA.json in Resources */ = {isa = PBXBuildFile; fileRef = 0C767C3D1C83099800484C05 /* METADATA.json */; };
-		0C767C461C83099800484C05 /* OFL.txt in Resources */ = {isa = PBXBuildFile; fileRef = 0C767C3E1C83099800484C05 /* OFL.txt */; };
 		0C767C471C83099800484C05 /* Poppins-Bold.ttf in Resources */ = {isa = PBXBuildFile; fileRef = 0C767C3F1C83099800484C05 /* Poppins-Bold.ttf */; };
 		0C767C481C83099800484C05 /* Poppins-Light.ttf in Resources */ = {isa = PBXBuildFile; fileRef = 0C767C401C83099800484C05 /* Poppins-Light.ttf */; };
 		0C767C491C83099800484C05 /* Poppins-Medium.ttf in Resources */ = {isa = PBXBuildFile; fileRef = 0C767C411C83099800484C05 /* Poppins-Medium.ttf */; };
 		0C767C4A1C83099800484C05 /* Poppins-Regular.ttf in Resources */ = {isa = PBXBuildFile; fileRef = 0C767C421C83099800484C05 /* Poppins-Regular.ttf */; };
 		0C767C4B1C83099800484C05 /* Poppins-SemiBold.ttf in Resources */ = {isa = PBXBuildFile; fileRef = 0C767C431C83099800484C05 /* Poppins-SemiBold.ttf */; };
 		0C767C4E1C831B2800484C05 /* Trips.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 0C767C501C831B2800484C05 /* Trips.storyboard */; };
+		0C767C541C837FD100484C05 /* TripsViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0C767C531C837FD100484C05 /* TripsViewController.swift */; };
+		0C767C561C837FF100484C05 /* TripDetailsViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0C767C551C837FF100484C05 /* TripDetailsViewController.swift */; };
+		0C767C581C83807500484C05 /* MonthPlanViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0C767C571C83807500484C05 /* MonthPlanViewController.swift */; };
 		94E88394A25019D0F7604FBF /* Pods_TripPlanner.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 46068CB9476AE3C5555A826A /* Pods_TripPlanner.framework */; };
 /* End PBXBuildFile section */
 
@@ -106,6 +106,9 @@
 		0C767C421C83099800484C05 /* Poppins-Regular.ttf */ = {isa = PBXFileReference; lastKnownFileType = file; path = "Poppins-Regular.ttf"; sourceTree = "<group>"; };
 		0C767C431C83099800484C05 /* Poppins-SemiBold.ttf */ = {isa = PBXFileReference; lastKnownFileType = file; path = "Poppins-SemiBold.ttf"; sourceTree = "<group>"; };
 		0C767C4F1C831B2800484C05 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Trips.storyboard; sourceTree = "<group>"; };
+		0C767C531C837FD100484C05 /* TripsViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = TripsViewController.swift; sourceTree = "<group>"; };
+		0C767C551C837FF100484C05 /* TripDetailsViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = TripDetailsViewController.swift; sourceTree = "<group>"; };
+		0C767C571C83807500484C05 /* MonthPlanViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = MonthPlanViewController.swift; sourceTree = "<group>"; };
 		46068CB9476AE3C5555A826A /* Pods_TripPlanner.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_TripPlanner.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		75AF2C9EF75917589137EED6 /* Pods-TripPlanner.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-TripPlanner.debug.xcconfig"; path = "Pods/Target Support Files/Pods-TripPlanner/Pods-TripPlanner.debug.xcconfig"; sourceTree = "<group>"; };
 		CE84A0EEF47CDE12FDCC4BF1 /* Pods-TripPlanner.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-TripPlanner.release.xcconfig"; path = "Pods/Target Support Files/Pods-TripPlanner/Pods-TripPlanner.release.xcconfig"; sourceTree = "<group>"; };
@@ -141,11 +144,8 @@
 		0C225ED31C8240FE005FCD19 /* ViewControllers */ = {
 			isa = PBXGroup;
 			children = (
-				0C225EE11C82413E005FCD19 /* FormViewController.swift */,
-				0C225EE21C82413E005FCD19 /* LandingViewController.swift */,
-				0C225EE31C82413E005FCD19 /* LoginViewController.swift */,
-				0C225EE71C82417F005FCD19 /* ResetPasswordViewController.swift */,
-				0C225EE81C82417F005FCD19 /* SignUpViewController.swift */,
+				0C767C511C837FA100484C05 /* Login */,
+				0C767C521C837FA600484C05 /* Trips */,
 			);
 			name = ViewControllers;
 			sourceTree = "<group>";
@@ -155,7 +155,6 @@
 			children = (
 				0C225ED51C824120005FCD19 /* Composition.swift */,
 				0C225ED61C824120005FCD19 /* Configuration.swift */,
-				0C225ED71C824120005FCD19 /* Configurations.plist */,
 				0C225ED81C824120005FCD19 /* HelpfulFunctions.swift */,
 				0C225ED91C824120005FCD19 /* UIExtensions.swift */,
 				0C225EDA1C824120005FCD19 /* UIViewControllerExt.swift */,
@@ -198,15 +197,11 @@
 		0C4FF3D11C81ABA500EB935F /* TripPlanner */ = {
 			isa = PBXGroup;
 			children = (
+				0C767C5A1C8385A900484C05 /* Model */,
 				0C225ED41C824105005FCD19 /* Helpers */,
 				0C225ED31C8240FE005FCD19 /* ViewControllers */,
 				0C4FF3D21C81ABA500EB935F /* AppDelegate.swift */,
-				0C767C3A1C83099800484C05 /* Fonts */,
-				0C4FF3D61C81ABA500EB935F /* Main.storyboard */,
-				0C4FF3D91C81ABA500EB935F /* Assets.xcassets */,
-				0C767C501C831B2800484C05 /* Trips.storyboard */,
-				0C4FF3DB1C81ABA500EB935F /* LaunchScreen.storyboard */,
-				0C4FF3DE1C81ABA500EB935F /* Info.plist */,
+				0C767C591C8381D700484C05 /* Resources */,
 			);
 			path = TripPlanner;
 			sourceTree = "<group>";
@@ -241,6 +236,49 @@
 				0C767C431C83099800484C05 /* Poppins-SemiBold.ttf */,
 			);
 			path = poppins;
+			sourceTree = "<group>";
+		};
+		0C767C511C837FA100484C05 /* Login */ = {
+			isa = PBXGroup;
+			children = (
+				0C225EE11C82413E005FCD19 /* FormViewController.swift */,
+				0C225EE21C82413E005FCD19 /* LandingViewController.swift */,
+				0C225EE31C82413E005FCD19 /* LoginViewController.swift */,
+				0C225EE71C82417F005FCD19 /* ResetPasswordViewController.swift */,
+				0C225EE81C82417F005FCD19 /* SignUpViewController.swift */,
+			);
+			name = Login;
+			sourceTree = "<group>";
+		};
+		0C767C521C837FA600484C05 /* Trips */ = {
+			isa = PBXGroup;
+			children = (
+				0C767C531C837FD100484C05 /* TripsViewController.swift */,
+				0C767C551C837FF100484C05 /* TripDetailsViewController.swift */,
+				0C767C571C83807500484C05 /* MonthPlanViewController.swift */,
+			);
+			name = Trips;
+			sourceTree = "<group>";
+		};
+		0C767C591C8381D700484C05 /* Resources */ = {
+			isa = PBXGroup;
+			children = (
+				0C767C3A1C83099800484C05 /* Fonts */,
+				0C4FF3D61C81ABA500EB935F /* Main.storyboard */,
+				0C4FF3D91C81ABA500EB935F /* Assets.xcassets */,
+				0C767C501C831B2800484C05 /* Trips.storyboard */,
+				0C4FF3DB1C81ABA500EB935F /* LaunchScreen.storyboard */,
+				0C4FF3DE1C81ABA500EB935F /* Info.plist */,
+				0C225ED71C824120005FCD19 /* Configurations.plist */,
+			);
+			name = Resources;
+			sourceTree = "<group>";
+		};
+		0C767C5A1C8385A900484C05 /* Model */ = {
+			isa = PBXGroup;
+			children = (
+			);
+			name = Model;
 			sourceTree = "<group>";
 		};
 		A3138B009A213ED71272BB99 /* Pods */ = {
@@ -386,15 +424,12 @@
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				0C767C461C83099800484C05 /* OFL.txt in Resources */,
 				0C767C481C83099800484C05 /* Poppins-Light.ttf in Resources */,
 				0C767C4E1C831B2800484C05 /* Trips.storyboard in Resources */,
 				0C4FF3DD1C81ABA500EB935F /* LaunchScreen.storyboard in Resources */,
 				0C225EDD1C824120005FCD19 /* Configurations.plist in Resources */,
 				0C767C471C83099800484C05 /* Poppins-Bold.ttf in Resources */,
-				0C767C451C83099800484C05 /* METADATA.json in Resources */,
 				0C4FF3DA1C81ABA500EB935F /* Assets.xcassets in Resources */,
-				0C767C441C83099800484C05 /* DESCRIPTION.en_us.html in Resources */,
 				0C767C4A1C83099800484C05 /* Poppins-Regular.ttf in Resources */,
 				0C767C4B1C83099800484C05 /* Poppins-SemiBold.ttf in Resources */,
 				0C4FF3D81C81ABA500EB935F /* Main.storyboard in Resources */,
@@ -480,9 +515,12 @@
 				0C225EDF1C824120005FCD19 /* UIExtensions.swift in Sources */,
 				0C225EDC1C824120005FCD19 /* Configuration.swift in Sources */,
 				0C225EEA1C82417F005FCD19 /* SignUpViewController.swift in Sources */,
+				0C767C581C83807500484C05 /* MonthPlanViewController.swift in Sources */,
 				0C225EE01C824120005FCD19 /* UIViewControllerExt.swift in Sources */,
 				0C225EE41C82413E005FCD19 /* FormViewController.swift in Sources */,
 				0C225EE51C82413E005FCD19 /* LandingViewController.swift in Sources */,
+				0C767C541C837FD100484C05 /* TripsViewController.swift in Sources */,
+				0C767C561C837FF100484C05 /* TripDetailsViewController.swift in Sources */,
 				0C225EE61C82413E005FCD19 /* LoginViewController.swift in Sources */,
 				0C4FF3D31C81ABA500EB935F /* AppDelegate.swift in Sources */,
 			);

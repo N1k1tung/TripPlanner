@@ -58,17 +58,11 @@
                             <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="logo" translatesAutoresizingMaskIntoConstraints="NO" id="hUg-7F-Unb">
                                 <rect key="frame" x="92" y="160" width="191" height="72"/>
                             </imageView>
-                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Welcome" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="foi-39-o7j">
-                                <rect key="frame" x="153" y="257" width="69.5" height="25"/>
-                                <fontDescription key="fontDescription" name="Poppins-Light" family="Poppins" pointSize="15"/>
-                                <color key="textColor" red="0.031372549020000001" green="0.090196078430000007" blue="0.1333333333" alpha="1" colorSpace="calibratedRGB"/>
-                                <nil key="highlightedColor"/>
-                            </label>
                             <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="RIl-4u-k07">
-                                <rect key="frame" x="159" y="367" width="57" height="42"/>
-                                <fontDescription key="fontDescription" name="Poppins-Light" family="Poppins" pointSize="18"/>
+                                <rect key="frame" x="156" y="362" width="63" height="45"/>
+                                <fontDescription key="fontDescription" name="Poppins-Light" family="Poppins" pointSize="20"/>
                                 <state key="normal" title="sign in">
-                                    <color key="titleColor" red="0.2156862745" green="0.23921568630000001" blue="0.2470588235" alpha="1" colorSpace="calibratedRGB"/>
+                                    <color key="titleColor" red="0.0" green="0.0" blue="1" alpha="1" colorSpace="calibratedRGB"/>
                                 </state>
                                 <connections>
                                     <segue destination="1ar-jQ-afA" kind="show" id="FDD-Vi-EO1">
@@ -77,15 +71,25 @@
                                 </connections>
                             </button>
                             <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="5EI-QG-A7w">
-                                <rect key="frame" x="155" y="431" width="65" height="42"/>
-                                <fontDescription key="fontDescription" name="Poppins-Light" family="Poppins" pointSize="18"/>
+                                <rect key="frame" x="151" y="429" width="72" height="45"/>
+                                <fontDescription key="fontDescription" name="Poppins-Light" family="Poppins" pointSize="20"/>
                                 <state key="normal" title="sign up">
-                                    <color key="titleColor" red="0.2156862745" green="0.23921568630000001" blue="0.2470588235" alpha="1" colorSpace="calibratedRGB"/>
+                                    <color key="titleColor" red="0.0" green="0.0" blue="1" alpha="1" colorSpace="calibratedRGB"/>
                                 </state>
+                                <connections>
+                                    <action selector="signUpTapHandler:" destination="ydb-o1-YN8" eventType="touchUpInside" id="VGk-C0-jSi"/>
+                                </connections>
                             </button>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Welcome to" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="foi-39-o7j">
+                                <rect key="frame" x="143.5" y="110" width="88.5" height="25"/>
+                                <fontDescription key="fontDescription" name="Poppins-Light" family="Poppins" pointSize="15"/>
+                                <color key="textColor" red="0.031372549020000001" green="0.090196078430000007" blue="0.1333333333" alpha="1" colorSpace="calibratedRGB"/>
+                                <nil key="highlightedColor"/>
+                            </label>
                         </subviews>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="calibratedWhite"/>
                         <constraints>
+                            <constraint firstItem="hUg-7F-Unb" firstAttribute="top" secondItem="foi-39-o7j" secondAttribute="bottom" constant="25" id="1Ej-UC-iJR"/>
                             <constraint firstItem="foi-39-o7j" firstAttribute="top" secondItem="hUg-7F-Unb" secondAttribute="bottom" constant="25" id="J1x-DS-KLJ"/>
                             <constraint firstItem="hUg-7F-Unb" firstAttribute="centerX" secondItem="tme-xe-Hbi" secondAttribute="centerX" id="NJR-WO-Xag"/>
                             <constraint firstItem="5EI-QG-A7w" firstAttribute="centerX" secondItem="tme-xe-Hbi" secondAttribute="centerX" id="Nx9-iE-9xg"/>
@@ -95,6 +99,11 @@
                             <constraint firstItem="5EI-QG-A7w" firstAttribute="centerY" secondItem="tme-xe-Hbi" secondAttribute="centerY" multiplier="1.5" id="oge-FI-COA"/>
                             <constraint firstItem="5EI-QG-A7w" firstAttribute="top" secondItem="RIl-4u-k07" secondAttribute="bottom" constant="22" id="wIY-RW-1bR"/>
                         </constraints>
+                        <variation key="default">
+                            <mask key="constraints">
+                                <exclude reference="J1x-DS-KLJ"/>
+                            </mask>
+                        </variation>
                     </view>
                     <navigationItem key="navigationItem" id="Q2A-BP-RF6">
                         <barButtonItem key="backBarButtonItem" title="Back" id="XMh-AV-SUx"/>
@@ -190,14 +199,17 @@
                     </view>
                     <navigationItem key="navigationItem" id="aj5-hr-ZJL">
                         <barButtonItem key="backBarButtonItem" title="Back" id="3W3-dZ-wJN"/>
+                        <barButtonItem key="rightBarButtonItem" title="Next" id="bp3-a0-XbF">
+                            <connections>
+                                <action selector="nextTapped:" destination="1ar-jQ-afA" id="CK4-2O-sy6"/>
+                            </connections>
+                        </barButtonItem>
                     </navigationItem>
                     <simulatedScreenMetrics key="simulatedDestinationMetrics" type="retina47"/>
                     <connections>
                         <outlet property="loginField" destination="5mu-h5-xio" id="P1y-01-dd1"/>
                         <outlet property="passwordField" destination="vgC-0g-uhI" id="cHc-Yy-wn3"/>
-                        <segue destination="5EZ-8R-3VX" kind="show" identifier="next" id="way-eK-CAr">
-                            <nil key="action"/>
-                        </segue>
+                        <segue destination="5EZ-8R-3VX" kind="presentation" identifier="next" id="way-eK-CAr"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="yvI-JB-KJZ" sceneMemberID="firstResponder"/>
@@ -302,14 +314,20 @@
                             <constraint firstItem="shU-c4-vxv" firstAttribute="leading" secondItem="CET-z3-CMW" secondAttribute="leading" constant="37" id="vfj-ux-fIj"/>
                         </constraints>
                     </view>
-                    <navigationItem key="navigationItem" id="fWf-35-CCW"/>
+                    <navigationItem key="navigationItem" id="fWf-35-CCW">
+                        <barButtonItem key="rightBarButtonItem" title="Next" id="DN1-ez-4RJ">
+                            <connections>
+                                <action selector="nextTapped:" destination="EJu-RU-9Bb" id="GFj-vo-4s6"/>
+                            </connections>
+                        </barButtonItem>
+                    </navigationItem>
                     <simulatedScreenMetrics key="simulatedDestinationMetrics" type="retina47"/>
                     <connections>
                         <outlet property="emailField" destination="Avb-Sq-cAu" id="Kdf-D0-gk9"/>
                         <outlet property="fullName" destination="shU-c4-vxv" id="fc8-R0-z2k"/>
                         <outlet property="passwordField" destination="ddg-F1-2DG" id="Et0-UG-i5x"/>
                         <outlet property="usernameField" destination="sRH-Te-Dz0" id="9bH-D1-N60"/>
-                        <segue destination="5EZ-8R-3VX" kind="show" identifier="next" id="iEW-Yg-YlZ"/>
+                        <segue destination="5EZ-8R-3VX" kind="presentation" identifier="next" id="iEW-Yg-YlZ"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="YOB-4Z-LrA" sceneMemberID="firstResponder"/>
@@ -370,7 +388,13 @@
                             <constraint firstItem="qo1-Sb-cCw" firstAttribute="centerX" secondItem="XjT-JI-CHt" secondAttribute="centerX" id="rVw-lo-kHS"/>
                         </constraints>
                     </view>
-                    <navigationItem key="navigationItem" id="tuc-Rt-YsV"/>
+                    <navigationItem key="navigationItem" id="tuc-Rt-YsV">
+                        <barButtonItem key="rightBarButtonItem" title="Next" id="wrk-YF-R8O">
+                            <connections>
+                                <action selector="nextTapped:" destination="0Zh-NF-xnL" id="S9m-zt-oOO"/>
+                            </connections>
+                        </barButtonItem>
+                    </navigationItem>
                     <simulatedNavigationBarMetrics key="simulatedTopBarMetrics" translucent="NO" prompted="NO"/>
                     <simulatedScreenMetrics key="simulatedDestinationMetrics" type="retina47"/>
                     <connections>

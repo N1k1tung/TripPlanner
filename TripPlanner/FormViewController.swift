@@ -20,6 +20,11 @@ typealias TextValidator = (String) -> Bool
  */
 class FormViewController: UIViewController {
 
+    /// the segue triggered by next button
+    var nextSegue: String {
+        return "next"
+    }
+    
     /// validated fields
     private var fieldsToValidate: [(UITextField, String?, TextValidator)] = []
     
@@ -61,9 +66,12 @@ class FormViewController: UIViewController {
         self.navigationController?.popViewControllerAnimated(true)
     }
     
-    /// the segue triggered by next button
-    var nextSegue: String {
-        return "next"
+    /**
+     goes to next screen
+     invoked after validation passes
+     */
+    func goNext() {
+        self.performSegueWithIdentifier(nextSegue, sender: nil)
     }
     
     /**
@@ -74,7 +82,7 @@ class FormViewController: UIViewController {
     @IBAction func nextTapped(sender: AnyObject?) {
         let (status, errorMessage) = self.validate()
         if status {
-            self.performSegueWithIdentifier(nextSegue, sender: nil)
+            goNext()
         } else
         {
             showAlert(errorMessage ?? "Please provide valid values for outlined fields")

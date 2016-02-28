@@ -7,6 +7,7 @@
 //
 
 import UIKit
+import Firebase
 
 /**
  * Sign up screen
@@ -39,12 +40,10 @@ class SignUpViewController: FormViewController {
     }
 
     /**
-     next tap handler
-     
-     - parameter sender: the button
+     sign user up
      */
-    override func nextTapped(sender: AnyObject?) {
-        super.nextTapped(sender)
+    override func goNext() {
+        
     }
     
 }

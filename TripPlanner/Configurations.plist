@@ -10,5 +10,7 @@
 	<string>test</string>
 	<key>fakeUsername</key>
 	<string>test</string>
+	<key>firebaseURL</key>
+	<string>https://shining-fire-122.firebaseio.com</string>
 </dict>
 </plist>
