@@ -8,6 +8,7 @@
 
 import UIKit
 import UIComponents
+import PKHUD
 
 /**
  * sign in screen
@@ -33,28 +34,27 @@ class LoginViewController: FormViewController {
     }
     
     /**
-     view will appear
+     view did appear
      */
-    override func viewWillAppear(animated: Bool) {
-        super.viewWillAppear(animated)
+    override func viewDidAppear(animated: Bool) {
+        super.viewDidAppear(animated)
         
         loginField.becomeFirstResponder()
     }
     
     /**
-     form validation
-     
-     - returns: validation result
+     logs user in
      */
-    override func validate() -> (Bool, String?) {
-        var (status, msg) = super.validate()
-        if status {
-            // MOCK check
-            if loginField.textValue != Configuration.fakeUsername() || passwordField.textValue != Configuration.fakePassword() {
-                status = false
-                msg = "Incorrect username or password"
+    override func goNext() {
+        HUD.show(.Progress)
+        LoginDataStore.sharedInstance.loginUser(loginField.textValue, password: passwordField.textValue) { (uid, error) -> () in
+            HUD.hide(afterDelay: 0, completion: nil)
+            if let error = error {
+                self.showErrorAlert(error.localizedDescription)
+            } else
+            {
+                super.goNext()
             }
         }
-        return (status, msg)
     }
 }

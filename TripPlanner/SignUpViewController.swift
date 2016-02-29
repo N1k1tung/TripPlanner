@@ -7,7 +7,7 @@
 //
 
 import UIKit
-import Firebase
+import PKHUD
 
 /**
  * Sign up screen
@@ -20,7 +20,6 @@ class SignUpViewController: FormViewController {
     /// outlets
     @IBOutlet weak var fullName: UITextField!
     @IBOutlet weak var emailField: UITextField!
-    @IBOutlet weak var usernameField: UITextField!
     @IBOutlet weak var passwordField: UITextField!
     
     /**
@@ -32,10 +31,15 @@ class SignUpViewController: FormViewController {
         // Do any additional setup after loading the view.
         addFieldValidation(fullName, validator: String.notEmpty..true)
         addFieldValidation(emailField, errorMessage: "Please provide valid email", validator: String.isEmail)
-        addFieldValidation(usernameField, errorMessage: "Username must be at least 8 characters", validator: String.countNotLess..8)
         addFieldValidation(passwordField, errorMessage: "Password must be at least 8 characters", validator: String.countNotLess..8)
+    }
+    
+    /**
+     view did appear
+     */
+    override func viewDidAppear(animated: Bool) {
+        super.viewDidAppear(animated)
         
-        // prefill data
         fullName.becomeFirstResponder()
     }
 
@@ -43,7 +47,16 @@ class SignUpViewController: FormViewController {
      sign user up
      */
     override func goNext() {
-        
+        HUD.show(.Progress)
+        LoginDataStore.sharedInstance.createUser(fullName.textValue, email: emailField.textValue, password: passwordField.textValue) { (uid, error) -> () in
+            HUD.hide(afterDelay: 0, completion: nil)
+            if let error = error {
+                self.showErrorAlert(error.localizedDescription)
+            } else
+            {
+                super.goNext()
+            }
+        }
     }
     
 }

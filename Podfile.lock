@@ -1,10 +1,13 @@
 PODS:
   - Firebase (2.5.1)
+  - PKHUD (3.0.0)
 
 DEPENDENCIES:
   - Firebase (>= 2.5.0)
+  - PKHUD
 
 SPEC CHECKSUMS:
   Firebase: 3565ea88b830f28f2c77ecc524622bc71a20d085
+  PKHUD: e1648a176717bcdf480ec4b91ff1f023f8abb8c4
 
 COCOAPODS: 0.39.0

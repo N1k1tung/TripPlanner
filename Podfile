@@ -3,12 +3,9 @@
 # Uncomment this line if you're using Swift
 use_frameworks!
 
-def included_pods
-    pod 'Firebase', '>= 2.5.0'
-end
-
 target 'TripPlanner' do
-    included_pods
+    pod 'Firebase', '>= 2.5.0'
+    pod 'PKHUD'
 end
 
 target 'TripPlannerUITests' do

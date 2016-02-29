@@ -17,4 +17,19 @@ import Firebase
  */
 class TripsDataStore {
 
+    /// singleton
+    static let sharedInstance = TripsDataStore()
+    
+    /// db ref
+    private let ref: Firebase
+    
+    /**
+     initializer
+     */
+    init() {
+        let firebaseURL = Configuration.firebaseURL()
+        let uid = LoginDataStore.sharedInstance.uid
+        ref = Firebase(url:"\(firebaseURL)/users/\(uid)/trips")
+    }
+    
 }

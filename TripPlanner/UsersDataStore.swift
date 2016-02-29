@@ -9,6 +9,12 @@
 import UIKit
 import Firebase
 
+// available user roles
+enum UserRole: String {
+    case User = "user"
+    case Admin = "admin"
+}
+
 /**
  * Firebase wrapper for users
  *
@@ -21,13 +27,13 @@ class UsersDataStore {
     static let sharedInstance = UsersDataStore()
     
     /// db ref
-    let ref: Firebase
+    private let ref: Firebase
 
     /**
      initializer
      */
     init() {
         let firebaseURL = Configuration.firebaseURL()
-        ref = Firebase(url:"\(firebaseURL)/")
+        ref = Firebase(url:"\(firebaseURL)")
     }
 }
