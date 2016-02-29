@@ -85,7 +85,7 @@ class FormViewController: UIViewController {
             goNext()
         } else
         {
-            showAlert(errorMessage ?? "Please provide valid values for outlined fields")
+            showAlert(errorMessage ?? NSLocalizedString("Please provide valid values for outlined fields", comment: ""))
         }
     }
 }

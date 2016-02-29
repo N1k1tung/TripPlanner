@@ -26,7 +26,7 @@ class ResetPasswordViewController: FormViewController {
         super.viewDidLoad()
 
         // Do any additional setup after loading the view.
-        addFieldValidation(emailField, errorMessage: "Please enter valid email", validator: String.isEmail)
+        addFieldValidation(emailField, errorMessage: NSLocalizedString("Please enter valid email", comment: ""), validator: String.isEmail)
         
         emailField.becomeFirstResponder()
     }

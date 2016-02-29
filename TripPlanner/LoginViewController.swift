@@ -9,6 +9,7 @@
 import UIKit
 import UIComponents
 import PKHUD
+import Firebase
 
 /**
  * sign in screen
@@ -29,8 +30,8 @@ class LoginViewController: FormViewController {
         super.viewDidLoad()
         
         // Do any additional setup after loading the view.
-        addFieldValidation(loginField, validator: String.notEmpty..true)
-        addFieldValidation(passwordField, validator: String.notEmpty..false)
+        addFieldValidation(loginField, errorMessage: NSLocalizedString("Please enter valid email", comment: ""), validator: String.isEmail)
+        addFieldValidation(passwordField, errorMessage: NSLocalizedString("Please enter password", comment: ""), validator: String.notEmpty..false)
     }
     
     /**
@@ -48,9 +49,16 @@ class LoginViewController: FormViewController {
     override func goNext() {
         HUD.show(.Progress)
         LoginDataStore.sharedInstance.loginUser(loginField.textValue, password: passwordField.textValue) { (uid, error) -> () in
-            HUD.hide(afterDelay: 0, completion: nil)
+            PKHUD.sharedHUD.hide(animated: false, completion: nil)
             if let error = error {
-                self.showErrorAlert(error.localizedDescription)
+                let err = FAuthenticationError(rawValue: error.code)
+                if err == .UserDoesNotExist || err == .InvalidEmail || err == .InvalidPassword {
+                    self.loginField.shake()
+                    self.passwordField.shake()
+                } else
+                {
+                    self.showErrorAlert(error.localizedDescription)
+                }
             } else
             {
                 super.goNext()

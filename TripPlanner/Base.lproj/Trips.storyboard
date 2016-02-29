@@ -3,13 +3,28 @@
     <dependencies>
         <deployment identifier="iOS"/>
         <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="9530"/>
+        <capability name="Constraints with non-1.0 multipliers" minToolsVersion="5.1"/>
     </dependencies>
+    <customFonts key="customFonts">
+        <mutableArray key="Poppins-Light.ttf">
+            <string>Poppins-Light</string>
+            <string>Poppins-Light</string>
+        </mutableArray>
+        <mutableArray key="Poppins-Medium.ttf">
+            <string>Poppins-Medium</string>
+            <string>Poppins-Medium</string>
+        </mutableArray>
+        <mutableArray key="Poppins-Regular.ttf">
+            <string>Poppins-Regular</string>
+            <string>Poppins-Regular</string>
+        </mutableArray>
+    </customFonts>
     <scenes>
-        <!--View Controller-->
+        <!--Trips View Controller-->
         <scene sceneID="usa-Ke-r4X">
             <objects>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="8ak-BC-xl5" userLabel="First Responder" sceneMemberID="firstResponder"/>
-                <viewController id="bbs-ew-clU" sceneMemberID="viewController">
+                <viewController id="bbs-ew-clU" customClass="TripsViewController" customModule="TripPlanner" customModuleProvider="target" sceneMemberID="viewController">
                     <layoutGuides>
                         <viewControllerLayoutGuide type="top" id="XRQ-wd-KuX"/>
                         <viewControllerLayoutGuide type="bottom" id="XG2-EH-ac4"/>
@@ -18,9 +33,45 @@
                         <rect key="frame" x="0.0" y="0.0" width="600" height="600"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
-                            <tableView clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" separatorStyle="default" rowHeight="44" sectionHeaderHeight="28" sectionFooterHeight="28" translatesAutoresizingMaskIntoConstraints="NO" id="mtb-Zi-nmv">
+                            <tableView clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" separatorStyle="default" rowHeight="60" sectionHeaderHeight="28" sectionFooterHeight="28" translatesAutoresizingMaskIntoConstraints="NO" id="mtb-Zi-nmv">
                                 <rect key="frame" x="0.0" y="20" width="600" height="580"/>
                                 <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                                <searchBar key="tableHeaderView" contentMode="redraw" placeholder="Search" id="0VD-uo-CoP">
+                                    <rect key="frame" x="0.0" y="0.0" width="600" height="44"/>
+                                    <autoresizingMask key="autoresizingMask" widthSizable="YES" flexibleMaxY="YES"/>
+                                    <textInputTraits key="textInputTraits"/>
+                                </searchBar>
+                                <prototypes>
+                                    <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" selectionStyle="blue" hidesAccessoryWhenEditing="NO" indentationLevel="1" indentationWidth="0.0" reuseIdentifier="TripCell" id="oAM-7P-fQX">
+                                        <rect key="frame" x="0.0" y="72" width="600" height="60"/>
+                                        <autoresizingMask key="autoresizingMask"/>
+                                        <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" tableViewCell="oAM-7P-fQX" id="ayz-Wu-g3t">
+                                            <rect key="frame" x="0.0" y="0.0" width="600" height="59.5"/>
+                                            <autoresizingMask key="autoresizingMask"/>
+                                            <subviews>
+                                                <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" horizontalCompressionResistancePriority="751" text="in 5 days" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="rrD-Lh-lQU">
+                                                    <rect key="frame" x="508" y="15" width="77" height="28"/>
+                                                    <fontDescription key="fontDescription" name="Poppins-Regular" family="Poppins" pointSize="17"/>
+                                                    <color key="textColor" white="0.33333333333333331" alpha="1" colorSpace="calibratedWhite"/>
+                                                    <nil key="highlightedColor"/>
+                                                </label>
+                                                <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Milan" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="1tc-Hl-LDv">
+                                                    <rect key="frame" x="15" y="15" width="45" height="28"/>
+                                                    <fontDescription key="fontDescription" name="Poppins-Regular" family="Poppins" pointSize="17"/>
+                                                    <color key="textColor" red="0.0" green="0.0" blue="0.0" alpha="1" colorSpace="calibratedRGB"/>
+                                                    <nil key="highlightedColor"/>
+                                                </label>
+                                            </subviews>
+                                            <constraints>
+                                                <constraint firstItem="rrD-Lh-lQU" firstAttribute="centerY" secondItem="ayz-Wu-g3t" secondAttribute="centerY" id="IK4-MU-IFp"/>
+                                                <constraint firstItem="rrD-Lh-lQU" firstAttribute="leading" relation="greaterThanOrEqual" secondItem="1tc-Hl-LDv" secondAttribute="trailing" constant="10" id="YFa-ja-gNJ"/>
+                                                <constraint firstAttribute="trailing" secondItem="rrD-Lh-lQU" secondAttribute="trailing" constant="15" id="ll8-Cr-jUe"/>
+                                                <constraint firstItem="1tc-Hl-LDv" firstAttribute="centerY" secondItem="ayz-Wu-g3t" secondAttribute="centerY" id="rLe-D1-T6Z"/>
+                                                <constraint firstItem="1tc-Hl-LDv" firstAttribute="leading" secondItem="ayz-Wu-g3t" secondAttribute="leading" constant="15" id="vYc-n5-AcF"/>
+                                            </constraints>
+                                        </tableViewCellContentView>
+                                    </tableViewCell>
+                                </prototypes>
                             </tableView>
                         </subviews>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
@@ -31,14 +82,17 @@
                             <constraint firstItem="mtb-Zi-nmv" firstAttribute="top" secondItem="XRQ-wd-KuX" secondAttribute="bottom" id="GGP-4W-psF"/>
                         </constraints>
                     </view>
+                    <connections>
+                        <segue destination="qFl-Sz-Jfl" kind="showDetail" identifier="edit" id="dV1-Tf-T1f"/>
+                    </connections>
                 </viewController>
             </objects>
             <point key="canvasLocation" x="302" y="408"/>
         </scene>
-        <!--View Controller-->
+        <!--Trip Details View Controller-->
         <scene sceneID="zQh-Dl-bcj">
             <objects>
-                <viewController id="qFl-Sz-Jfl" sceneMemberID="viewController">
+                <viewController id="qFl-Sz-Jfl" customClass="TripDetailsViewController" customModule="TripPlanner" customModuleProvider="target" sceneMemberID="viewController">
                     <layoutGuides>
                         <viewControllerLayoutGuide type="top" id="ctw-66-Uq7"/>
                         <viewControllerLayoutGuide type="bottom" id="Hve-RG-Ue3"/>
@@ -46,8 +100,102 @@
                     <view key="view" contentMode="scaleToFill" id="RAd-ml-mOk">
                         <rect key="frame" x="0.0" y="0.0" width="600" height="600"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <mapView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" mapType="standard" translatesAutoresizingMaskIntoConstraints="NO" id="yjf-eG-QQd">
+                                <rect key="frame" x="0.0" y="0.0" width="600" height="200"/>
+                            </mapView>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Start date:" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="Iku-De-22B">
+                                <rect key="frame" x="20" y="220" width="87.5" height="28"/>
+                                <fontDescription key="fontDescription" name="Poppins-Light" family="Poppins" pointSize="17"/>
+                                <color key="textColor" red="0.0" green="0.0" blue="0.0" alpha="1" colorSpace="calibratedRGB"/>
+                                <nil key="highlightedColor"/>
+                            </label>
+                            <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="27J-x3-z2D" userLabel="pickerView">
+                                <rect key="frame" x="0.0" y="600" width="600" height="260"/>
+                                <subviews>
+                                    <datePicker contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" datePickerMode="time" minuteInterval="1" translatesAutoresizingMaskIntoConstraints="NO" id="B4l-yb-TMm">
+                                        <rect key="frame" x="0.0" y="44" width="600" height="216"/>
+                                        <date key="date" timeIntervalSinceReferenceDate="473678551.50203001">
+                                            <!--2016-01-05 09:22:31 +0000-->
+                                        </date>
+                                    </datePicker>
+                                    <toolbar opaque="NO" clearsContextBeforeDrawing="NO" contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="lOJ-eY-W9U">
+                                        <rect key="frame" x="0.0" y="0.0" width="600" height="44"/>
+                                        <items>
+                                            <barButtonItem style="plain" systemItem="flexibleSpace" id="L3t-Jk-9KX"/>
+                                            <barButtonItem title="Done" id="I10-7y-hRh" userLabel="Done">
+                                                <connections>
+                                                    <action selector="doneTapped:" destination="qFl-Sz-Jfl" id="k7t-Wc-EUd"/>
+                                                </connections>
+                                            </barButtonItem>
+                                        </items>
+                                    </toolbar>
+                                </subviews>
+                                <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                                <constraints>
+                                    <constraint firstItem="B4l-yb-TMm" firstAttribute="leading" secondItem="27J-x3-z2D" secondAttribute="leading" id="96T-v5-iZv"/>
+                                    <constraint firstAttribute="bottom" secondItem="B4l-yb-TMm" secondAttribute="bottom" id="EYY-jb-uYT"/>
+                                    <constraint firstAttribute="trailing" secondItem="B4l-yb-TMm" secondAttribute="trailing" id="Xmt-jL-ZqF"/>
+                                    <constraint firstAttribute="height" constant="260" id="jOU-cQ-wl2"/>
+                                    <constraint firstItem="B4l-yb-TMm" firstAttribute="top" secondItem="lOJ-eY-W9U" secondAttribute="bottom" id="jyp-Df-C0G"/>
+                                    <constraint firstItem="lOJ-eY-W9U" firstAttribute="leading" secondItem="B4l-yb-TMm" secondAttribute="leading" id="l6k-YX-ZYF"/>
+                                    <constraint firstItem="lOJ-eY-W9U" firstAttribute="trailing" secondItem="B4l-yb-TMm" secondAttribute="trailing" id="lZa-Fq-FXv"/>
+                                    <constraint firstItem="lOJ-eY-W9U" firstAttribute="top" secondItem="27J-x3-z2D" secondAttribute="top" id="zHd-4Q-kch"/>
+                                </constraints>
+                                <variation key="default">
+                                    <mask key="constraints">
+                                        <exclude reference="jOU-cQ-wl2"/>
+                                    </mask>
+                                </variation>
+                            </view>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="End date:" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="BaG-NW-okn">
+                                <rect key="frame" x="20" y="265" width="79" height="28"/>
+                                <fontDescription key="fontDescription" name="Poppins-Light" family="Poppins" pointSize="17"/>
+                                <color key="textColor" red="0.0" green="0.0" blue="0.0" alpha="1" colorSpace="calibratedRGB"/>
+                                <nil key="highlightedColor"/>
+                            </label>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" horizontalCompressionResistancePriority="751" text="in 5 days" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="pf6-vE-Z5y">
+                                <rect key="frame" x="115.5" y="265" width="79" height="28"/>
+                                <fontDescription key="fontDescription" name="Poppins-Medium" family="Poppins" pointSize="17"/>
+                                <color key="textColor" white="0.33333333333333331" alpha="1" colorSpace="calibratedWhite"/>
+                                <nil key="highlightedColor"/>
+                            </label>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" horizontalCompressionResistancePriority="751" text="in 5 days" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="VnW-HJ-oTn">
+                                <rect key="frame" x="115.5" y="220" width="79" height="28"/>
+                                <fontDescription key="fontDescription" name="Poppins-Medium" family="Poppins" pointSize="17"/>
+                                <color key="textColor" white="0.33333333333333331" alpha="1" colorSpace="calibratedWhite"/>
+                                <nil key="highlightedColor"/>
+                            </label>
+                        </subviews>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                        <constraints>
+                            <constraint firstItem="yjf-eG-QQd" firstAttribute="height" secondItem="RAd-ml-mOk" secondAttribute="height" multiplier="1/3" id="0Hm-ie-Uje"/>
+                            <constraint firstItem="Hve-RG-Ue3" firstAttribute="top" secondItem="27J-x3-z2D" secondAttribute="bottom" constant="-260" id="8L9-3m-3Th"/>
+                            <constraint firstItem="pf6-vE-Z5y" firstAttribute="baseline" secondItem="BaG-NW-okn" secondAttribute="baseline" id="Gf8-pk-Lk0"/>
+                            <constraint firstItem="BaG-NW-okn" firstAttribute="leading" secondItem="Iku-De-22B" secondAttribute="leading" id="KNL-Vh-EfW"/>
+                            <constraint firstItem="Iku-De-22B" firstAttribute="leading" secondItem="RAd-ml-mOk" secondAttribute="leading" constant="20" id="Noy-ea-WAc"/>
+                            <constraint firstAttribute="trailing" secondItem="yjf-eG-QQd" secondAttribute="trailing" id="Ozm-Lo-2hk"/>
+                            <constraint firstAttribute="trailing" relation="greaterThanOrEqual" secondItem="VnW-HJ-oTn" secondAttribute="trailing" constant="8" id="QSZ-HH-wR8"/>
+                            <constraint firstItem="VnW-HJ-oTn" firstAttribute="leading" secondItem="Iku-De-22B" secondAttribute="trailing" constant="8" id="Uz4-sJ-CrZ"/>
+                            <constraint firstItem="VnW-HJ-oTn" firstAttribute="baseline" secondItem="Iku-De-22B" secondAttribute="baseline" id="Vf8-I5-cGn"/>
+                            <constraint firstAttribute="trailing" relation="greaterThanOrEqual" secondItem="pf6-vE-Z5y" secondAttribute="trailing" constant="8" id="WLg-NS-pcn"/>
+                            <constraint firstItem="Iku-De-22B" firstAttribute="top" secondItem="yjf-eG-QQd" secondAttribute="bottom" constant="20" id="Z6m-pq-J8m"/>
+                            <constraint firstItem="BaG-NW-okn" firstAttribute="top" secondItem="Iku-De-22B" secondAttribute="bottom" constant="17" id="a9l-SQ-IfZ"/>
+                            <constraint firstItem="pf6-vE-Z5y" firstAttribute="leading" secondItem="VnW-HJ-oTn" secondAttribute="leading" id="eeZ-13-QFO"/>
+                            <constraint firstItem="27J-x3-z2D" firstAttribute="leading" secondItem="RAd-ml-mOk" secondAttribute="leading" id="lg3-li-MJF"/>
+                            <constraint firstItem="yjf-eG-QQd" firstAttribute="top" secondItem="ctw-66-Uq7" secondAttribute="bottom" constant="-20" id="m5r-2D-xGk"/>
+                            <constraint firstAttribute="trailing" secondItem="27J-x3-z2D" secondAttribute="trailing" id="mNs-LH-tRr"/>
+                            <constraint firstItem="yjf-eG-QQd" firstAttribute="leading" secondItem="RAd-ml-mOk" secondAttribute="leading" id="sfs-jx-ub3"/>
+                            <constraint firstItem="pf6-vE-Z5y" firstAttribute="leading" relation="greaterThanOrEqual" secondItem="BaG-NW-okn" secondAttribute="trailing" constant="8" id="syP-Ij-1bg"/>
+                        </constraints>
                     </view>
+                    <connections>
+                        <outlet property="datePicker" destination="B4l-yb-TMm" id="ToT-jr-6fv"/>
+                        <outlet property="pickerOffset" destination="8L9-3m-3Th" id="l6g-Hy-YV1"/>
+                        <outlet property="pickerView" destination="27J-x3-z2D" id="oA5-pc-hnI"/>
+                        <outlet property="timeEndLabel" destination="pf6-vE-Z5y" id="P1H-aF-fSN"/>
+                        <outlet property="timeStartLabel" destination="VnW-HJ-oTn" id="33c-7r-COb"/>
+                    </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="HdU-lg-dWv" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
