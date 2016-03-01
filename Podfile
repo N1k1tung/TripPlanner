@@ -7,6 +7,7 @@ target 'TripPlanner' do
     pod 'Firebase', '>= 2.5.0'
     pod 'PKHUD'
     pod 'IQKeyboardManagerSwift'
+    pod 'KeychainAccess'
 end
 
 target 'TripPlannerUITests' do
