@@ -7,6 +7,7 @@
 //
 
 import UIKit
+import PKHUD
 
 /**
  * Reset password screen
@@ -16,6 +17,9 @@ import UIKit
  */
 class ResetPasswordViewController: FormViewController {
 
+    /// preset email
+    var presetEmail = ""
+    
     /// outlets
     @IBOutlet weak var emailField: UITextField!
     
@@ -26,9 +30,26 @@ class ResetPasswordViewController: FormViewController {
         super.viewDidLoad()
 
         // Do any additional setup after loading the view.
-        addFieldValidation(emailField, errorMessage: NSLocalizedString("Please enter valid email", comment: ""), validator: String.isEmail)
-        
+        addFieldValidation(emailField, errorMessage: "Please enter valid email".localized, validator: String.isEmail)
+        emailField.text = presetEmail
         emailField.becomeFirstResponder()
     }
 
+    /**
+     resets passwor
+     */
+    override func goNext() {
+        HUD.show(.Progress)
+        LoginDataStore.sharedInstance.resetPassword(emailField.textValue) { (error) -> () in
+            PKHUD.sharedHUD.hide(animated: false, completion: nil)
+            if let error = error {
+                self.showErrorAlert(error.localizedDescription)
+            } else
+            {
+                self.showAlert("A reset link was sent to your email".localized)
+                super.goNext()
+            }
+        }
+    }
+    
 }

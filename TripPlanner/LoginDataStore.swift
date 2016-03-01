@@ -82,6 +82,18 @@ class LoginDataStore {
     }
     
     /**
+     resets user password
+    
+     - parameter email:    email
+     - parameter callback: callback
+     */
+    func resetPassword(email: String, callback: ((NSError?) -> ())?) {
+        ref.resetPasswordForUser(email) { (error) -> Void in
+            callback?(error)
+        }
+    }
+    
+    /**
      logs user out
      */
     func logout() {

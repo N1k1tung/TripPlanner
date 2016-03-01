@@ -30,8 +30,8 @@ class LoginViewController: FormViewController {
         super.viewDidLoad()
         
         // Do any additional setup after loading the view.
-        addFieldValidation(loginField, errorMessage: NSLocalizedString("Please enter valid email", comment: ""), validator: String.isEmail)
-        addFieldValidation(passwordField, errorMessage: NSLocalizedString("Please enter password", comment: ""), validator: String.notEmpty..false)
+        addFieldValidation(loginField, errorMessage: "Please enter valid email".localized, validator: String.isEmail)
+        addFieldValidation(passwordField, errorMessage: "Please enter password".localized, validator: String.notEmpty..false)
     }
     
     /**
@@ -63,6 +63,15 @@ class LoginViewController: FormViewController {
             {
                 super.goNext()
             }
+        }
+    }
+    
+    /**
+     prepare for segue
+     */
+    override func prepareForSegue(segue: UIStoryboardSegue, sender: AnyObject?) {
+        if let vc = segue.destinationViewController as? ResetPasswordViewController {
+            vc.presetEmail = loginField.textValue
         }
     }
 }

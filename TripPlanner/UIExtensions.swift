@@ -32,6 +32,7 @@ extension UIColor {
      Get UIColor from hex string, e.g. "FF0000" -> red color
      
      - parameter hexString: the hex string
+     
      - returns: the UIColor instance or nil
      */
     class func fromString(hexString: String) -> UIColor? {
@@ -57,10 +58,17 @@ extension UIColor {
     }
     
     /**
+     very light gray color
+     */
+    class func veryLightGray() -> UIColor {
+        return UIColor.fromString("FAFCFE")!
+    }
+    
+    /**
      dark blue color
      */
     class func darkBlueColor() -> UIColor {
-        return UIColor(r: 0, g: 31, b: 59)
+        return UIColor.fromString("001F3B")!
     }
     
 }
@@ -77,39 +85,44 @@ extension UIColor {
 extension UIViewController {
     
     /**
-     Load child controller :vc inside :contentView
+     Load child controller inside contentView
      
-     - parameters:
-     - vc: child controller
-     - contentView: container view
+     - parameter vc: child controller
+     - parameter contentView: container view
      */
     func loadChildController(vc: UIViewController, inContentView contentView: UIView) {
         self.addChildViewController(vc)
+        
+        vc.view.translatesAutoresizingMaskIntoConstraints = false
         contentView.addSubview(vc.view)
-        vc.view.frame.size = contentView.frame.size
+        contentView.addConstraints(NSLayoutConstraint.constraintsWithVisualFormat("V:|-0-[view]-0-|",
+            options: [], metrics: nil, views: ["view" : vc.view]))
+        contentView.addConstraints(NSLayoutConstraint.constraintsWithVisualFormat("H:|-0-[view]-0-|",
+            options: [], metrics: nil, views: ["view" : vc.view]))
+        
+        self.view.layoutIfNeeded()
+
         vc.didMoveToParentViewController(self)
     }
     
     /**
-     Unload child controller :vc from its parent
+     Unload child controller from its parent
      
-     - parameters:
-     - vc: child controller
+     - parameter vc: child controller
      */
     func unloadChildController(vc: UIViewController?) {
         if let vc = vc {
             vc.willMoveToParentViewController(nil)
-            vc.view.removeFromSuperview()
             vc.removeFromParentViewController()
+            vc.view.removeFromSuperview()
         }
     }
     
     /**
      Show alert
      
-     - parameters:
-     - title: the title of the alert
-     - message: the message of the alert
+     - parameter title: the title of the alert
+     - parameter message: the message of the alert
      */
     func showAlert(title: String, message: String, handler: ((UIAlertAction) -> Void)? = nil) {
         let alert = UIAlertController(title: title, message: message, preferredStyle: UIAlertControllerStyle.Alert)
@@ -130,14 +143,13 @@ extension UIViewController {
      Create a view controller from storyboard.
      By default will load from the same storyboard of self storyboard.
      
-     - parameters:
-     - controllerClass: type of controller
-     - storyboardName: the name of storyboard
+     - parameter controllerClass: type of controller
+     - parameter storyboardName: the name of storyboard
      
      - returns: the controller instance from storyboard
      */
     func create<T: UIViewController>(controllerClass: T.Type, storyboardName: String? = nil) -> T? {
-        let className = NSStringFromClass(controllerClass).componentsSeparatedByString(".").last!
+        let className = String.stringFromClass(controllerClass)
         var storyboard = self.storyboard
         if let storyboardName = storyboardName {
             storyboard = UIStoryboard(name: storyboardName, bundle: nil)
@@ -147,18 +159,14 @@ extension UIViewController {
     }
     
     /**
-     Class function to create a view controller from Main storyboard.
+     wraps view controller in a navigation controller
      
-     - parameters:
-     - controllerClass: type of the controller
-     
-     - returns: the controller instance from storyboard
+     - returns: parent navigation controller
      */
-    class func createFromMainStoryboard<T: UIViewController>(controllerClass: T.Type) -> T? {
-        let className = NSStringFromClass(controllerClass).componentsSeparatedByString(".").last!
-        let storyboard = UIStoryboard(name: "Main", bundle: nil)
-        let controller = storyboard.instantiateViewControllerWithIdentifier(className) as? T
-        return controller
+    func wrapInNavigationController() -> UINavigationController {
+        let navigation = UINavigationController(rootViewController: self)
+        navigation.navigationBar.translucent = false
+        return navigation
     }
 }
 
@@ -186,38 +194,6 @@ extension UIFont {
      */
     class func arialFontOfSize(size: CGFloat) -> UIFont {
         return UIFont(name: "Arial", size: size)!
-    }
-    
-}
-
-/**
- * Extension for UIImage
- *
- * - author: Nikita Rodin
- * - version: 1.0
- */
-extension UIImage {
-    
-    /**
-     adds a text on top of self
-     
-     - parameter text: text to draw
-     - parameter edgeInsets: edge insets
-     - parameter font:       text font
-     - parameter color:      text color
-     
-     - returns: image with added text
-     */
-    func imageWithText(text: String, edgeInsets: UIEdgeInsets = UIEdgeInsets(top: 5, left: 0, bottom: 5, right: 0), font: UIFont = UIFont.boldArialFontOfSize(10.5), color: UIColor = UIColor.whiteColor()) -> UIImage {
-        UIGraphicsBeginImageContextWithOptions(self.size, false, 0.0)
-        self.drawAtPoint(CGPointZero)
-        let style: NSMutableParagraphStyle = NSMutableParagraphStyle()
-        style.alignment = .Center
-        let textString: NSAttributedString = NSAttributedString(string: text, attributes: [NSFontAttributeName: font, NSForegroundColorAttributeName: color, NSParagraphStyleAttributeName: style])
-        textString.drawInRect(CGRectMake(edgeInsets.left, edgeInsets.top, self.size.width - edgeInsets.left - edgeInsets.right, self.size.height - edgeInsets.top - edgeInsets.bottom))
-        let result: UIImage = UIGraphicsGetImageFromCurrentImageContext()
-        UIGraphicsEndImageContext()
-        return result
     }
     
 }
@@ -370,3 +346,31 @@ extension UIView {
         }
     }
 }
+
+/**
+ * First responder helper
+ *
+ * - author: Nikita Rodin
+ * - version: 1.0
+ */
+extension UIView {
+    /**
+     Finds the first responder
+     
+     - returns: the first responder, or nil if nothing found.
+     */
+    func findFirstResponder() -> UIView? {
+        if isFirstResponder() { return self }
+        else {
+            for view in subviews {
+                if let responder = view.findFirstResponder() {
+                    return responder
+                }
+            }
+            return nil
+        }
+    }
+}
+
+/// iPad check
+let IS_IPAD = UIDevice.currentDevice().userInterfaceIdiom == .Pad

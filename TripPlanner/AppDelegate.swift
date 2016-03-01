@@ -10,16 +10,31 @@ import UIKit
 import Firebase
 import PKHUD
 
+/**
+ * App delegate responder
+ *
+ * - author: Nikita Rodin
+ * - version: 1.0
+ */
 @UIApplicationMain
 class AppDelegate: UIResponder, UIApplicationDelegate {
 
     var window: UIWindow?
 
-
+    /**
+     convenience typed singleton
+     
+     - returns: return shared app delegate casted to AppDelegate
+     */
+    class func sharedInstance() -> AppDelegate {
+        return UIApplication.sharedApplication().delegate as! AppDelegate
+    }
+    
     func application(application: UIApplication, didFinishLaunchingWithOptions launchOptions: [NSObject: AnyObject]?) -> Bool {
         // Override point for customization after application launch.
         Firebase.defaultConfig().persistenceEnabled = true
         PKHUD.sharedHUD.dimsBackground = false
+        UINavigationBar.appearance().tintColor = .blackColor()
         return true
     }
 

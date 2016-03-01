@@ -14,6 +14,7 @@ class TripsViewController: UIViewController {
         super.viewDidLoad()
 
         // Do any additional setup after loading the view.
+        addMenuButton()
     }
 
     override func didReceiveMemoryWarning() {

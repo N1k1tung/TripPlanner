@@ -159,16 +159,9 @@ extension String {
         return className
     }
     
-}
-
-/**
- += for Swift dictionaries
- 
- - parameter left:  destination
- - parameter right: source
- */
-func += <KeyType, ValueType> (inout left: Dictionary<KeyType, ValueType>, right: Dictionary<KeyType, ValueType>) {
-    for (k, v) in right {
-        left.updateValue(v, forKey: k)
+    /// localized string
+    var localized: String {
+        return NSLocalizedString(self, comment: "")
     }
+    
 }

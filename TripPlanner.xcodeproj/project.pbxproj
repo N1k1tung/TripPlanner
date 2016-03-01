@@ -24,6 +24,11 @@
 		0C225EFE1C82423A005FCD19 /* UnderlineTextField.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0C225EFD1C82423A005FCD19 /* UnderlineTextField.swift */; };
 		0C225EFF1C824375005FCD19 /* HelpfulFunctions.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0C225ED81C824120005FCD19 /* HelpfulFunctions.swift */; };
 		0C225F001C824386005FCD19 /* UIExtensions.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0C225ED91C824120005FCD19 /* UIExtensions.swift */; };
+		0C23CFFB1C85CFA5006110F4 /* MenuViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0C23CFF91C85CFA5006110F4 /* MenuViewController.swift */; };
+		0C23CFFC1C85CFA5006110F4 /* SlideMenuViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0C23CFFA1C85CFA5006110F4 /* SlideMenuViewController.swift */; };
+		0C23CFFE1C85D614006110F4 /* MenuTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0C23CFFD1C85D614006110F4 /* MenuTableViewCell.swift */; };
+		0C23D0001C85E0C7006110F4 /* ContainerViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0C23CFFF1C85E0C7006110F4 /* ContainerViewController.swift */; };
+		0C23D0021C85E9A0006110F4 /* SectionHeaderTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0C23D0011C85E9A0006110F4 /* SectionHeaderTableViewCell.swift */; };
 		0C4FF3D31C81ABA500EB935F /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0C4FF3D21C81ABA500EB935F /* AppDelegate.swift */; };
 		0C4FF3D81C81ABA500EB935F /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 0C4FF3D61C81ABA500EB935F /* Main.storyboard */; };
 		0C4FF3DA1C81ABA500EB935F /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 0C4FF3D91C81ABA500EB935F /* Assets.xcassets */; };
@@ -91,6 +96,11 @@
 		0C225EF21C82422A005FCD19 /* UIComponents.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = UIComponents.h; sourceTree = "<group>"; };
 		0C225EF41C82422A005FCD19 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		0C225EFD1C82423A005FCD19 /* UnderlineTextField.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = UnderlineTextField.swift; sourceTree = "<group>"; };
+		0C23CFF91C85CFA5006110F4 /* MenuViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = MenuViewController.swift; sourceTree = "<group>"; };
+		0C23CFFA1C85CFA5006110F4 /* SlideMenuViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = SlideMenuViewController.swift; sourceTree = "<group>"; };
+		0C23CFFD1C85D614006110F4 /* MenuTableViewCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = MenuTableViewCell.swift; sourceTree = "<group>"; };
+		0C23CFFF1C85E0C7006110F4 /* ContainerViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ContainerViewController.swift; sourceTree = "<group>"; };
+		0C23D0011C85E9A0006110F4 /* SectionHeaderTableViewCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = SectionHeaderTableViewCell.swift; sourceTree = "<group>"; };
 		0C4FF3CF1C81ABA500EB935F /* TripPlanner.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = TripPlanner.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		0C4FF3D21C81ABA500EB935F /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		0C4FF3D71C81ABA500EB935F /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Main.storyboard; sourceTree = "<group>"; };
@@ -150,6 +160,7 @@
 		0C225ED31C8240FE005FCD19 /* ViewControllers */ = {
 			isa = PBXGroup;
 			children = (
+				0C23CFF81C85CF9A006110F4 /* Menu */,
 				0C767C511C837FA100484C05 /* Login */,
 				0C767C521C837FA600484C05 /* Trips */,
 			);
@@ -176,6 +187,18 @@
 				0C225EF41C82422A005FCD19 /* Info.plist */,
 			);
 			path = UIComponents;
+			sourceTree = "<group>";
+		};
+		0C23CFF81C85CF9A006110F4 /* Menu */ = {
+			isa = PBXGroup;
+			children = (
+				0C23CFF91C85CFA5006110F4 /* MenuViewController.swift */,
+				0C23CFFF1C85E0C7006110F4 /* ContainerViewController.swift */,
+				0C23CFFA1C85CFA5006110F4 /* SlideMenuViewController.swift */,
+				0C23CFFD1C85D614006110F4 /* MenuTableViewCell.swift */,
+				0C23D0011C85E9A0006110F4 /* SectionHeaderTableViewCell.swift */,
+			);
+			name = Menu;
 			sourceTree = "<group>";
 		};
 		0C4FF3C61C81ABA500EB935F = {
@@ -518,6 +541,7 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				0C23D0021C85E9A0006110F4 /* SectionHeaderTableViewCell.swift in Sources */,
 				0C225EDB1C824120005FCD19 /* Composition.swift in Sources */,
 				0C767C5D1C83973600484C05 /* TripsDataStore.swift in Sources */,
 				0C767C611C83A4C400484C05 /* LoginDataStore.swift in Sources */,
@@ -531,9 +555,13 @@
 				0C225EE01C824120005FCD19 /* UIViewControllerExt.swift in Sources */,
 				0C225EE41C82413E005FCD19 /* FormViewController.swift in Sources */,
 				0C225EE51C82413E005FCD19 /* LandingViewController.swift in Sources */,
+				0C23CFFB1C85CFA5006110F4 /* MenuViewController.swift in Sources */,
+				0C23CFFE1C85D614006110F4 /* MenuTableViewCell.swift in Sources */,
 				0C767C541C837FD100484C05 /* TripsViewController.swift in Sources */,
+				0C23D0001C85E0C7006110F4 /* ContainerViewController.swift in Sources */,
 				0C767C561C837FF100484C05 /* TripDetailsViewController.swift in Sources */,
 				0C225EE61C82413E005FCD19 /* LoginViewController.swift in Sources */,
+				0C23CFFC1C85CFA5006110F4 /* SlideMenuViewController.swift in Sources */,
 				0C4FF3D31C81ABA500EB935F /* AppDelegate.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
