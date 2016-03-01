@@ -7,6 +7,7 @@
 //
 
 import UIKit
+import MapKit
 
 /**
  * Trip details screen
@@ -17,6 +18,7 @@ import UIKit
 class TripDetailsViewController: UIViewController {
 
     /// outlets
+    @IBOutlet weak var mapView: MKMapView!
     @IBOutlet weak var timeStartLabel: UILabel!
     @IBOutlet weak var timeEndLabel: UILabel!
     @IBOutlet weak var pickerOffset: NSLayoutConstraint!

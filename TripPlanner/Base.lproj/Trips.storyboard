@@ -215,6 +215,7 @@
                     </view>
                     <connections>
                         <outlet property="datePicker" destination="B4l-yb-TMm" id="ToT-jr-6fv"/>
+                        <outlet property="mapView" destination="yjf-eG-QQd" id="E1L-xs-7Yz"/>
                         <outlet property="pickerOffset" destination="8L9-3m-3Th" id="l6g-Hy-YV1"/>
                         <outlet property="pickerView" destination="27J-x3-z2D" id="oA5-pc-hnI"/>
                         <outlet property="timeEndLabel" destination="pf6-vE-Z5y" id="P1H-aF-fSN"/>
