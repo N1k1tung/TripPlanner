@@ -173,7 +173,7 @@ extension MenuViewController : UITableViewDataSource, UITableViewDelegate {
         let menu = self.menus[self.sections[indexPath.section].items[indexPath.row]]
         
         if menu?.item == .Logout {
-            // TODO: logout with confirmation
+            self.slideMenuController?.confirmLogout()
         } else if !menu!.controllerName.isEmpty {
             if let controller = createContentControllerAtIndex(indexPath) {
                 self.slideMenuController?.setContentViewController(controller)

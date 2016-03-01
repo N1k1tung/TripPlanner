@@ -311,6 +311,22 @@ class SlideMenuViewController: UIViewController {
         hideSideMenu()
     }
     
+    /**
+     Confirms logout action and performs logout if needed
+     */
+    func confirmLogout() {
+        let alert = UIAlertController(title: "Confirm".localized, message: "Are you sure you want to log out?".localized, preferredStyle: .Alert)
+        alert.addAction(UIAlertAction(title: "Yes".localized, style: UIAlertActionStyle.Destructive, handler: { (_) -> Void in
+            alert.dismissViewControllerAnimated(true, completion: nil)
+            LoginDataStore.sharedInstance.logout()
+            self.parentViewController?.dismissViewControllerAnimated(true, completion: nil)
+        }))
+        alert.addAction(UIAlertAction(title: "No".localized, style: UIAlertActionStyle.Cancel, handler: { (_) -> Void in
+            alert.dismissViewControllerAnimated(true, completion: nil)
+        }))
+        self.presentViewController(alert, animated: true, completion: nil)
+    }
+    
 }
 
 /**
