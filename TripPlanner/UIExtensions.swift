@@ -179,21 +179,30 @@ extension UIViewController {
  */
 extension UIFont {
     /**
-     bold Arial font
+     bold Poppins font
      
      - parameter size: font size
      */
-    class func boldArialFontOfSize(size: CGFloat) -> UIFont {
-        return UIFont(name: "Arial-BoldMT", size: size)!
+    class func boldPoppinsFontOfSize(size: CGFloat) -> UIFont {
+        return UIFont(name: "Poppins-Medium", size: size)!
     }
     
     /**
-     regular Arial font
+     bold Poppins font
      
      - parameter size: font size
      */
-    class func arialFontOfSize(size: CGFloat) -> UIFont {
-        return UIFont(name: "Arial", size: size)!
+    class func lightPoppinsFontOfSize(size: CGFloat) -> UIFont {
+        return UIFont(name: "Poppins-Light", size: size)!
+    }
+    
+    /**
+     regular Poppins font
+     
+     - parameter size: font size
+     */
+    class func poppinsFontOfSize(size: CGFloat) -> UIFont {
+        return UIFont(name: "Poppins-Regular", size: size)!
     }
     
 }

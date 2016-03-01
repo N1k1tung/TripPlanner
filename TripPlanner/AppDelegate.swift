@@ -37,7 +37,12 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
         PKHUD.sharedHUD.dimsBackground = false
         IQKeyboardManager.sharedManager().enable = true
         IQKeyboardManager.sharedManager().enableAutoToolbar = false
+        
+        // Appearance
         UINavigationBar.appearance().tintColor = .blackColor()
+        UINavigationBar.appearance().titleTextAttributes = [NSForegroundColorAttributeName: UIColor.blackColor(), NSFontAttributeName: UIFont.boldPoppinsFontOfSize(18)]
+        UIBarButtonItem.appearance().setTitleTextAttributes([NSForegroundColorAttributeName: UIColor.blackColor(), NSFontAttributeName: UIFont.poppinsFontOfSize(15)], forState: .Normal)
+        
         return true
     }
 

@@ -1,0 +1,54 @@
+
+/* Class = "UIBarButtonItem"; title = "Back"; ObjectID = "3W3-dZ-wJN"; */
+"3W3-dZ-wJN.title" = "Back";
+
+/* Class = "UIButton"; normalTitle = "sign up"; ObjectID = "5EI-QG-A7w"; */
+"5EI-QG-A7w.normalTitle" = "sign up";
+
+/* Class = "UITextField"; placeholder = "Email"; ObjectID = "5mu-h5-xio"; */
+"5mu-h5-xio.placeholder" = "Email";
+
+/* Class = "UITextField"; placeholder = "Email"; ObjectID = "Avb-Sq-cAu"; */
+"Avb-Sq-cAu.placeholder" = "Email";
+
+/* Class = "UIBarButtonItem"; title = "Create"; ObjectID = "DN1-ez-4RJ"; */
+"DN1-ez-4RJ.title" = "Create";
+
+/* Class = "UIButton"; normalTitle = "sign in"; ObjectID = "RIl-4u-k07"; */
+"RIl-4u-k07.normalTitle" = "sign in";
+
+/* Class = "UIBarButtonItem"; title = "Back"; ObjectID = "XMh-AV-SUx"; */
+"XMh-AV-SUx.title" = "Back";
+
+/* Class = "UIBarButtonItem"; title = "Login"; ObjectID = "bp3-a0-XbF"; */
+"bp3-a0-XbF.title" = "Login";
+
+/* Class = "UITextField"; placeholder = "Password"; ObjectID = "ddg-F1-2DG"; */
+"ddg-F1-2DG.placeholder" = "Password";
+
+/* Class = "UILabel"; text = "Welcome to"; ObjectID = "foi-39-o7j"; */
+"foi-39-o7j.text" = "Welcome to";
+
+/* Class = "UILabel"; text = "sign up"; ObjectID = "jGX-LG-ZAl"; */
+"jGX-LG-ZAl.text" = "sign up";
+
+/* Class = "UIButton"; normalTitle = "Forgot password"; ObjectID = "k3o-PJ-TvP"; */
+"k3o-PJ-TvP.normalTitle" = "Forgot password";
+
+/* Class = "UILabel"; text = "sign in"; ObjectID = "nv7-ML-Dwk"; */
+"nv7-ML-Dwk.text" = "sign in";
+
+/* Class = "UILabel"; text = "Enter your email address"; ObjectID = "qo1-Sb-cCw"; */
+"qo1-Sb-cCw.text" = "Enter your email address";
+
+/* Class = "UILabel"; text = "reset your password"; ObjectID = "rru-s9-6Iw"; */
+"rru-s9-6Iw.text" = "reset your password";
+
+/* Class = "UITextField"; placeholder = "Full Name"; ObjectID = "shU-c4-vxv"; */
+"shU-c4-vxv.placeholder" = "Full Name";
+
+/* Class = "UITextField"; placeholder = "Password"; ObjectID = "vgC-0g-uhI"; */
+"vgC-0g-uhI.placeholder" = "Password";
+
+/* Class = "UIBarButtonItem"; title = "Next"; ObjectID = "wrk-YF-R8O"; */
+"wrk-YF-R8O.title" = "Next";

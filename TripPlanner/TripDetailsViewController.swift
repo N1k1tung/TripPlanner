@@ -15,10 +15,17 @@ import MapKit
  * - author: TCCODER
  * - version: 1.0
  */
-class TripDetailsViewController: UIViewController {
+class TripDetailsViewController: UIViewController, UITextViewDelegate {
 
+    /// trip to edit
+    var trip: Trip!
+    
+    /// save handler
+    var onSave: ((Trip) -> Void)?
+    
     /// outlets
     @IBOutlet weak var mapView: MKMapView!
+    @IBOutlet weak var destinationLabel: UILabel!
     @IBOutlet weak var timeStartLabel: UILabel!
     @IBOutlet weak var timeEndLabel: UILabel!
     @IBOutlet weak var pickerOffset: NSLayoutConstraint!
@@ -32,12 +39,12 @@ class TripDetailsViewController: UIViewController {
     /// model values used to store changed options
     var timeStartValue: NSDate = NSDate() {
         didSet {
-            updateLabelWithValue(timeStartLabel, value: timeStartValue, formatter: Static.dateFormetter)
+            updateLabelWithValue(timeStartLabel, value: timeStartValue)
         }
     }
     var timeEndValue: NSDate = NSDate() {
         didSet {
-            updateLabelWithValue(timeEndLabel, value: timeEndValue, formatter: Static.dateFormetter)
+            updateLabelWithValue(timeEndLabel, value: timeEndValue)
         }
     }
     
@@ -62,6 +69,19 @@ class TripDetailsViewController: UIViewController {
         
         textView.layer.borderColor = UIColor.lightGray().CGColor
         textView.layer.borderWidth = 0.5
+        
+        // update UI
+        if let trip = trip {
+            destinationLabel.text = trip.destination ?? "-"
+            textView.text = trip.comment
+        } else
+        {
+            trip = Trip()
+        }
+        timeStartValue = trip.startDate ?? NSDate()
+        timeEndValue = trip.endDate ?? NSDate()
+        
+        self.navigationItem.rightBarButtonItem = UIBarButtonItem(title: "Save".localized, style: .Plain, target: self, action: "doneTapped")
     }
     
     /**
@@ -69,17 +89,17 @@ class TripDetailsViewController: UIViewController {
      
      - parameter label:     the label
      - parameter value:     the value
-     - parameter formetter: the number formetter
      */
-    func updateLabelWithValue(label: UILabel, value: NSDate?, formatter: NSDateFormatter) {
+    func updateLabelWithValue(label: UILabel, value: NSDate?) {
         if let date = value {
-            label.text = formatter.stringFromDate(date)
+            label.text = Static.dateFormetter.stringFromDate(date)
         } else
         {
             label.text = "-"
         }
     }
     
+    // MARK: - actions
     /**
      picker time changes
      
@@ -108,7 +128,7 @@ class TripDetailsViewController: UIViewController {
     @IBAction func pickStartTime(sender: AnyObject) {
         pickingStart = true
         datePicker.date = timeStartValue
-        self.showPicker(true)
+        showPicker(true)
     }
     
     /**
@@ -119,19 +139,8 @@ class TripDetailsViewController: UIViewController {
     @IBAction func pickEndTime(sender: AnyObject) {
         pickingStart = false
         datePicker.date = timeEndValue
-        self.showPicker(true)
+        showPicker(true)
     }
-    
-    /**
-     Save button tap handler
-     
-     - parameter sender: the button
-     */
-    @IBAction func saveButtonAction(sender: AnyObject) {
-
-        self.navigationController?.popViewControllerAnimated(true)
-    }
-    
     
     /**
      shows/hides time picker
@@ -139,12 +148,15 @@ class TripDetailsViewController: UIViewController {
      - parameter show: true to show, false to hide
      */
     func showPicker(show: Bool) {
-        if !show && pickerOffset.constant == 0 { // hide
+        if !show && pickerOffset.constant == 0 {
+            // hide
             UIView.animateWithDuration(0.3) {
                 self.pickerOffset.constant = -self.pickerView.frame.height
                 self.pickerView.layoutIfNeeded()
             }
-        } else if show && pickerOffset.constant == -pickerView.frame.height { // show
+        } else if show && pickerOffset.constant == -pickerView.frame.height {
+            // show
+            textView.resignFirstResponder()
             UIView.animateWithDuration(0.3) {
                 self.pickerOffset.constant = 0
                 self.pickerView.layoutIfNeeded()
@@ -161,5 +173,31 @@ class TripDetailsViewController: UIViewController {
         self.showPicker(false)
     }
 
+    // MARK: - Navigation
+    
+    // In a storyboard-based application, you will often want to do a little preparation before navigation
+    override func prepareForSegue(segue: UIStoryboardSegue, sender: AnyObject?) {
+        if let vc = segue.destinationViewController as? SelectLocationViewController {
+            vc.destination = trip.destination
+            vc.onSelect = { (dst) in
+                self.trip.destination = dst
+                self.destinationLabel.text = dst ?? "-"
+            }
+        }
+    }
+    
+    /**
+     done tap handler
+     */
+    func doneTapped() {
+        // TODO: validate
+        onSave?(trip!)
+        self.navigationController?.popViewControllerAnimated(true)
+    }
 
+    // MARK: - text view delegate
+    func textViewDidBeginEditing(textView: UITextView) {
+        showPicker(false)
+    }
+    
 }
