@@ -9,6 +9,7 @@
 import UIKit
 import Firebase
 import PKHUD
+import IQKeyboardManagerSwift
 
 /**
  * App delegate responder
@@ -34,6 +35,8 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
         // Override point for customization after application launch.
         Firebase.defaultConfig().persistenceEnabled = true
         PKHUD.sharedHUD.dimsBackground = false
+        IQKeyboardManager.sharedManager().enable = true
+        IQKeyboardManager.sharedManager().enableAutoToolbar = false
         UINavigationBar.appearance().tintColor = .blackColor()
         return true
     }

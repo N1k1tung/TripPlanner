@@ -6,6 +6,7 @@ use_frameworks!
 target 'TripPlanner' do
     pod 'Firebase', '>= 2.5.0'
     pod 'PKHUD'
+    pod 'IQKeyboardManagerSwift'
 end
 
 target 'TripPlannerUITests' do

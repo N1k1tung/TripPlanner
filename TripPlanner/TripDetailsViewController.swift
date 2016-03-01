@@ -24,6 +24,7 @@ class TripDetailsViewController: UIViewController {
     @IBOutlet weak var pickerOffset: NSLayoutConstraint!
     @IBOutlet weak var pickerView: UIView!
     @IBOutlet weak var datePicker: UIDatePicker!
+    @IBOutlet weak var textView: UITextView!
     
     /// indicates date picker selection
     var pickingStart = false
@@ -51,6 +52,16 @@ class TripDetailsViewController: UIViewController {
             f.timeStyle = .NoStyle
             return f
         }()
+    }
+    
+    /**
+     view did load
+     */
+    override func viewDidLoad() {
+        super.viewDidLoad()
+        
+        textView.layer.borderColor = UIColor.lightGray().CGColor
+        textView.layer.borderWidth = 0.5
     }
     
     /**
