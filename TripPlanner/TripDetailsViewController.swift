@@ -49,19 +49,6 @@ class TripDetailsViewController: UIViewController, UITextViewDelegate {
     }
     
     /**
-     *  Date formatter
-     */
-    struct Static {
-        static var dateFormetter: NSDateFormatter = {
-            let f = NSDateFormatter()
-            f.locale = NSLocale.autoupdatingCurrentLocale()
-            f.dateStyle = .MediumStyle
-            f.timeStyle = .NoStyle
-            return f
-        }()
-    }
-    
-    /**
      view did load
      */
     override func viewDidLoad() {
@@ -103,7 +90,7 @@ class TripDetailsViewController: UIViewController, UITextViewDelegate {
      */
     func updateLabelWithValue(label: UILabel, value: NSDate?) {
         if let date = value {
-            label.text = Static.dateFormetter.stringFromDate(date)
+            label.text = dateFormetter.stringFromDate(date)
         } else
         {
             label.text = "-"

@@ -165,3 +165,24 @@ extension String {
     }
     
 }
+
+// MARK: - date formatters
+
+/// default date formatter
+var dateFormetter: NSDateFormatter = {
+    let f = NSDateFormatter()
+    f.locale = NSLocale.autoupdatingCurrentLocale()
+    f.dateStyle = .MediumStyle
+    f.timeStyle = .NoStyle
+    return f
+}()
+
+/// date formatter for serializing
+var requestDateFormetter: NSDateFormatter = {
+    let f = NSDateFormatter()
+    f.locale = NSLocale(localeIdentifier: "en_US")
+    f.dateFormat = "dd-MM-yyyy"
+    f.timeZone = NSTimeZone(forSecondsFromGMT: 0)
+    return f
+}()
+

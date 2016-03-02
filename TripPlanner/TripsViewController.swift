@@ -140,4 +140,10 @@ extension TripsViewController: UITableViewDelegate, UITableViewDataSource {
         self.performSegueWithIdentifier("edit", sender: nil)
     }
     
+    func tableView(tableView: UITableView, commitEditingStyle editingStyle: UITableViewCellEditingStyle, forRowAtIndexPath indexPath: NSIndexPath) {
+        if editingStyle == .Delete {
+            
+        }
+    }
+    
 }
