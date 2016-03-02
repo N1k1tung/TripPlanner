@@ -14,6 +14,7 @@ Menu items
 */
 enum MenuItem {
     case Trips
+    case MonthPlan
     case Users
     case Logout
 }
@@ -60,6 +61,8 @@ class MenuViewController: UIViewController {
 
     /// table view
     @IBOutlet weak var tableView: UITableView!
+    @IBOutlet weak var shadowView: UIView!
+    
     /// connection status
     var offline = false {
         didSet {
@@ -70,6 +73,7 @@ class MenuViewController: UIViewController {
     /// the menus
     let menus: [MenuItem: Menu] = [
         .Trips				: Menu(item: .Trips, name: "Trips".localized, controllerName: String.stringFromClass(TripsViewController.self)),
+        .MonthPlan          : Menu(item: .MonthPlan, name: "Month plan".localized, controllerName: String.stringFromClass(MonthPlanViewController.self)),
         .Users              : Menu(item: .Users, name: "Users".localized, controllerName: String.stringFromClass(TripsViewController.self)),
         .Logout             : Menu(item: .Logout, name: "Logout".localized, controllerName: "")
     ]
@@ -83,6 +87,11 @@ class MenuViewController: UIViewController {
     */
     override func viewDidLoad() {
         super.viewDidLoad()
+        
+        // show shadow
+        shadowView.layer.shadowRadius = 7
+        shadowView.layer.shadowOffset = CGSizeMake(-6, 0)
+        shadowView.layer.shadowOpacity = 0.7
         
         tableView.backgroundColor = .veryLightGray()
     }

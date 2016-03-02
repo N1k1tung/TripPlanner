@@ -35,7 +35,11 @@ class TripsViewController: UIViewController {
     @IBOutlet weak var searchBar: UISearchBar!
     
     /// is searching or not
-    var isSearching = false
+    var isSearching = false {
+        didSet {
+            reloadRows()
+        }
+    }
     
     /**
      view did load
@@ -53,6 +57,15 @@ class TripsViewController: UIViewController {
         if let indexPath = tableView.indexPathForSelectedRow {
             tableView.deselectRowAtIndexPath(indexPath, animated: true)
         }
+    }
+    
+    /**
+     filter tap handler
+     
+     - parameter sender: the button
+     */
+    @IBAction func filterTapped(sender: AnyObject) {
+        
     }
     
     // MARK: - Navigation
@@ -75,12 +88,37 @@ class TripsViewController: UIViewController {
             }
         }
     }
-
+    
+    /**
+     updates displayed rows
+     */
+    func reloadRows() {
+        var trips = allTrips
+        if isSearching && (searchBar.text ?? "").notEmpty() {
+            trips = trips.filter { ($0.destination?.0 ?? "").contains(searchBar.text!, caseSensitive: false) }
+        }
+        self.trips = trips
+    }
 
 }
 
 // MARK: - UISearchBarDelegate
 extension TripsViewController: UISearchBarDelegate {
+    
+    func searchBarTextDidBeginEditing(searchBar: UISearchBar) {
+        isSearching = true
+        searchBar.setShowsCancelButton(true, animated: true)
+    }
+    
+    func searchBar(searchBar: UISearchBar, textDidChange searchText: String) {
+        reloadRows()
+    }
+    
+    func searchBarCancelButtonClicked(searchBar: UISearchBar) {
+        searchBar.resignFirstResponder()
+        isSearching = false
+        searchBar.setShowsCancelButton(false, animated: true)
+    }
     
 }
 
@@ -96,6 +134,10 @@ extension TripsViewController: UITableViewDelegate, UITableViewDataSource {
     
     func tableView(tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
         return trips.count
+    }
+    
+    func tableView(tableView: UITableView, didSelectRowAtIndexPath indexPath: NSIndexPath) {
+        self.performSegueWithIdentifier("edit", sender: nil)
     }
     
 }

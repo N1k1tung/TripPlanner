@@ -26,12 +26,12 @@ class TripCell: UITableViewCell {
      - parameter trip: trip
      */
     func configure(trip: Trip) {
-        titleLabel.text = trip.destination
+        titleLabel.text = trip.destination?.0
         if let date = trip.startDate {
-            if date.timeIntervalSinceNow > 0 {
+            if date.timeIntervalSinceNow < 0 {
                 // already started
                 if let endDate = trip.endDate {
-                    valueLabel.text = endDate.timeIntervalSinceNow > 0 ? "Finished".localized : "Started".localized
+                    valueLabel.text = endDate.timeIntervalSinceNow < 0 ? "Finished".localized : "Started".localized
                 }
             } else
             {

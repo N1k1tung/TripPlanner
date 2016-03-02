@@ -173,6 +173,7 @@
 				0C23CFF81C85CF9A006110F4 /* Menu */,
 				0C767C511C837FA100484C05 /* Login */,
 				0C767C521C837FA600484C05 /* Trips */,
+				0C99AC481C87338000E8C279 /* Users */,
 			);
 			name = ViewControllers;
 			sourceTree = "<group>";
@@ -341,6 +342,13 @@
 				0C767C681C8650D400484C05 /* TripCell.swift */,
 			);
 			name = Cells;
+			sourceTree = "<group>";
+		};
+		0C99AC481C87338000E8C279 /* Users */ = {
+			isa = PBXGroup;
+			children = (
+			);
+			name = Users;
 			sourceTree = "<group>";
 		};
 		A3138B009A213ED71272BB99 /* Pods */ = {

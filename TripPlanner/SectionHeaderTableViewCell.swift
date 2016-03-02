@@ -22,7 +22,7 @@ class SectionHeaderTableViewCell: UITableViewCell {
                 nameLabel.text = section.name
                 
                 if !section.name.isEmpty {
-                    let lineColor = UIColor.darkBlueColor().CGColor
+                    let lineColor = UIColor.darkGrayColor().CGColor
                     let width = UIScreen.mainScreen().bounds.width
                     // Add the top line
                     let bottomLine = CALayer()

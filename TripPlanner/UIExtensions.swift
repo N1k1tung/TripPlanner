@@ -64,13 +64,6 @@ extension UIColor {
         return UIColor.fromString("FAFCFE")!
     }
     
-    /**
-     dark blue color
-     */
-    class func darkBlueColor() -> UIColor {
-        return UIColor.fromString("001F3B")!
-    }
-    
 }
 
 
@@ -208,32 +201,6 @@ extension UIFont {
 }
 
 /**
- * ios8 separator inset fix
- *
- * - author: Nikita Rodin
- * - version: 1.0
- */
-class ZeroMarginsCell: UITableViewCell {
-    override var layoutMargins: UIEdgeInsets {
-        get { return UIEdgeInsetsZero }
-        set(newVal) {}
-    }
-}
-
-/**
- * ios8 separator inset fix
- *
- * - author: Nikita Rodin
- * - version: 1.0
- */
-class ZeroMarginsTableView : UITableView {
-    override var layoutMargins: UIEdgeInsets {
-        get { return UIEdgeInsetsZero }
-        set(newVal) {}
-    }
-}
-
-/**
  * Shortcut methods for UITableView
  *
  * - author: Nikita Rodin
@@ -252,28 +219,6 @@ extension UITableView {
     func getCell<T: UITableViewCell>(indexPath: NSIndexPath, ofClass cellClass: T.Type) -> T {
         let className = String.stringFromClass(cellClass)
         return self.dequeueReusableCellWithIdentifier(className, forIndexPath: indexPath) as! T
-    }
-}
-
-/**
- * Shortcut methods for UICollectionView
- *
- * - author: Nikita Rodin
- * - version: 1.0
- */
-extension UICollectionView {
-    
-    /**
-     Get cell of given class for indexPath
-     
-     - parameter indexPath: the indexPath
-     - parameter cellClass: a cell class
-     
-     - returns: a reusable cell
-     */
-    func getCell<T: UICollectionViewCell>(indexPath: NSIndexPath, ofClass cellClass: T.Type) -> T {
-        let className = String.stringFromClass(cellClass)
-        return self.dequeueReusableCellWithReuseIdentifier(className, forIndexPath: indexPath) as! T
     }
 }
 
@@ -298,24 +243,6 @@ extension UITextField {
     /// unwrapped text value
     var textValue: String {
         return text ?? ""
-    }
-    
-}
-
-/**
- * Circle view
- *
- * - author: Nikita Rodin
- * - version: 1.0
- */
-extension UIView {
- 
-    /**
-     masks against circle
-     */
-    func maskCircle() {
-        self.layer.cornerRadius = self.bounds.width/2
-        self.layer.masksToBounds = true
     }
     
 }

@@ -11,6 +11,7 @@
 "Please enter valid email" = "Please enter valid email";
 "Please enter password" = "Please enter password";
 "Trips" = "Trips";
+"Month plan" = "Month plan";
 "Users" = "Users";
 "Logout" = "Logout";
 "Profile" = "Profile";
@@ -28,3 +29,5 @@
 "days" = "days";
 "Save" = "Save";
 "OK" = "OK";
+"Please select destination" = "Please select destination";
+"Press on map" = "Press on map";

@@ -72,7 +72,14 @@ class TripDetailsViewController: UIViewController, UITextViewDelegate {
         
         // update UI
         if let trip = trip {
-            destinationLabel.text = trip.destination ?? "-"
+            destinationLabel.text = trip.destination?.0 ?? "-"
+            // add pin
+            if let location = trip.destination?.1 {
+                let point = MKPointAnnotation()
+                point.coordinate = location
+                mapView.addAnnotation(point)
+                mapView.showAnnotations([point], animated: false)
+            }
             textView.text = trip.comment
         } else
         {
@@ -82,6 +89,10 @@ class TripDetailsViewController: UIViewController, UITextViewDelegate {
         timeEndValue = trip.endDate ?? NSDate()
         
         self.navigationItem.rightBarButtonItem = UIBarButtonItem(title: "Save".localized, style: .Plain, target: self, action: "doneTapped")
+        
+        // dismiss keyboard on tap
+        let tapGesture = UITapGestureRecognizer(target: self, action: "endEditing")
+        self.view.addGestureRecognizer(tapGesture)
     }
     
     /**
@@ -181,7 +192,15 @@ class TripDetailsViewController: UIViewController, UITextViewDelegate {
             vc.destination = trip.destination
             vc.onSelect = { (dst) in
                 self.trip.destination = dst
-                self.destinationLabel.text = dst ?? "-"
+                self.destinationLabel.text = dst?.0 ?? "-"
+                // add new pin
+                if let location = dst?.1 {
+                    self.mapView.removeAnnotations(self.mapView.annotations)
+                    let point = MKPointAnnotation()
+                    point.coordinate = location
+                    self.mapView.addAnnotation(point)
+                    self.mapView.showAnnotations([point], animated: false)
+                }
             }
         }
     }
@@ -190,9 +209,34 @@ class TripDetailsViewController: UIViewController, UITextViewDelegate {
      done tap handler
      */
     func doneTapped() {
-        // TODO: validate
-        onSave?(trip!)
-        self.navigationController?.popViewControllerAnimated(true)
+        if validate() {
+            trip.startDate = timeStartValue
+            trip.endDate = timeEndValue
+            trip.comment = textView.text
+            onSave?(trip!)
+            self.navigationController?.popViewControllerAnimated(true)
+        }
+    }
+    
+    /**
+     ends editing
+     */
+    func endEditing() {
+        textView.resignFirstResponder()
+    }
+    
+    /**
+     validates trip
+     
+     - returns: validation result
+     */
+    func validate() -> Bool {
+        if trip.destination == nil {
+            showAlert("Please select destination".localized)
+            return false
+        }
+        
+        return true
     }
 
     // MARK: - text view delegate

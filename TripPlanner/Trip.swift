@@ -7,6 +7,7 @@
 //
 
 import UIKit
+import CoreLocation
 
 /**
  * Trip model
@@ -17,7 +18,7 @@ import UIKit
 class Trip: NSObject {
 
     /// fields
-    var destination: String?
+    var destination: (String, CLLocationCoordinate2D)?
     var startDate: NSDate?
     var endDate: NSDate?
     var comment: String?

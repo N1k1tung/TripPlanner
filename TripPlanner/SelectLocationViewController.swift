@@ -27,10 +27,13 @@ class SelectLocationViewController: UIViewController, MKMapViewDelegate {
     let geocoder = CLGeocoder()
     
     /// destination
-    var destination: String?
+    var destination: (String, CLLocationCoordinate2D)?
     
     /// selection handler
-    var onSelect: ((String?) -> Void)?
+    var onSelect: (((String, CLLocationCoordinate2D)?) -> Void)?
+    
+    /// help
+    let helpText = "Press on map".localized
     
     /**
      view did load
@@ -42,7 +45,12 @@ class SelectLocationViewController: UIViewController, MKMapViewDelegate {
         let longPress = UILongPressGestureRecognizer(target: self, action: "handleLongPress:")
         longPress.minimumPressDuration = 0.5
         mapView.addGestureRecognizer(longPress)
-        destinationLabel.text = destination ?? "-"
+        destinationLabel.text = destination?.0 ?? helpText
+        if let location = destination?.1 {
+            let point = MKPointAnnotation()
+            point.coordinate = location
+            mapView.addAnnotation(point)
+        }
         
         self.navigationItem.rightBarButtonItem = UIBarButtonItem(title: "Done".localized, style: .Plain, target: self, action: "doneTapped")
     }
@@ -75,8 +83,14 @@ class SelectLocationViewController: UIViewController, MKMapViewDelegate {
                 self.showAlert(error.localizedDescription)
             } else
             {
-                self.destination = placemarks?.first?.name
-                self.destinationLabel.text = self.destination ?? "-"
+                if let name = placemarks?.first?.name {
+                    self.destination = (name, coordinate)
+                    self.destinationLabel.text = name
+                } else
+                {
+                    self.destination = nil
+                    self.destinationLabel.text = self.helpText
+                }
             }
         }
     }
