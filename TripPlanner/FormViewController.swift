@@ -36,6 +36,10 @@ class FormViewController: UIViewController {
      - parameter validator:    validation check
      */
     func addFieldValidation(field: UITextField, errorMessage: String? = nil, validator: TextValidator) {
+        field.delegate = self
+        field.tag = fieldsToValidate.count
+        field.returnKeyType = .Done
+        fieldsToValidate.last?.0.returnKeyType = .Next
         fieldsToValidate.append(field, errorMessage, validator)
     }
     
@@ -55,15 +59,6 @@ class FormViewController: UIViewController {
             }
         }
         return result
-    }
-
-    /**
-    back tap handler
-    
-    - parameter sender: the button
-    */
-    @IBAction func backTapped(sender: AnyObject?) {
-        self.navigationController?.popViewControllerAnimated(true)
     }
     
     /**
@@ -88,4 +83,19 @@ class FormViewController: UIViewController {
             showAlert(errorMessage ?? "Please provide valid values for outlined fields".localized)
         }
     }
+}
+
+// MARK: - UITextFieldDelegate
+extension FormViewController: UITextFieldDelegate {
+    
+    func textFieldShouldReturn(textField: UITextField) -> Bool {
+        if textField.tag == fieldsToValidate.count-1 {
+            nextTapped(nil)
+        } else
+        {
+            fieldsToValidate[textField.tag+1].0.becomeFirstResponder()
+        }
+        return false
+    }
+    
 }
