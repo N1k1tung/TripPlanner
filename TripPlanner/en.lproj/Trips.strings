@@ -1,0 +1,54 @@
+
+/* Class = "UISearchBar"; placeholder = "Search"; ObjectID = "0VD-uo-CoP"; */
+"0VD-uo-CoP.placeholder" = "Search";
+
+/* Class = "UILabel"; text = "Milan"; ObjectID = "1tc-Hl-LDv"; */
+"1tc-Hl-LDv.text" = "Milan";
+
+/* Class = "UILabel"; text = "End date:"; ObjectID = "BaG-NW-okn"; */
+"BaG-NW-okn.text" = "End date:";
+
+/* Class = "UINavigationItem"; title = "Trips"; ObjectID = "D2h-8S-iFM"; */
+"D2h-8S-iFM.title" = "Trips";
+
+/* Class = "UILabel"; text = "Unknown"; ObjectID = "FXs-sF-cD6"; */
+"FXs-sF-cD6.text" = "Unknown";
+
+/* Class = "UILabel"; text = "Title"; ObjectID = "GeB-ZZ-Hwr"; */
+"GeB-ZZ-Hwr.text" = "Title";
+
+/* Class = "UIBarButtonItem"; title = "Done"; ObjectID = "I10-7y-hRh"; */
+"I10-7y-hRh.title" = "Done";
+
+/* Class = "UILabel"; text = "Start date:"; ObjectID = "Iku-De-22B"; */
+"Iku-De-22B.text" = "Start date:";
+
+/* Class = "UILabel"; text = "SECTION"; ObjectID = "NYR-Aj-ims"; */
+"NYR-Aj-ims.text" = "SECTION";
+
+/* Class = "UILabel"; text = "Destination:"; ObjectID = "VCW-7Y-hEy"; */
+"VCW-7Y-hEy.text" = "Destination:";
+
+/* Class = "UILabel"; text = "-"; ObjectID = "VnW-HJ-oTn"; */
+"VnW-HJ-oTn.text" = "-";
+
+/* Class = "UILabel"; text = "Destination:"; ObjectID = "fUm-gt-QsH"; */
+"fUm-gt-QsH.text" = "Destination:";
+
+/* Class = "UILabel"; text = "Comment:"; ObjectID = "gmJ-9e-lEi"; */
+"gmJ-9e-lEi.text" = "Comment:";
+
+/* Class = "UILabel"; text = "-"; ObjectID = "pf6-vE-Z5y"; */
+"pf6-vE-Z5y.text" = "-";
+
+/* Class = "UINavigationItem"; title = "Select Location"; ObjectID = "r1Z-Kb-b9D"; */
+"r1Z-Kb-b9D.title" = "Select Location";
+
+/* Class = "UILabel"; text = "in 5 days"; ObjectID = "rrD-Lh-lQU"; */
+"rrD-Lh-lQU.text" = "in 5 days";
+
+/* Class = "UINavigationItem"; title = "Trip"; ObjectID = "u1p-rj-tiC"; */
+"u1p-rj-tiC.title" = "Trip";
+
+/* Class = "UILabel"; text = "-"; ObjectID = "xhK-OA-lUr"; */
+"xhK-OA-lUr.text" = "-";

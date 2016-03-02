@@ -30,7 +30,7 @@ class SignUpViewController: FormViewController {
 
         // Do any additional setup after loading the view.
         addFieldValidation(fullName, validator: String.notEmpty..true)
-        addFieldValidation(emailField, errorMessage: "Please provide valid email".localized, validator: String.isEmail)
+        addFieldValidation(emailField, errorMessage: "Please enter valid email".localized, validator: String.isEmail)
         addFieldValidation(passwordField, errorMessage: "Password must be at least 8 characters".localized, validator: String.countNotLess..8)
     }
     

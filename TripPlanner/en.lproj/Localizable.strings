@@ -1,0 +1,30 @@
+/* 
+  Localizable.strings
+  TripPlanner
+
+  Created by Nikita Rodin on 3/2/16.
+  Copyright © 2016 Toptal. All rights reserved.
+*/
+"Please provide valid values for outlined fields" = "Please provide valid values for outlined fields";
+"Signing in" = "Signing in";
+"No credentials present" = "No credentials present";
+"Please enter valid email" = "Please enter valid email";
+"Please enter password" = "Please enter password";
+"Trips" = "Trips";
+"Users" = "Users";
+"Logout" = "Logout";
+"Profile" = "Profile";
+"A reset link was sent to your email" = "A reset link was sent to your email";
+"Done" = "Done";
+"Password must be at least 8 characters" = "Password must be at least 8 characters";
+"Confirm" = "Confirm";
+"Are you sure you want to log out?" = "Are you sure you want to log out?";
+"Yes" = "Yes";
+"No" = "No";
+"Finished" = "Finished";
+"Started" = "Started";
+"in" = "in";
+"day" = "day";
+"days" = "days";
+"Save" = "Save";
+"OK" = "OK";

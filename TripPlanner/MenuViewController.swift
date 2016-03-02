@@ -14,7 +14,6 @@ Menu items
 */
 enum MenuItem {
     case Trips
-    case CreateTrip
     case Users
     case Logout
 }
@@ -71,14 +70,13 @@ class MenuViewController: UIViewController {
     /// the menus
     let menus: [MenuItem: Menu] = [
         .Trips				: Menu(item: .Trips, name: "Trips".localized, controllerName: String.stringFromClass(TripsViewController.self)),
-        .CreateTrip         : Menu(item: .CreateTrip, name: "Create trip".localized, controllerName: String.stringFromClass(TripDetailsViewController.self)),
         .Users              : Menu(item: .Users, name: "Users".localized, controllerName: String.stringFromClass(TripsViewController.self)),
         .Logout             : Menu(item: .Logout, name: "Logout".localized, controllerName: "")
     ]
 
     /// the sections
-    let sections: [MenuSection] = [MenuSection(name: "TRIPS".localized, items: [.Trips, .CreateTrip]),
-        MenuSection(name: "PROFILE".localized, items: [.Logout])]
+    let sections: [MenuSection] = [MenuSection(name: "Trips".localized.uppercaseString, items: [.Trips]),
+        MenuSection(name: "Profile".localized.uppercaseString, items: [.Logout])]
 
     /**
     View did load
