@@ -8,6 +8,10 @@
 
 import UIKit
 import Firebase
+import KeychainAccess
+
+// keychain keys
+let kEmailKey = "USER_EMAIL"
 
 /**
  * Wrapper for login/sign up
@@ -25,6 +29,9 @@ class LoginDataStore {
 
     /// user id
     var uid: String = ""
+    
+    /// secure storage
+    private let keychain = Keychain(service: "com.toptal.TripPlanner")
     
     /**
      initializer
@@ -76,6 +83,9 @@ class LoginDataStore {
                 callback?(uid: nil, error)
             } else {
                 self.uid = authData.uid
+                // store credentials for restoring session
+                self.keychain[kEmailKey] = email
+                self.keychain[email] = password
                 callback?(uid: authData.uid, nil)
             }
         }
@@ -97,6 +107,41 @@ class LoginDataStore {
      logs user out
      */
     func logout() {
+        cleanCredentials()
         ref.unauth()
+    }
+    
+    /**
+     attempts to relogin using stored credentials
+     
+     - parameter callback: callback
+     */
+    func restoreSession(callback: ((uid: String?, NSError?) -> ())?) {
+        if let email = keychain[kEmailKey],
+            let password = keychain[email] {
+            loginUser(email, password: password, callback: callback)
+        } else
+        {
+            callback?(uid: nil, NSError(domain: "LOGIN", code: -1, userInfo: [NSLocalizedDescriptionKey: "No credentials present".localized]))
+        }
+    }
+
+    /**
+     checks if credentials are present
+     
+     - returns: true if credentials are present
+     */
+    func hasCredentials() -> Bool {
+        return keychain[kEmailKey] != nil
+    }
+    
+    /**
+     cleans credentials
+     */
+    func cleanCredentials() {
+        if let email = keychain[kEmailKey] {
+            keychain[email] = nil
+            keychain[kEmailKey] = nil
+        }
     }
 }

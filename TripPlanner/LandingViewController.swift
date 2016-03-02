@@ -7,6 +7,7 @@
 //
 
 import UIKit
+import PKHUD
 
 /**
  * Landing screen
@@ -15,9 +16,6 @@ import UIKit
  * - version: 1.0
  */
 class LandingViewController: UIViewController {
-
-    /// sign up segue
-    let signUpSegue = "signUp"
     
     /**
      view did load
@@ -27,16 +25,20 @@ class LandingViewController: UIViewController {
         // remove the line under navbar
         self.navigationController?.navigationBar.shadowImage = UIImage()
         self.navigationController?.navigationBar.setBackgroundImage(UIImage(), forBarPosition: .Any, barMetrics: .Default)
+        
+        // check if we can relogin
+        if LoginDataStore.sharedInstance.hasCredentials() {
+            HUD.show(.LabeledProgress(title: "Signing in".localized, subtitle: nil))
+            LoginDataStore.sharedInstance.restoreSession({ (uid, error) -> () in
+                if let _ = error {
+                    HUD.flash(.Error, withDelay: 0.5)
+                } else
+                {
+                    HUD.flash(.Success, withDelay: 0.3)
+                    self.performSegueWithIdentifier("restore", sender: nil)
+                }
+            })
+        }
     }
-    
-    /**
-     sign up tap handler
-     
-     - parameter sender: the button
-     */
-    @IBAction func signUpTapHandler(sender: AnyObject) {
-        self.performSegueWithIdentifier(signUpSegue, sender: nil)
-    }
-    
-    
+        
 }

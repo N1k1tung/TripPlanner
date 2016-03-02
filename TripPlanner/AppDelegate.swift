@@ -38,6 +38,13 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
         IQKeyboardManager.sharedManager().enable = true
         IQKeyboardManager.sharedManager().enableAutoToolbar = false
         
+        // clean keychain of 1st launch
+        if !NSUserDefaults.standardUserDefaults().boolForKey("FirstLaunch") {
+            LoginDataStore.sharedInstance.cleanCredentials()
+            NSUserDefaults.standardUserDefaults().setBool(true, forKey: "FirstLaunch")
+            NSUserDefaults.standardUserDefaults().synchronize()
+        }
+        
         // Appearance
         UINavigationBar.appearance().tintColor = .blackColor()
         UINavigationBar.appearance().titleTextAttributes = [NSForegroundColorAttributeName: UIColor.blackColor(), NSFontAttributeName: UIFont.boldPoppinsFontOfSize(18)]

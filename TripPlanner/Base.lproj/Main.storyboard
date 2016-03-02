@@ -1,5 +1,5 @@
 <?xml version="1.0" encoding="UTF-8" standalone="no"?>
-<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="9532" systemVersion="15D21" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" initialViewController="5ub-kG-fov">
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="9532" systemVersion="14F1021" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" initialViewController="5ub-kG-fov">
     <dependencies>
         <deployment identifier="iOS"/>
         <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="9530"/>
@@ -88,7 +88,7 @@
                                     <color key="titleColor" red="0.031372549020000001" green="0.090196078430000007" blue="0.1333333333" alpha="1" colorSpace="calibratedRGB"/>
                                 </state>
                                 <connections>
-                                    <action selector="signUpTapHandler:" destination="ydb-o1-YN8" eventType="touchUpInside" id="VGk-C0-jSi"/>
+                                    <segue destination="EJu-RU-9Bb" kind="show" id="2Qs-cN-fj8"/>
                                 </connections>
                             </button>
                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Welcome to" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="foi-39-o7j">
@@ -121,9 +121,7 @@
                     </navigationItem>
                     <simulatedScreenMetrics key="simulatedDestinationMetrics" type="retina47"/>
                     <connections>
-                        <segue destination="EJu-RU-9Bb" kind="show" identifier="signUp" id="0dh-it-qXc">
-                            <nil key="action"/>
-                        </segue>
+                        <segue destination="5EZ-8R-3VX" kind="presentation" identifier="restore" id="kTE-SG-7HO"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="6d8-Vi-NGz" sceneMemberID="firstResponder"/>
@@ -407,14 +405,14 @@
                 <viewControllerPlaceholder storyboardName="Trips" id="5EZ-8R-3VX" sceneMemberID="viewController"/>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="rff-60-Dh0" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="764.5" y="477"/>
+            <point key="canvasLocation" x="758" y="463"/>
         </scene>
     </scenes>
     <resources>
         <image name="logo" width="191" height="72"/>
     </resources>
     <inferredMetricsTieBreakers>
-        <segue reference="lNr-ws-2vZ"/>
-        <segue reference="way-eK-CAr"/>
+        <segue reference="FDD-Vi-EO1"/>
+        <segue reference="kTE-SG-7HO"/>
     </inferredMetricsTieBreakers>
 </document>

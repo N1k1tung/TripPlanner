@@ -1,0 +1,217 @@
+<?xml version="1.0" encoding="UTF-8" standalone="no"?>
+<xliff xmlns="urn:oasis:names:tc:xliff:document:1.2" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" version="1.2" xsi:schemaLocation="urn:oasis:names:tc:xliff:document:1.2 http://docs.oasis-open.org/xliff/v1.2/os/xliff-core-1.2-strict.xsd">
+  <file original="TripPlanner/Base.lproj/LaunchScreen.storyboard" source-language="en" datatype="plaintext">
+    <header>
+      <tool tool-id="com.apple.dt.xcode" tool-name="Xcode" tool-version="7.2.1" build-num="7C1002"/>
+    </header>
+    <body/>
+  </file>
+  <file original="TripPlanner/Base.lproj/Main.storyboard" source-language="en" datatype="plaintext">
+    <header>
+      <tool tool-id="com.apple.dt.xcode" tool-name="Xcode" tool-version="7.2.1" build-num="7C1002"/>
+    </header>
+    <body>
+      <trans-unit id="3W3-dZ-wJN.title">
+        <source>Back</source>
+        <note>Class = "UIBarButtonItem"; title = "Back"; ObjectID = "3W3-dZ-wJN";</note>
+      </trans-unit>
+      <trans-unit id="5EI-QG-A7w.normalTitle">
+        <source>sign up</source>
+        <note>Class = "UIButton"; normalTitle = "sign up"; ObjectID = "5EI-QG-A7w";</note>
+      </trans-unit>
+      <trans-unit id="5mu-h5-xio.placeholder">
+        <source>Email</source>
+        <note>Class = "UITextField"; placeholder = "Email"; ObjectID = "5mu-h5-xio";</note>
+      </trans-unit>
+      <trans-unit id="Avb-Sq-cAu.placeholder">
+        <source>Email</source>
+        <note>Class = "UITextField"; placeholder = "Email"; ObjectID = "Avb-Sq-cAu";</note>
+      </trans-unit>
+      <trans-unit id="DN1-ez-4RJ.title">
+        <source>Create</source>
+        <note>Class = "UIBarButtonItem"; title = "Create"; ObjectID = "DN1-ez-4RJ";</note>
+      </trans-unit>
+      <trans-unit id="RIl-4u-k07.normalTitle">
+        <source>sign in</source>
+        <note>Class = "UIButton"; normalTitle = "sign in"; ObjectID = "RIl-4u-k07";</note>
+      </trans-unit>
+      <trans-unit id="XMh-AV-SUx.title">
+        <source>Back</source>
+        <note>Class = "UIBarButtonItem"; title = "Back"; ObjectID = "XMh-AV-SUx";</note>
+      </trans-unit>
+      <trans-unit id="bp3-a0-XbF.title">
+        <source>Login</source>
+        <note>Class = "UIBarButtonItem"; title = "Login"; ObjectID = "bp3-a0-XbF";</note>
+      </trans-unit>
+      <trans-unit id="ddg-F1-2DG.placeholder">
+        <source>Password</source>
+        <note>Class = "UITextField"; placeholder = "Password"; ObjectID = "ddg-F1-2DG";</note>
+      </trans-unit>
+      <trans-unit id="foi-39-o7j.text">
+        <source>Welcome to</source>
+        <note>Class = "UILabel"; text = "Welcome to"; ObjectID = "foi-39-o7j";</note>
+      </trans-unit>
+      <trans-unit id="jGX-LG-ZAl.text">
+        <source>sign up</source>
+        <note>Class = "UILabel"; text = "sign up"; ObjectID = "jGX-LG-ZAl";</note>
+      </trans-unit>
+      <trans-unit id="k3o-PJ-TvP.normalTitle">
+        <source>Forgot password</source>
+        <note>Class = "UIButton"; normalTitle = "Forgot password"; ObjectID = "k3o-PJ-TvP";</note>
+      </trans-unit>
+      <trans-unit id="nv7-ML-Dwk.text">
+        <source>sign in</source>
+        <note>Class = "UILabel"; text = "sign in"; ObjectID = "nv7-ML-Dwk";</note>
+      </trans-unit>
+      <trans-unit id="qo1-Sb-cCw.text">
+        <source>Enter your email address</source>
+        <note>Class = "UILabel"; text = "Enter your email address"; ObjectID = "qo1-Sb-cCw";</note>
+      </trans-unit>
+      <trans-unit id="rru-s9-6Iw.text">
+        <source>reset your password</source>
+        <note>Class = "UILabel"; text = "reset your password"; ObjectID = "rru-s9-6Iw";</note>
+      </trans-unit>
+      <trans-unit id="shU-c4-vxv.placeholder">
+        <source>Full Name</source>
+        <note>Class = "UITextField"; placeholder = "Full Name"; ObjectID = "shU-c4-vxv";</note>
+      </trans-unit>
+      <trans-unit id="vgC-0g-uhI.placeholder">
+        <source>Password</source>
+        <note>Class = "UITextField"; placeholder = "Password"; ObjectID = "vgC-0g-uhI";</note>
+      </trans-unit>
+      <trans-unit id="wrk-YF-R8O.title">
+        <source>Next</source>
+        <note>Class = "UIBarButtonItem"; title = "Next"; ObjectID = "wrk-YF-R8O";</note>
+      </trans-unit>
+    </body>
+  </file>
+  <file original="TripPlanner/Base.lproj/Trips.storyboard" source-language="en" datatype="plaintext">
+    <header>
+      <tool tool-id="com.apple.dt.xcode" tool-name="Xcode" tool-version="7.2.1" build-num="7C1002"/>
+    </header>
+    <body>
+      <trans-unit id="0VD-uo-CoP.placeholder">
+        <source>Search</source>
+        <note>Class = "UISearchBar"; placeholder = "Search"; ObjectID = "0VD-uo-CoP";</note>
+      </trans-unit>
+      <trans-unit id="1tc-Hl-LDv.text">
+        <source>Milan</source>
+        <note>Class = "UILabel"; text = "Milan"; ObjectID = "1tc-Hl-LDv";</note>
+      </trans-unit>
+      <trans-unit id="BaG-NW-okn.text">
+        <source>End date:</source>
+        <note>Class = "UILabel"; text = "End date:"; ObjectID = "BaG-NW-okn";</note>
+      </trans-unit>
+      <trans-unit id="D2h-8S-iFM.title">
+        <source>Trips</source>
+        <note>Class = "UINavigationItem"; title = "Trips"; ObjectID = "D2h-8S-iFM";</note>
+      </trans-unit>
+      <trans-unit id="FXs-sF-cD6.text">
+        <source>Unknown</source>
+        <note>Class = "UILabel"; text = "Unknown"; ObjectID = "FXs-sF-cD6";</note>
+      </trans-unit>
+      <trans-unit id="GeB-ZZ-Hwr.text">
+        <source>Title</source>
+        <note>Class = "UILabel"; text = "Title"; ObjectID = "GeB-ZZ-Hwr";</note>
+      </trans-unit>
+      <trans-unit id="I10-7y-hRh.title">
+        <source>Done</source>
+        <note>Class = "UIBarButtonItem"; title = "Done"; ObjectID = "I10-7y-hRh";</note>
+      </trans-unit>
+      <trans-unit id="Iku-De-22B.text">
+        <source>Start date:</source>
+        <note>Class = "UILabel"; text = "Start date:"; ObjectID = "Iku-De-22B";</note>
+      </trans-unit>
+      <trans-unit id="NYR-Aj-ims.text">
+        <source>SECTION</source>
+        <note>Class = "UILabel"; text = "SECTION"; ObjectID = "NYR-Aj-ims";</note>
+      </trans-unit>
+      <trans-unit id="VCW-7Y-hEy.text">
+        <source>Destination:</source>
+        <note>Class = "UILabel"; text = "Destination:"; ObjectID = "VCW-7Y-hEy";</note>
+      </trans-unit>
+      <trans-unit id="VnW-HJ-oTn.text">
+        <source>-</source>
+        <note>Class = "UILabel"; text = "-"; ObjectID = "VnW-HJ-oTn";</note>
+      </trans-unit>
+      <trans-unit id="fUm-gt-QsH.text">
+        <source>Destination:</source>
+        <note>Class = "UILabel"; text = "Destination:"; ObjectID = "fUm-gt-QsH";</note>
+      </trans-unit>
+      <trans-unit id="gmJ-9e-lEi.text">
+        <source>Comment:</source>
+        <note>Class = "UILabel"; text = "Comment:"; ObjectID = "gmJ-9e-lEi";</note>
+      </trans-unit>
+      <trans-unit id="pf6-vE-Z5y.text">
+        <source>-</source>
+        <note>Class = "UILabel"; text = "-"; ObjectID = "pf6-vE-Z5y";</note>
+      </trans-unit>
+      <trans-unit id="r1Z-Kb-b9D.title">
+        <source>Select Location</source>
+        <note>Class = "UINavigationItem"; title = "Select Location"; ObjectID = "r1Z-Kb-b9D";</note>
+      </trans-unit>
+      <trans-unit id="rrD-Lh-lQU.text">
+        <source>in 5 days</source>
+        <note>Class = "UILabel"; text = "in 5 days"; ObjectID = "rrD-Lh-lQU";</note>
+      </trans-unit>
+      <trans-unit id="u1p-rj-tiC.title">
+        <source>Trip</source>
+        <note>Class = "UINavigationItem"; title = "Trip"; ObjectID = "u1p-rj-tiC";</note>
+      </trans-unit>
+      <trans-unit id="xhK-OA-lUr.text">
+        <source>-</source>
+        <note>Class = "UILabel"; text = "-"; ObjectID = "xhK-OA-lUr";</note>
+      </trans-unit>
+    </body>
+  </file>
+  <file original="TripPlanner/Info.plist" source-language="en" datatype="plaintext">
+    <header>
+      <tool tool-id="com.apple.dt.xcode" tool-name="Xcode" tool-version="7.2.1" build-num="7C1002"/>
+    </header>
+    <body>
+      <trans-unit id="CFBundleName">
+        <source>$(PRODUCT_NAME)</source>
+      </trans-unit>
+      <trans-unit id="CFBundleShortVersionString">
+        <source>1.0</source>
+      </trans-unit>
+    </body>
+  </file>
+  <file original="TripPlanner/Localizable.strings" source-language="en" datatype="plaintext">
+    <header>
+      <tool tool-id="com.apple.dt.xcode" tool-name="Xcode" tool-version="7.2.1" build-num="7C1002"/>
+    </header>
+    <body>
+      <trans-unit id="Error">
+        <source>Error</source>
+        <note>No comment provided by engineer.</note>
+      </trans-unit>
+    </body>
+  </file>
+  <file original="TripPlannerUITests/Info.plist" source-language="en" datatype="plaintext">
+    <header>
+      <tool tool-id="com.apple.dt.xcode" tool-name="Xcode" tool-version="7.2.1" build-num="7C1002"/>
+    </header>
+    <body>
+      <trans-unit id="CFBundleName">
+        <source>$(PRODUCT_NAME)</source>
+      </trans-unit>
+      <trans-unit id="CFBundleShortVersionString">
+        <source>1.0</source>
+      </trans-unit>
+    </body>
+  </file>
+  <file original="UIComponents/Info.plist" source-language="en" datatype="plaintext">
+    <header>
+      <tool tool-id="com.apple.dt.xcode" tool-name="Xcode" tool-version="7.2.1" build-num="7C1002"/>
+    </header>
+    <body>
+      <trans-unit id="CFBundleName">
+        <source>$(PRODUCT_NAME)</source>
+      </trans-unit>
+      <trans-unit id="CFBundleShortVersionString">
+        <source>1.0</source>
+      </trans-unit>
+    </body>
+  </file>
+</xliff>
