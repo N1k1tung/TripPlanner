@@ -35,6 +35,7 @@ class TripDetailsViewController: UIViewController, UITextViewDelegate {
     @IBOutlet weak var pickerOffset: NSLayoutConstraint!
     @IBOutlet weak var pickerView: UIView!
     @IBOutlet weak var datePicker: UIDatePicker!
+    @IBOutlet weak var pickerHeaderLabel: UILabel!
     @IBOutlet weak var textView: UITextView!
     
     /// indicates date picker selection
@@ -130,6 +131,7 @@ class TripDetailsViewController: UIViewController, UITextViewDelegate {
     @IBAction func pickStartTime(sender: AnyObject) {
         pickingStart = true
         datePicker.date = timeStartValue
+        pickerHeaderLabel.text = "Start date".localized
         showPicker(true)
     }
     
@@ -141,6 +143,7 @@ class TripDetailsViewController: UIViewController, UITextViewDelegate {
     @IBAction func pickEndTime(sender: AnyObject) {
         pickingStart = false
         datePicker.date = timeEndValue
+        pickerHeaderLabel.text = "End date".localized
         showPicker(true)
     }
     

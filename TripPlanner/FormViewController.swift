@@ -29,6 +29,17 @@ class FormViewController: UIViewController {
     private var fieldsToValidate: [(UITextField, String?, TextValidator)] = []
     
     /**
+     view did load
+     */
+    override func viewDidLoad() {
+        super.viewDidLoad()
+        // dismiss keyboard on tap
+        let tapGesture = UITapGestureRecognizer(target: self, action: "endEditing")
+        self.view.addGestureRecognizer(tapGesture)
+
+    }
+    
+    /**
      adds a field for validation
      
      - parameter field:        textfield
@@ -82,6 +93,13 @@ class FormViewController: UIViewController {
         {
             showAlert(errorMessage ?? "Please provide valid values for outlined fields".localized)
         }
+    }
+    
+    /**
+     ends editing
+     */
+    func endEditing() {
+        self.view.endEditing(true)
     }
 }
 

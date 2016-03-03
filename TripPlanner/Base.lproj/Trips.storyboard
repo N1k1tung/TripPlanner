@@ -15,6 +15,7 @@
             <string>Poppins-Light</string>
             <string>Poppins-Light</string>
             <string>Poppins-Light</string>
+            <string>Poppins-Light</string>
         </mutableArray>
         <mutableArray key="Poppins-Medium.ttf">
             <string>Poppins-Medium</string>
@@ -259,16 +260,25 @@
                                             </barButtonItem>
                                         </items>
                                     </toolbar>
+                                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="252" verticalHuggingPriority="251" text="Start date:" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="cdD-FA-1DD">
+                                        <rect key="frame" x="20" y="8" width="88" height="28"/>
+                                        <fontDescription key="fontDescription" name="Poppins-Light" family="Poppins" pointSize="17"/>
+                                        <color key="textColor" red="0.0" green="0.0" blue="0.0" alpha="1" colorSpace="calibratedRGB"/>
+                                        <nil key="highlightedColor"/>
+                                    </label>
                                 </subviews>
                                 <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                                 <constraints>
                                     <constraint firstItem="B4l-yb-TMm" firstAttribute="leading" secondItem="27J-x3-z2D" secondAttribute="leading" id="96T-v5-iZv"/>
                                     <constraint firstAttribute="bottom" secondItem="B4l-yb-TMm" secondAttribute="bottom" id="EYY-jb-uYT"/>
+                                    <constraint firstItem="cdD-FA-1DD" firstAttribute="trailing" relation="lessThanOrEqual" secondItem="lOJ-eY-W9U" secondAttribute="trailing" constant="-90" id="QEM-OT-ETO"/>
                                     <constraint firstAttribute="trailing" secondItem="B4l-yb-TMm" secondAttribute="trailing" id="Xmt-jL-ZqF"/>
+                                    <constraint firstItem="cdD-FA-1DD" firstAttribute="centerY" secondItem="lOJ-eY-W9U" secondAttribute="centerY" id="cCA-4E-2Ru"/>
                                     <constraint firstAttribute="height" constant="260" id="jOU-cQ-wl2"/>
                                     <constraint firstItem="B4l-yb-TMm" firstAttribute="top" secondItem="lOJ-eY-W9U" secondAttribute="bottom" id="jyp-Df-C0G"/>
                                     <constraint firstItem="lOJ-eY-W9U" firstAttribute="leading" secondItem="B4l-yb-TMm" secondAttribute="leading" id="l6k-YX-ZYF"/>
                                     <constraint firstItem="lOJ-eY-W9U" firstAttribute="trailing" secondItem="B4l-yb-TMm" secondAttribute="trailing" id="lZa-Fq-FXv"/>
+                                    <constraint firstItem="cdD-FA-1DD" firstAttribute="leading" secondItem="lOJ-eY-W9U" secondAttribute="leading" constant="20" id="mL2-sh-qmu"/>
                                     <constraint firstItem="lOJ-eY-W9U" firstAttribute="top" secondItem="27J-x3-z2D" secondAttribute="top" id="zHd-4Q-kch"/>
                                 </constraints>
                                 <variation key="default">
@@ -327,6 +337,7 @@
                         <outlet property="datePicker" destination="B4l-yb-TMm" id="ToT-jr-6fv"/>
                         <outlet property="destinationLabel" destination="xhK-OA-lUr" id="KRh-jx-ggc"/>
                         <outlet property="mapView" destination="yjf-eG-QQd" id="E1L-xs-7Yz"/>
+                        <outlet property="pickerHeaderLabel" destination="cdD-FA-1DD" id="KHe-if-pjs"/>
                         <outlet property="pickerOffset" destination="8L9-3m-3Th" id="l6g-Hy-YV1"/>
                         <outlet property="pickerView" destination="27J-x3-z2D" id="oA5-pc-hnI"/>
                         <outlet property="textView" destination="HUf-TF-4Pi" id="Ec6-eE-ffg"/>

@@ -8,6 +8,9 @@
 
 import UIKit
 
+/// root container
+var RootContainerController: ContainerViewController?
+
 /**
  * Container screen
  *
@@ -35,6 +38,18 @@ class ContainerViewController: UIViewController {
             widthDelegate: menu!
         )
         loadChildController(slideController!, inContentView: self.view)
+        
+        // update global ref
+        RootContainerController = self
+    }
+    
+    /**
+     Loads popover view controller
+     
+     - parameter viewController: the popover view controller
+     */
+    func showViewControllerAsPopover(viewController: UIViewController) {
+        loadChildController(viewController, inContentView: self.view)
     }
 
 }

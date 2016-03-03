@@ -1,0 +1,86 @@
+<?xml version="1.0" encoding="UTF-8" standalone="no"?>
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="9532" systemVersion="14F1021" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES">
+    <dependencies>
+        <deployment identifier="iOS"/>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="9530"/>
+    </dependencies>
+    <customFonts key="customFonts">
+        <mutableArray key="Poppins-Regular.ttf">
+            <string>Poppins-Regular</string>
+            <string>Poppins-Regular</string>
+        </mutableArray>
+    </customFonts>
+    <scenes>
+        <!--Popover TableVC-->
+        <scene sceneID="hIo-Bf-DnI">
+            <objects>
+                <tableViewController storyboardIdentifier="PopoverTableVC" id="czs-p1-1EH" customClass="PopoverTableVC" customModule="TripPlanner" customModuleProvider="target" sceneMemberID="viewController">
+                    <tableView key="view" clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" separatorStyle="none" rowHeight="49" sectionHeaderHeight="22" sectionFooterHeight="22" id="c0a-1x-FOo">
+                        <rect key="frame" x="0.0" y="0.0" width="280" height="235"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                        <color key="sectionIndexBackgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                        <view key="tableHeaderView" contentMode="scaleToFill" id="yem-c0-ccJ">
+                            <rect key="frame" x="0.0" y="0.0" width="280" height="39"/>
+                            <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                            <subviews>
+                                <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="Oaj-Gs-ckp">
+                                    <rect key="frame" x="10" y="38" width="260" height="1"/>
+                                    <color key="backgroundColor" red="0.0" green="0.18823529410000001" blue="0.34509803919999998" alpha="1" colorSpace="calibratedRGB"/>
+                                    <constraints>
+                                        <constraint firstAttribute="height" constant="1" id="Exs-Rh-hCC"/>
+                                    </constraints>
+                                </view>
+                                <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" misplaced="YES" text="Label" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="Dgl-VW-FB7">
+                                    <rect key="frame" x="118" y="8" width="45" height="24"/>
+                                    <fontDescription key="fontDescription" name="Poppins-Regular" family="Poppins" pointSize="17"/>
+                                    <color key="textColor" red="0.0" green="0.0" blue="1" alpha="1" colorSpace="calibratedRGB"/>
+                                    <nil key="highlightedColor"/>
+                                </label>
+                            </subviews>
+                            <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                            <constraints>
+                                <constraint firstAttribute="centerY" secondItem="Dgl-VW-FB7" secondAttribute="centerY" id="4Cw-9g-yCR"/>
+                                <constraint firstAttribute="centerX" secondItem="Dgl-VW-FB7" secondAttribute="centerX" id="L7c-KI-tHe"/>
+                                <constraint firstItem="Oaj-Gs-ckp" firstAttribute="leading" secondItem="yem-c0-ccJ" secondAttribute="leading" constant="10" id="d3I-BX-TTc"/>
+                                <constraint firstAttribute="bottom" secondItem="Oaj-Gs-ckp" secondAttribute="bottom" id="kd5-pg-O9f"/>
+                                <constraint firstAttribute="trailing" secondItem="Oaj-Gs-ckp" secondAttribute="trailing" constant="10" id="utl-Ye-Rhb"/>
+                            </constraints>
+                        </view>
+                        <prototypes>
+                            <tableViewCell contentMode="scaleToFill" selectionStyle="default" indentationWidth="10" reuseIdentifier="cell" textLabel="BFf-0q-itl" style="IBUITableViewCellStyleDefault" id="ggm-9B-6Ns">
+                                <rect key="frame" x="0.0" y="61" width="280" height="49"/>
+                                <autoresizingMask key="autoresizingMask"/>
+                                <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" tableViewCell="ggm-9B-6Ns" id="YGD-L8-Kcr">
+                                    <rect key="frame" x="0.0" y="0.0" width="280" height="49"/>
+                                    <autoresizingMask key="autoresizingMask"/>
+                                    <subviews>
+                                        <label opaque="NO" multipleTouchEnabled="YES" contentMode="left" text="Title" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" id="BFf-0q-itl">
+                                            <rect key="frame" x="15" y="0.0" width="250" height="49"/>
+                                            <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                            <fontDescription key="fontDescription" name="Poppins-Regular" family="Poppins" pointSize="17"/>
+                                            <color key="textColor" white="0.33333333333333331" alpha="1" colorSpace="calibratedWhite"/>
+                                            <nil key="highlightedColor"/>
+                                        </label>
+                                    </subviews>
+                                </tableViewCellContentView>
+                                <color key="tintColor" red="0.0" green="0.18823529410000001" blue="0.34509803919999998" alpha="1" colorSpace="calibratedRGB"/>
+                            </tableViewCell>
+                        </prototypes>
+                        <connections>
+                            <outlet property="dataSource" destination="czs-p1-1EH" id="sFK-N3-V7d"/>
+                            <outlet property="delegate" destination="czs-p1-1EH" id="oa5-ev-2kV"/>
+                        </connections>
+                    </tableView>
+                    <freeformSimulatedSizeMetrics key="simulatedDestinationMetrics"/>
+                    <size key="freeformSize" width="280" height="235"/>
+                    <connections>
+                        <outlet property="titleLabel" destination="Dgl-VW-FB7" id="bUo-CJ-Drh"/>
+                    </connections>
+                </tableViewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="KMc-g2-wFK" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="-241" y="989.5"/>
+        </scene>
+    </scenes>
+</document>

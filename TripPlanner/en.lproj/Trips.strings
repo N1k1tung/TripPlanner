@@ -5,6 +5,9 @@
 /* Class = "UILabel"; text = "Milan"; ObjectID = "1tc-Hl-LDv"; */
 "1tc-Hl-LDv.text" = "Milan";
 
+/* Class = "UINavigationItem"; title = "Month Plan"; ObjectID = "5gy-8v-Qxr"; */
+"5gy-8v-Qxr.title" = "Month Plan";
+
 /* Class = "UILabel"; text = "End date:"; ObjectID = "BaG-NW-okn"; */
 "BaG-NW-okn.text" = "End date:";
 
