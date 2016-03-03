@@ -30,7 +30,7 @@ class TripsDataStore: ObjectStore {
     override func createRef() -> Firebase {
         let firebaseURL = Configuration.firebaseURL()
         let uid = LoginDataStore.sharedInstance.uid
-        return Firebase(url:"\(firebaseURL)/users/\(uid)/trips")
+        return Firebase(url:"\(firebaseURL)/trips/\(uid)")
     }
 
     /**

@@ -24,6 +24,11 @@ enum UserRole: String {
  */
 class UsersDataStore: ObjectStore {
     
+    /// users
+    var users: [User] {
+        return objects as! [User]
+    }
+    
     /**
      ref constructor
      
@@ -32,6 +37,18 @@ class UsersDataStore: ObjectStore {
     override func createRef() -> Firebase {
         let firebaseURL = Configuration.firebaseURL()
         return Firebase(url:"\(firebaseURL)/users")
+    }
+    
+    
+    /**
+     object constructor
+     
+     - parameter dictionary: data dictionary
+     
+     - returns: stored object
+     */
+    override func createObject(dictionary: NSDictionary) -> StoredObject {
+        return User(dictionary: dictionary)
     }
     
 }

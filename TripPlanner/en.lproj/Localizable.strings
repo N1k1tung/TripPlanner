@@ -36,3 +36,6 @@
 "All" = "All";
 "Ongoing" = "Ongoing";
 "Filter" = "Filter";
+"user" = "User";
+"manager" = "Manager";
+"admin" = "Admin";

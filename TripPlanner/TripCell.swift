@@ -19,6 +19,7 @@ class TripCell: UITableViewCell {
     /// outlets
     @IBOutlet weak var titleLabel: UILabel!
     @IBOutlet weak var valueLabel: UILabel!
+    @IBOutlet weak var subtitleLabel: UILabel!
     
     /**
      configures cell with trip info
@@ -28,6 +29,7 @@ class TripCell: UITableViewCell {
     func configure(trip: Trip) {
         titleLabel.text = trip.destination?.0
         valueLabel.text = trip.status
+        subtitleLabel.text = trip.comment
     }
     
 }

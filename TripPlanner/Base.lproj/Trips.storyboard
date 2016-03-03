@@ -16,6 +16,7 @@
             <string>Poppins-Light</string>
             <string>Poppins-Light</string>
             <string>Poppins-Light</string>
+            <string>Poppins-Light</string>
         </mutableArray>
         <mutableArray key="Poppins-Medium.ttf">
             <string>Poppins-Medium</string>
@@ -95,8 +96,17 @@
                                                     <color key="textColor" red="0.0" green="0.0" blue="0.0" alpha="1" colorSpace="calibratedRGB"/>
                                                     <nil key="highlightedColor"/>
                                                 </label>
+                                                <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" horizontalCompressionResistancePriority="751" text="comment" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="vO6-TV-Wq4">
+                                                    <rect key="frame" x="15" y="39" width="48" height="16.5"/>
+                                                    <fontDescription key="fontDescription" name="Poppins-Light" family="Poppins" pointSize="10"/>
+                                                    <color key="textColor" white="0.33333333333333331" alpha="1" colorSpace="calibratedWhite"/>
+                                                    <nil key="highlightedColor"/>
+                                                </label>
                                             </subviews>
                                             <constraints>
+                                                <constraint firstItem="rrD-Lh-lQU" firstAttribute="leading" relation="greaterThanOrEqual" secondItem="vO6-TV-Wq4" secondAttribute="trailing" constant="10" id="5xJ-OU-3Mp"/>
+                                                <constraint firstItem="vO6-TV-Wq4" firstAttribute="leading" secondItem="1tc-Hl-LDv" secondAttribute="leading" id="7Vg-3K-DAU"/>
+                                                <constraint firstItem="vO6-TV-Wq4" firstAttribute="top" secondItem="1tc-Hl-LDv" secondAttribute="bottom" constant="-4" id="9jF-B6-5VK"/>
                                                 <constraint firstItem="rrD-Lh-lQU" firstAttribute="centerY" secondItem="ayz-Wu-g3t" secondAttribute="centerY" id="IK4-MU-IFp"/>
                                                 <constraint firstItem="rrD-Lh-lQU" firstAttribute="leading" relation="greaterThanOrEqual" secondItem="1tc-Hl-LDv" secondAttribute="trailing" constant="10" id="YFa-ja-gNJ"/>
                                                 <constraint firstAttribute="trailing" secondItem="rrD-Lh-lQU" secondAttribute="trailing" constant="15" id="ll8-Cr-jUe"/>
@@ -105,6 +115,7 @@
                                             </constraints>
                                         </tableViewCellContentView>
                                         <connections>
+                                            <outlet property="subtitleLabel" destination="vO6-TV-Wq4" id="I3q-Iy-uYM"/>
                                             <outlet property="titleLabel" destination="1tc-Hl-LDv" id="tGr-0R-I0v"/>
                                             <outlet property="valueLabel" destination="rrD-Lh-lQU" id="7Yk-Nn-UXF"/>
                                         </connections>
