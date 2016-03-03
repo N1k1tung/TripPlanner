@@ -13,7 +13,7 @@ import PKHUD
 /**
  * Trip details screen
  *
- * - author: TCCODER
+ * - author: Nikita Rodin
  * - version: 1.0
  */
 class TripDetailsViewController: UIViewController, UITextViewDelegate {
@@ -76,8 +76,8 @@ class TripDetailsViewController: UIViewController, UITextViewDelegate {
         {
             trip = Trip()
         }
-        timeStartValue = trip.startDate ?? NSDate()
-        timeEndValue = trip.endDate ?? NSDate()
+        timeStartValue = trip.startDate
+        timeEndValue = trip.endDate
         
         self.navigationItem.rightBarButtonItem = UIBarButtonItem(title: "Save".localized, style: .Plain, target: self, action: "doneTapped")
         

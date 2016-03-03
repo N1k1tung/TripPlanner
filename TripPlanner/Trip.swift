@@ -20,8 +20,8 @@ class Trip: NSObject {
     /// fields
     var key: String?
     var destination: (String, CLLocationCoordinate2D)?
-    var startDate: NSDate?
-    var endDate: NSDate?
+    var startDate: NSDate = NSDate()
+    var endDate: NSDate = NSDate()
     var comment: String?
     
     /**
@@ -34,8 +34,8 @@ class Trip: NSObject {
             "destinationName": destination?.0 ?? "",
             "destinationLat": destination?.1.latitude ?? 0,
             "destinationLong": destination?.1.longitude ?? 0,
-            "startDate": startDate != nil ? requestDateFormetter.stringFromDate(startDate!) : "",
-            "endDate": endDate != nil ? requestDateFormetter.stringFromDate(endDate!) : "",
+            "startDate": requestDateFormetter.stringFromDate(startDate),
+            "endDate": requestDateFormetter.stringFromDate(endDate),
             "comment": comment ?? ""
         ]
     }
@@ -63,10 +63,10 @@ class Trip: NSObject {
                 destination = (name, CLLocationCoordinate2DMake(lat, long))
         }
         if let date = dictionary["startDate"] as? String {
-            startDate = requestDateFormetter.dateFromString(date)
+            startDate = requestDateFormetter.dateFromString(date) ?? NSDate()
         }
         if let date = dictionary["endDate"] as? String {
-            endDate = requestDateFormetter.dateFromString(date)
+            endDate = requestDateFormetter.dateFromString(date) ?? NSDate()
         }
     }
     

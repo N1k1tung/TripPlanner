@@ -80,7 +80,7 @@ class MenuViewController: UIViewController {
     ]
 
     /// the sections
-    let sections: [MenuSection] = [MenuSection(name: "Trips".localized.uppercaseString, items: [.Trips]),
+    let sections: [MenuSection] = [MenuSection(name: "Trips".localized.uppercaseString, items: [.Trips, .MonthPlan]),
         MenuSection(name: "Profile".localized.uppercaseString, items: [.Logout])]
 
     /**

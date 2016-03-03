@@ -62,7 +62,7 @@ class TripsDataStore {
      - parameter trip:     trip
      - parameter callback: callback
      */
-    func addTrip(trip: Trip, callback: ((NSError!) -> Void)?) {
+    func addTrip(trip: Trip, callback: ((NSError?) -> Void)?) {
         let tripRef = trip.key != nil ? ref.childByAppendingPath(trip.key!) : ref.childByAutoId()
         let tripValue = trip.toDictionary()
         tripRef.setValue(tripValue, withCompletionBlock: { (error: NSError!, ref: Firebase!) -> Void in
@@ -76,7 +76,7 @@ class TripsDataStore {
      - parameter key:      key of trip
      - parameter callback: callback
      */
-    func removeSeat(key: String, callback: ((NSError!) -> Void)?) {
+    func removeSeat(key: String, callback: ((NSError?) -> Void)?) {
         ref.childByAppendingPath(key).removeValueWithCompletionBlock { (error: NSError!, ref: Firebase!) -> Void in
             callback?(error)
         }

@@ -531,5 +531,42 @@
             </objects>
             <point key="canvasLocation" x="1492.5" y="407.5"/>
         </scene>
+        <!--Month Plan-->
+        <scene sceneID="DEb-9Z-SoY">
+            <objects>
+                <viewController storyboardIdentifier="MonthPlanViewController" id="CLn-Lh-tI0" customClass="MonthPlanViewController" customModule="TripPlanner" customModuleProvider="target" sceneMemberID="viewController">
+                    <layoutGuides>
+                        <viewControllerLayoutGuide type="top" id="f8c-dd-9aa"/>
+                        <viewControllerLayoutGuide type="bottom" id="n0w-XF-0Dn"/>
+                    </layoutGuides>
+                    <view key="view" contentMode="scaleToFill" id="UuN-Zz-51i">
+                        <rect key="frame" x="0.0" y="0.0" width="600" height="600"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <mapView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" mapType="standard" translatesAutoresizingMaskIntoConstraints="NO" id="PoD-Vg-SVw">
+                                <rect key="frame" x="0.0" y="0.0" width="600" height="600"/>
+                                <connections>
+                                    <outlet property="delegate" destination="CLn-Lh-tI0" id="1Qq-bS-qsd"/>
+                                </connections>
+                            </mapView>
+                        </subviews>
+                        <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                        <constraints>
+                            <constraint firstItem="PoD-Vg-SVw" firstAttribute="leading" secondItem="UuN-Zz-51i" secondAttribute="leading" id="4GA-RH-bo2"/>
+                            <constraint firstItem="n0w-XF-0Dn" firstAttribute="top" secondItem="PoD-Vg-SVw" secondAttribute="bottom" id="Nd6-yJ-yt2"/>
+                            <constraint firstItem="PoD-Vg-SVw" firstAttribute="top" secondItem="f8c-dd-9aa" secondAttribute="bottom" constant="-64" id="dud-Be-uwd"/>
+                            <constraint firstAttribute="trailing" secondItem="PoD-Vg-SVw" secondAttribute="trailing" id="qUN-MU-OSO"/>
+                        </constraints>
+                    </view>
+                    <navigationItem key="navigationItem" title="Month Plan" id="5gy-8v-Qxr"/>
+                    <simulatedNavigationBarMetrics key="simulatedTopBarMetrics" prompted="NO"/>
+                    <connections>
+                        <outlet property="mapView" destination="PoD-Vg-SVw" id="3Qp-Iq-kmS"/>
+                    </connections>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="zw3-BZ-5Xg" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="414" y="1221"/>
+        </scene>
     </scenes>
 </document>

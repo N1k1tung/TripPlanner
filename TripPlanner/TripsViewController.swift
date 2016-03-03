@@ -59,7 +59,7 @@ class TripsViewController: UIViewController {
         // Do any additional setup after loading the view.
         addMenuButton()
         dataStore.onChange = {
-            self.reloadFromDS()
+            self.allTrips = self.dataStore.trips
         }
     }
 
@@ -97,13 +97,6 @@ class TripsViewController: UIViewController {
                 // create already handled
             }
         }
-    }
-    
-    /**
-     reloads trips from data store
-     */
-    func reloadFromDS() {
-        allTrips = dataStore.trips
     }
     
     /**
@@ -169,6 +162,7 @@ extension TripsViewController: UITableViewDelegate, UITableViewDataSource {
                         self.showErrorAlert(error.localizedDescription)
                     } else
                     {
+                        // delete row with animation
                         self.animatedReload = true
                         self.allTrips.removeAtIndex(self.allTrips.indexOf(trip)!)
                         self.tableView.deleteRowsAtIndexPaths([indexPath], withRowAnimation: .Fade)

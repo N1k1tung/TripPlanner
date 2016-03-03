@@ -56,13 +56,14 @@ class LoginDataStore {
                     // There was an error creating the account
                     callback?(uid: nil, error)
                 } else {
+                    if let uid = result["uid"] as? String {
+                        // add new user info
+                        let userInfo = ["name": name, "email": email, "role": UserRole.User.rawValue]
+                        self.ref.childByAppendingPath("users").childByAppendingPath(uid).setValue(userInfo)
+                    }
+                    
                     // log user in
                     self.loginUser(email, password: password) { (uid, error) in
-                        if let uid = uid {
-                            // add new user info
-                            let userInfo = ["name": name, "email": email, "role": UserRole.User.rawValue]
-                            self.ref.childByAppendingPath("users").childByAppendingPath(uid).setValue(userInfo)
-                        }
                         callback?(uid: uid, error)
                     }
                 }
