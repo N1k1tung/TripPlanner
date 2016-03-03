@@ -100,7 +100,7 @@
                     <navigationItem key="navigationItem" title="Users" id="Lnp-5w-f0M">
                         <rightBarButtonItems>
                             <barButtonItem systemItem="add" id="l6e-Jz-l9D"/>
-                            <barButtonItem systemItem="bookmarks" id="aKz-AT-0mq">
+                            <barButtonItem image="filter" id="aKz-AT-0mq">
                                 <connections>
                                     <action selector="filterTapped:" destination="xoP-Mh-tQS" id="3cZ-6X-EEI"/>
                                 </connections>
@@ -119,4 +119,7 @@
             <point key="canvasLocation" x="302" y="408"/>
         </scene>
     </scenes>
+    <resources>
+        <image name="filter" width="28" height="28"/>
+    </resources>
 </document>

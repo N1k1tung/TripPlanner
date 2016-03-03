@@ -142,7 +142,7 @@
                                     <segue destination="qFl-Sz-Jfl" kind="show" identifier="add" id="7F6-4b-dci"/>
                                 </connections>
                             </barButtonItem>
-                            <barButtonItem systemItem="bookmarks" id="DBn-Vv-2OL">
+                            <barButtonItem image="filter" id="DBn-Vv-2OL">
                                 <connections>
                                     <action selector="filterTapped:" destination="bbs-ew-clU" id="2tr-Dz-PG7"/>
                                 </connections>
@@ -609,4 +609,7 @@
             <point key="canvasLocation" x="414" y="1221"/>
         </scene>
     </scenes>
+    <resources>
+        <image name="filter" width="28" height="28"/>
+    </resources>
 </document>
