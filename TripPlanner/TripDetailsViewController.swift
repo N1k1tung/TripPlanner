@@ -60,7 +60,7 @@ class TripDetailsViewController: UIViewController, UITextViewDelegate {
         super.viewDidLoad()
         
         textView.layer.borderColor = UIColor.lightGray().CGColor
-        textView.layer.borderWidth = 0.5
+        textView.layer.borderWidth = IS_IPAD ? 1 : 0.5
         
         // update UI
         if let trip = trip {
@@ -209,7 +209,7 @@ class TripDetailsViewController: UIViewController, UITextViewDelegate {
             trip.comment = textView.text
             // upsert trip
             HUD.show(.Progress)
-            self.dataStore.addTrip(trip, callback: { (error) -> Void in
+            self.dataStore.upsertObject(trip, callback: { (error) -> Void in
                 HUD.hide(afterDelay: 0, completion: nil)
                 if let error = error {
                     self.showErrorAlert(error.localizedDescription.stripCodeInfo)

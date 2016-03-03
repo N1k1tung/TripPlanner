@@ -58,6 +58,7 @@ class MonthPlanViewController: UIViewController {
         
         // draw travel map
         mapView.removeAnnotations(mapView.annotations)
+        mapView.removeOverlays(mapView.overlays)
         var prev: CLLocationCoordinate2D?
         for t in trips {
             if let location = t.destination?.1 {

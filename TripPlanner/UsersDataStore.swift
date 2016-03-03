@@ -22,19 +22,16 @@ enum UserRole: String {
  * - author: Nikita Rodin
  * - version: 1.0
  */
-class UsersDataStore {
-
-    /// singleton
-    static let sharedInstance = UsersDataStore()
+class UsersDataStore: ObjectStore {
     
-    /// db ref
-    private let ref: Firebase
-
     /**
-     initializer
+     ref constructor
+     
+     - returns: firebase ref
      */
-    init() {
+    override func createRef() -> Firebase {
         let firebaseURL = Configuration.firebaseURL()
-        ref = Firebase(url:"\(firebaseURL)")
+        return Firebase(url:"\(firebaseURL)/users")
     }
+    
 }

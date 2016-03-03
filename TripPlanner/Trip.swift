@@ -15,10 +15,9 @@ import CoreLocation
  * - author: Nikita Rodin
  * - version: 1.0
  */
-class Trip: NSObject {
+class Trip: StoredObject {
 
     /// fields
-    var key: String?
     var destination: (String, CLLocationCoordinate2D)?
     var startDate: NSDate = NSDate()
     var endDate: NSDate = NSDate()
@@ -43,7 +42,7 @@ class Trip: NSObject {
      
      - returns: dictionary
      */
-    func toDictionary() -> NSDictionary {
+    override func toDictionary() -> NSDictionary {
         return [
             "destinationName": destination?.0 ?? "",
             "destinationLat": destination?.1.latitude ?? 0,
@@ -52,13 +51,6 @@ class Trip: NSObject {
             "endDate": requestDateFormetter.stringFromDate(endDate),
             "comment": comment ?? ""
         ]
-    }
-    
-    /**
-     empty initializer
-     */
-    override init() {
-        super.init()
     }
     
     /**
