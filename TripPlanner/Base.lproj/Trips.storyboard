@@ -1,5 +1,5 @@
 <?xml version="1.0" encoding="UTF-8" standalone="no"?>
-<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="9532" systemVersion="15D21" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" initialViewController="OLV-pD-d1O">
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="9532" systemVersion="14F1021" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" initialViewController="OLV-pD-d1O">
     <dependencies>
         <deployment identifier="iOS"/>
         <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="9530"/>
@@ -17,6 +17,7 @@
             <string>Poppins-Light</string>
         </mutableArray>
         <mutableArray key="Poppins-Medium.ttf">
+            <string>Poppins-Medium</string>
             <string>Poppins-Medium</string>
             <string>Poppins-Medium</string>
             <string>Poppins-Medium</string>
@@ -78,7 +79,7 @@
                                         <rect key="frame" x="0.0" y="136" width="375" height="60"/>
                                         <autoresizingMask key="autoresizingMask"/>
                                         <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" tableViewCell="oAM-7P-fQX" id="ayz-Wu-g3t">
-                                            <rect key="frame" x="0.0" y="0.0" width="375" height="59.5"/>
+                                            <rect key="frame" x="0.0" y="0.0" width="375" height="59"/>
                                             <autoresizingMask key="autoresizingMask"/>
                                             <subviews>
                                                 <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" horizontalCompressionResistancePriority="751" text="in 5 days" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="rrD-Lh-lQU">
@@ -141,7 +142,6 @@
                     <connections>
                         <outlet property="searchBar" destination="0VD-uo-CoP" id="VzJ-d7-PMq"/>
                         <outlet property="tableView" destination="mtb-Zi-nmv" id="AeV-TK-kmA"/>
-                        <segue destination="qFl-Sz-Jfl" kind="show" identifier="edit" action="showDetailViewController:sender:" id="dV1-Tf-T1f"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="8ak-BC-xl5" userLabel="First Responder" sceneMemberID="firstResponder"/>
@@ -356,7 +356,23 @@
                                 <view key="tableHeaderView" contentMode="scaleToFill" id="0P0-qo-OUR">
                                     <rect key="frame" x="0.0" y="0.0" width="375" height="64"/>
                                     <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                    <subviews>
+                                        <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="e5w-fy-53x">
+                                            <rect key="frame" x="22" y="56" width="345" height="0.0"/>
+                                            <fontDescription key="fontDescription" name="Poppins-Medium" family="Poppins" pointSize="15"/>
+                                            <color key="textColor" white="0.33333333333333331" alpha="1" colorSpace="calibratedWhite"/>
+                                            <nil key="highlightedColor"/>
+                                            <variation key="heightClass=regular-widthClass=compact" misplaced="YES">
+                                                <rect key="frame" x="53" y="12" width="259" height="15.5"/>
+                                            </variation>
+                                        </label>
+                                    </subviews>
                                     <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="calibratedWhite"/>
+                                    <constraints>
+                                        <constraint firstAttribute="bottom" secondItem="e5w-fy-53x" secondAttribute="bottom" constant="8" id="f4g-la-SOp"/>
+                                        <constraint firstAttribute="trailing" secondItem="e5w-fy-53x" secondAttribute="trailing" constant="8" id="fB9-ht-uR7"/>
+                                        <constraint firstItem="e5w-fy-53x" firstAttribute="leading" secondItem="0P0-qo-OUR" secondAttribute="leading" constant="22" id="kMT-ND-hGM"/>
+                                    </constraints>
                                 </view>
                                 <prototypes>
                                     <tableViewCell contentMode="scaleToFill" restorationIdentifier="SectionHeaderTableViewCell" selectionStyle="default" indentationWidth="10" reuseIdentifier="SectionHeaderTableViewCell" rowHeight="32" id="Adz-Ww-nfg" customClass="SectionHeaderTableViewCell" customModule="TripPlanner" customModuleProvider="target">
@@ -453,6 +469,7 @@
                     <connections>
                         <outlet property="shadowView" destination="XO0-zV-ozE" id="FDB-7d-vVw"/>
                         <outlet property="tableView" destination="CCL-Rn-RVy" id="KVV-gG-NCu"/>
+                        <outlet property="usernameLabel" destination="e5w-fy-53x" id="tT6-aV-NZC"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="uI3-pG-lXF" userLabel="First Responder" sceneMemberID="firstResponder"/>
@@ -515,7 +532,4 @@
             <point key="canvasLocation" x="1492.5" y="407.5"/>
         </scene>
     </scenes>
-    <inferredMetricsTieBreakers>
-        <segue reference="dV1-Tf-T1f"/>
-    </inferredMetricsTieBreakers>
 </document>

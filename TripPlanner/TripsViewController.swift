@@ -7,6 +7,7 @@
 //
 
 import UIKit
+import PKHUD
 
 /**
  * Trips list screen
@@ -16,17 +17,25 @@ import UIKit
  */
 class TripsViewController: UIViewController {
 
+    /// data store
+    let dataStore = TripsDataStore()
+    
     /// trips
     var allTrips: [Trip] = [] {
         didSet {
-            trips = allTrips
+            reloadRows()
         }
     }
+    
+    /// skips full table reload if set
+    var animatedReload = false
     
     /// displayed trips
     var trips: [Trip] = [] {
         didSet {
-            tableView?.reloadData()
+            if !animatedReload {
+                tableView?.reloadData()
+            }
         }
     }
     
@@ -49,6 +58,9 @@ class TripsViewController: UIViewController {
 
         // Do any additional setup after loading the view.
         addMenuButton()
+        dataStore.onChange = {
+            self.reloadFromDS()
+        }
     }
 
     override func viewWillAppear(animated: Bool) {
@@ -73,6 +85,7 @@ class TripsViewController: UIViewController {
     // In a storyboard-based application, you will often want to do a little preparation before navigation
     override func prepareForSegue(segue: UIStoryboardSegue, sender: AnyObject?) {
         if let vc = segue.destinationViewController as? TripDetailsViewController {
+            vc.dataStore = dataStore
             if let indexPath = tableView.indexPathForSelectedRow {
                 // edit
                 vc.trip = trips[indexPath.row]
@@ -81,12 +94,16 @@ class TripsViewController: UIViewController {
                 }
             } else
             {
-                // create
-                vc.onSave = { (trip) in
-                    self.allTrips.append(trip)
-                }
+                // create already handled
             }
         }
+    }
+    
+    /**
+     reloads trips from data store
+     */
+    func reloadFromDS() {
+        allTrips = dataStore.trips
     }
     
     /**
@@ -137,12 +154,30 @@ extension TripsViewController: UITableViewDelegate, UITableViewDataSource {
     }
     
     func tableView(tableView: UITableView, didSelectRowAtIndexPath indexPath: NSIndexPath) {
-        self.performSegueWithIdentifier("edit", sender: nil)
+        self.performSegueWithIdentifier("add", sender: nil)
     }
     
     func tableView(tableView: UITableView, commitEditingStyle editingStyle: UITableViewCellEditingStyle, forRowAtIndexPath indexPath: NSIndexPath) {
         if editingStyle == .Delete {
-            
+            // delete trip
+            let trip = trips[indexPath.row]
+            if let key = trip.key {
+                HUD.show(.Progress)
+                dataStore.removeSeat(key, callback: { (error) -> Void in
+                    HUD.hide(afterDelay: 0, completion: nil)
+                    if let error = error {
+                        self.showErrorAlert(error.localizedDescription)
+                    } else
+                    {
+                        self.animatedReload = true
+                        self.allTrips.removeAtIndex(self.allTrips.indexOf(trip)!)
+                        self.tableView.deleteRowsAtIndexPaths([indexPath], withRowAnimation: .Fade)
+                    }
+                })
+            } else
+            {
+                print("WARNING: Deleting unsynced trip!")
+            }
         }
     }
     

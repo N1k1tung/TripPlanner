@@ -60,6 +60,7 @@ struct MenuSection  {
 class MenuViewController: UIViewController {
 
     /// table view
+    @IBOutlet weak var usernameLabel: UILabel!
     @IBOutlet weak var tableView: UITableView!
     @IBOutlet weak var shadowView: UIView!
     
@@ -94,6 +95,7 @@ class MenuViewController: UIViewController {
         shadowView.layer.shadowOpacity = 0.7
         
         tableView.backgroundColor = .veryLightGray()
+        self.view.backgroundColor = .veryLightGray()
     }
 
     /**

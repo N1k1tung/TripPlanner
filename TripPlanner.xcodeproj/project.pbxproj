@@ -12,7 +12,6 @@
 		0C225EDD1C824120005FCD19 /* Configurations.plist in Resources */ = {isa = PBXBuildFile; fileRef = 0C225ED71C824120005FCD19 /* Configurations.plist */; };
 		0C225EDE1C824120005FCD19 /* HelpfulFunctions.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0C225ED81C824120005FCD19 /* HelpfulFunctions.swift */; };
 		0C225EDF1C824120005FCD19 /* UIExtensions.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0C225ED91C824120005FCD19 /* UIExtensions.swift */; };
-		0C225EE01C824120005FCD19 /* UIViewControllerExt.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0C225EDA1C824120005FCD19 /* UIViewControllerExt.swift */; };
 		0C225EE41C82413E005FCD19 /* FormViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0C225EE11C82413E005FCD19 /* FormViewController.swift */; };
 		0C225EE51C82413E005FCD19 /* LandingViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0C225EE21C82413E005FCD19 /* LandingViewController.swift */; };
 		0C225EE61C82413E005FCD19 /* LoginViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0C225EE31C82413E005FCD19 /* LoginViewController.swift */; };
@@ -90,7 +89,6 @@
 		0C225ED71C824120005FCD19 /* Configurations.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; path = Configurations.plist; sourceTree = "<group>"; };
 		0C225ED81C824120005FCD19 /* HelpfulFunctions.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = HelpfulFunctions.swift; sourceTree = "<group>"; };
 		0C225ED91C824120005FCD19 /* UIExtensions.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = UIExtensions.swift; sourceTree = "<group>"; };
-		0C225EDA1C824120005FCD19 /* UIViewControllerExt.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = UIViewControllerExt.swift; sourceTree = "<group>"; };
 		0C225EE11C82413E005FCD19 /* FormViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = FormViewController.swift; sourceTree = "<group>"; };
 		0C225EE21C82413E005FCD19 /* LandingViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = LandingViewController.swift; sourceTree = "<group>"; };
 		0C225EE31C82413E005FCD19 /* LoginViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = LoginViewController.swift; sourceTree = "<group>"; };
@@ -185,7 +183,6 @@
 				0C225ED61C824120005FCD19 /* Configuration.swift */,
 				0C225ED81C824120005FCD19 /* HelpfulFunctions.swift */,
 				0C225ED91C824120005FCD19 /* UIExtensions.swift */,
-				0C225EDA1C824120005FCD19 /* UIViewControllerExt.swift */,
 			);
 			name = Helpers;
 			sourceTree = "<group>";
@@ -455,6 +452,7 @@
 					};
 					0C4FF3CE1C81ABA500EB935F = {
 						CreatedOnToolsVersion = 7.2.1;
+						DevelopmentTeam = P4U27N5P3S;
 					};
 					0C4FF3E21C81ABA500EB935F = {
 						CreatedOnToolsVersion = 7.2.1;
@@ -591,7 +589,6 @@
 				0C225EEA1C82417F005FCD19 /* SignUpViewController.swift in Sources */,
 				0C767C581C83807500484C05 /* MonthPlanViewController.swift in Sources */,
 				0C767C5F1C83976000484C05 /* UsersDataStore.swift in Sources */,
-				0C225EE01C824120005FCD19 /* UIViewControllerExt.swift in Sources */,
 				0C767C671C86483800484C05 /* Trip.swift in Sources */,
 				0C767C651C8641F400484C05 /* SelectLocationViewController.swift in Sources */,
 				0C767C691C8650D400484C05 /* TripCell.swift in Sources */,
@@ -753,6 +750,7 @@
 				IPHONEOS_DEPLOYMENT_TARGET = 8.0;
 				MTL_ENABLE_DEBUG_INFO = YES;
 				ONLY_ACTIVE_ARCH = YES;
+				OTHER_SWIFT_FLAGS = "-DDEBUG";
 				SDKROOT = iphoneos;
 				SWIFT_OPTIMIZATION_LEVEL = "-Onone";
 			};
@@ -800,11 +798,13 @@
 			baseConfigurationReference = 75AF2C9EF75917589137EED6 /* Pods-TripPlanner.debug.xcconfig */;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				CODE_SIGN_IDENTITY = "iPhone Developer";
 				EMBEDDED_CONTENT_CONTAINS_SWIFT = YES;
 				INFOPLIST_FILE = TripPlanner/Info.plist;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
 				PRODUCT_BUNDLE_IDENTIFIER = com.toptal.TripPlanner;
 				PRODUCT_NAME = "$(TARGET_NAME)";
+				TARGETED_DEVICE_FAMILY = "1,2";
 			};
 			name = Debug;
 		};
@@ -813,11 +813,13 @@
 			baseConfigurationReference = CE84A0EEF47CDE12FDCC4BF1 /* Pods-TripPlanner.release.xcconfig */;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				CODE_SIGN_IDENTITY = "iPhone Developer";
 				EMBEDDED_CONTENT_CONTAINS_SWIFT = YES;
 				INFOPLIST_FILE = TripPlanner/Info.plist;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
 				PRODUCT_BUNDLE_IDENTIFIER = com.toptal.TripPlanner;
 				PRODUCT_NAME = "$(TARGET_NAME)";
+				TARGETED_DEVICE_FAMILY = "1,2";
 			};
 			name = Release;
 		};

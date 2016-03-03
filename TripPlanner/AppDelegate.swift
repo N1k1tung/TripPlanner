@@ -45,6 +45,15 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
             NSUserDefaults.standardUserDefaults().synchronize()
         }
         
+        // long keyboard loading fix
+        #if DEBUG
+            let tf = UITextField()
+            window?.addSubview(tf)
+            tf.becomeFirstResponder()
+            tf.resignFirstResponder()
+            tf.removeFromSuperview()
+        #endif
+        
         // Appearance
         UINavigationBar.appearance().tintColor = .blackColor()
         UINavigationBar.appearance().titleTextAttributes = [NSForegroundColorAttributeName: UIColor.blackColor(), NSFontAttributeName: UIFont.boldPoppinsFontOfSize(18)]
@@ -52,6 +61,8 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
         
         return true
     }
+    
+    
 
     func applicationWillResignActive(application: UIApplication) {
         // Sent when the application is about to move from active to inactive state. This can occur for certain types of temporary interruptions (such as an incoming phone call or SMS message) or when the user quits the application and it begins the transition to the background state.

@@ -17,14 +17,14 @@ import Firebase
  */
 class TripsDataStore {
 
-    /// singleton
-    static let sharedInstance = TripsDataStore()
-    
     /// db ref
     private let ref: Firebase
     
     /// trips data
     var trips: [Trip] = []
+    
+    /// change handler
+    var onChange: (() -> Void)?
     
     /**
      initializer
@@ -39,6 +39,7 @@ class TripsDataStore {
             let dic = NSMutableDictionary(dictionary: snapshot.value as! NSDictionary)
             dic.setValue(snapshot.key, forKey: "key")   // add key to dictionary for remove
             self.trips.append(Trip(dictionary: dic))
+            self.onChange?()
         })
         
         // Update trips as they are updated on Firebase

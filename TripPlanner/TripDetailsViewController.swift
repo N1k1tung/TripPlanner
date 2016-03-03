@@ -8,6 +8,7 @@
 
 import UIKit
 import MapKit
+import PKHUD
 
 /**
  * Trip details screen
@@ -17,6 +18,9 @@ import MapKit
  */
 class TripDetailsViewController: UIViewController, UITextViewDelegate {
 
+    /// data store
+    var dataStore: TripsDataStore!
+    
     /// trip to edit
     var trip: Trip!
     
@@ -200,8 +204,19 @@ class TripDetailsViewController: UIViewController, UITextViewDelegate {
             trip.startDate = timeStartValue
             trip.endDate = timeEndValue
             trip.comment = textView.text
-            onSave?(trip!)
-            self.navigationController?.popViewControllerAnimated(true)
+            // upsert trip
+            HUD.show(.Progress)
+            self.dataStore.addTrip(trip, callback: { (error) -> Void in
+                HUD.hide(afterDelay: 0, completion: nil)
+                if let error = error {
+                    self.showErrorAlert(error.localizedDescription)
+                } else
+                {
+                    self.onSave?(self.trip)
+                    self.navigationController?.popViewControllerAnimated(true)
+                }
+            })
+
         }
     }
     

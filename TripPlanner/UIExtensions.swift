@@ -117,9 +117,9 @@ extension UIViewController {
      - parameter title: the title of the alert
      - parameter message: the message of the alert
      */
-    func showAlert(title: String, message: String, handler: ((UIAlertAction) -> Void)? = nil) {
+    func showAlert(message: String, title: String = "", handler: ((UIAlertAction) -> Void)? = nil) {
         let alert = UIAlertController(title: title, message: message, preferredStyle: UIAlertControllerStyle.Alert)
-        alert.addAction(UIAlertAction(title: "OK", style: UIAlertActionStyle.Default, handler: handler))
+        alert.addAction(UIAlertAction(title: "OK".localized, style: UIAlertActionStyle.Default, handler: handler))
         self.presentViewController(alert, animated: true, completion: nil)
     }
     
@@ -129,7 +129,7 @@ extension UIViewController {
      - parameter message: the message of the error alert
      */
     func showErrorAlert(message: String) {
-        self.showAlert(NSLocalizedString("Error", comment: ""), message: message)
+        self.showAlert(message, title: "Error".localized)
     }
     
     /**
@@ -310,3 +310,11 @@ extension UIView {
 
 /// iPad check
 let IS_IPAD = UIDevice.currentDevice().userInterfaceIdiom == .Pad
+
+/// screen size
+let SCREEN_SIZE = UIScreen.mainScreen().bounds.size;
+
+/// orientation
+var IS_LANDSCAPE: Bool {
+    return UIApplication.sharedApplication().statusBarOrientation.isLandscape;
+}
