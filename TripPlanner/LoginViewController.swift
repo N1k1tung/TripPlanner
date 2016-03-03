@@ -19,6 +19,9 @@ import Firebase
  */
 class LoginViewController: FormViewController {
 
+    /// preset email
+    var presetEmail = ""
+    
     /// outlets
     @IBOutlet weak var loginField: UITextField!
     @IBOutlet weak var passwordField: UITextField!
@@ -40,6 +43,7 @@ class LoginViewController: FormViewController {
     override func viewDidAppear(animated: Bool) {
         super.viewDidAppear(animated)
         
+        loginField.text = presetEmail
         loginField.becomeFirstResponder()
     }
     
@@ -57,10 +61,12 @@ class LoginViewController: FormViewController {
                     self.passwordField.shake()
                 } else
                 {
-                    self.showErrorAlert(error.localizedDescription)
+                    self.showErrorAlert(error.localizedDescription.stripCodeInfo)
                 }
             } else
             {
+                self.loginField.text = ""
+                self.passwordField.text = ""
                 super.goNext()
             }
         }

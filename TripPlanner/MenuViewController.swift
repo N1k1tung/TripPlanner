@@ -161,6 +161,8 @@ extension MenuViewController : UITableViewDataSource, UITableViewDelegate {
         let cell = tableView.getCell(indexPath, ofClass: MenuTableViewCell.self)
         let menu = self.menus[self.sections[indexPath.section].items[indexPath.row]]
         cell.menu = menu
+        cell.contentView.backgroundColor = tableView.backgroundColor
+        cell.backgroundColor = tableView.backgroundColor
         return cell
     }
 
@@ -174,7 +176,10 @@ extension MenuViewController : UITableViewDataSource, UITableViewDelegate {
     
     func tableView(tableView: UITableView, viewForHeaderInSection section: Int) -> UIView? {
         let header = tableView.dequeueReusableCellWithIdentifier("SectionHeaderTableViewCell") as? SectionHeaderTableViewCell
-        header!.section = self.sections[section]
+        header?.section = self.sections[section]
+        header?.contentView.backgroundColor = tableView.backgroundColor
+        header?.backgroundColor = tableView.backgroundColor
+
         return header
     }
 

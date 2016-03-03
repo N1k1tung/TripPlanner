@@ -24,6 +24,20 @@ class Trip: NSObject {
     var endDate: NSDate = NSDate()
     var comment: String?
     
+    /// calculates status
+    var status: String {
+        if startDate.timeIntervalSinceNow < 0 {
+            // already started
+            return endDate.timeIntervalSinceNow < 0 ? "Finished".localized : "Started".localized
+        } else
+        {
+            // count days to start
+            let calendar = NSCalendar.currentCalendar()
+            let days = calendar.components(.Day, fromDate: NSDate(), toDate: startDate, options: []).day
+            return "in".localized + " \(days) " + (days == 1 ? "day".localized : "days".localized)
+        }
+    }
+    
     /**
      exports to dictionary
      

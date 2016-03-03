@@ -259,7 +259,7 @@ extension UIView {
      Shake the view as rejection action.
      */
     func shake(callback: (()->())? = nil) {
-        shake(5, callback: callback)
+        shake(7, callback: callback)
     }
     
     /**

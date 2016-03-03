@@ -51,9 +51,12 @@ class SignUpViewController: FormViewController {
         LoginDataStore.sharedInstance.createUser(fullName.textValue, email: emailField.textValue, password: passwordField.textValue) { (uid, error) -> () in
             HUD.hide(afterDelay: 0, completion: nil)
             if let error = error {
-                self.showErrorAlert(error.localizedDescription)
+                self.showErrorAlert(error.localizedDescription.stripCodeInfo)
             } else
             {
+                self.fullName.text = ""
+                self.emailField.text = ""
+                self.passwordField.text = ""
                 super.goNext()
             }
         }

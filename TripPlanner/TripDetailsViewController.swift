@@ -212,7 +212,7 @@ class TripDetailsViewController: UIViewController, UITextViewDelegate {
             self.dataStore.addTrip(trip, callback: { (error) -> Void in
                 HUD.hide(afterDelay: 0, completion: nil)
                 if let error = error {
-                    self.showErrorAlert(error.localizedDescription)
+                    self.showErrorAlert(error.localizedDescription.stripCodeInfo)
                 } else
                 {
                     self.onSave?(self.trip)

@@ -164,6 +164,14 @@ extension String {
         return NSLocalizedString(self, comment: "")
     }
     
+    /// strips error code information from Firebase errors
+    var stripCodeInfo: String {
+        if let index = self.rangeOfString(")")?.endIndex {
+            return self.substringFromIndex(index)
+        }
+        return self
+    }
+    
 }
 
 // MARK: - date formatters

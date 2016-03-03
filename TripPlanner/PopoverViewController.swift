@@ -81,11 +81,6 @@ extension UIPopoverController {
                 }
                 
                 RootContainerController?.showViewControllerAsPopover(popover)
-                // figure out arrow position
-                if let view = item.valueForKey("view") as? UIView {
-                    let rectInWindow = view.convertRect(view.bounds, toView: nil)
-                    popover.arrow.center.x = rectInWindow.midX
-                }
                 
                 // present
                 UIView.animateWithDuration(0.3, animations: { () -> Void in
@@ -168,17 +163,18 @@ class PopoverTableVC: UITableViewController {
  */
 class PopoverBackgroundView: UIPopoverBackgroundView {
     
-    // arrow image
+    /// arrow image
     var arrow: UIImageView!
-    // bg
+    /// bg
     var bg: UIView!
-    // dim
+    /// dim
     var dimBG: UIView!
     
+    /// arrow base width
     override class func arrowBase() -> CGFloat {
         return 37
     }
-    
+    /// arrow arrow height
     override class func arrowHeight() -> CGFloat {
         return 23
     }
@@ -195,7 +191,7 @@ class PopoverBackgroundView: UIPopoverBackgroundView {
         self.addSubview(dimBG)
         
         // arrow
-        self.arrow = UIImageView(image: UIImage(named: "PopoverArrow"))
+        self.arrow = UIImageView(image: UIImage(named: "popover_arrow_up"))
         arrow.center.y = PopoverBackgroundView.arrowHeight()/2
         self.addSubview(arrow)
         
@@ -235,10 +231,10 @@ class PopoverBackgroundView: UIPopoverBackgroundView {
     /// current arrow offset
     override var arrowOffset: CGFloat {
         get {
-            return 0
+            return -arrow.center.x + POPOVER_WIDTH / 2
         }
         set {
-            arrow.center.x = self.center.x + arrowOffset
+            arrow.center.x = self.center.x + newValue
         }
     }
     
@@ -275,8 +271,6 @@ class PopoverBackgroundViewController: UIViewController {
         fatalError("init(coder:) has not been implemented")
     }
     
-    /// arrow image
-    var arrow: UIImageView!
     /// content view
     var contentView: UIView!
     /// dim
@@ -299,17 +293,11 @@ class PopoverBackgroundViewController: UIViewController {
         dimBG.addGestureRecognizer(tapGesture)
         
         // white rect bg
-        let frame = CGRectMake(0, self.view.bounds.height-size.height-44, size.width, size.height)
+        let frame = CGRectMake(0, self.view.bounds.height-size.height, size.width, size.height)
         self.contentView = UIView(frame: frame)
         contentView.autoresizingMask = [.FlexibleWidth, .FlexibleTopMargin]
         contentView.backgroundColor = UIColor.whiteColor()
         self.view.addSubview(contentView)
-        
-        // arrow
-        self.arrow = UIImageView(image: UIImage(named: "PopoverArrow_down"))
-        arrow.center.y = frame.maxY
-        arrow.autoresizingMask = [.FlexibleLeftMargin, .FlexibleRightMargin, .FlexibleTopMargin]
-        self.view.addSubview(arrow)
         
         // subscribe to keyboard notifications
         NSNotificationCenter.defaultCenter().addObserver(self, selector: Selector("willShowKeyboard:"),
@@ -362,7 +350,7 @@ class PopoverBackgroundViewController: UIViewController {
      */
     func willHideKeyboard(notif: NSNotification) {
         UIView.animateWithDuration(0.3) {
-            self.contentView.frame.origin.y = self.view.bounds.height-self.size.height-44
+            self.contentView.frame.origin.y = self.view.bounds.height-self.size.height
         }
     }
     
