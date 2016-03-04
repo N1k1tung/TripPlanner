@@ -324,7 +324,9 @@ class SlideMenuViewController: UIViewController {
         alert.addAction(UIAlertAction(title: "No".localized, style: UIAlertActionStyle.Cancel, handler: { (_) -> Void in
             alert.dismissViewControllerAnimated(true, completion: nil)
         }))
-        self.presentViewController(alert, animated: true, completion: nil)
+        dispatch_async(dispatch_get_main_queue()) {
+            self.presentViewController(alert, animated: true, completion: nil)
+        }
     }
     
 }

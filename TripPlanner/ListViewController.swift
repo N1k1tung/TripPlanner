@@ -157,6 +157,7 @@ extension ListViewController: UISearchBarDelegate {
     func searchBarCancelButtonClicked(searchBar: UISearchBar) {
         searchBar.resignFirstResponder()
         isSearching = false
+        searchBar.text = ""
         searchBar.setShowsCancelButton(false, animated: true)
     }
     

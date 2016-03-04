@@ -55,19 +55,19 @@
                                             <autoresizingMask key="autoresizingMask"/>
                                             <subviews>
                                                 <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" horizontalCompressionResistancePriority="751" text="in 5 days" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="ggY-fB-tqh">
-                                                    <rect key="frame" x="291" y="19" width="69" height="20"/>
+                                                    <rect key="frame" x="283" y="15" width="77" height="28"/>
                                                     <fontDescription key="fontDescription" name="Poppins-Regular" family="Poppins" pointSize="17"/>
                                                     <color key="textColor" white="0.33333333333333331" alpha="1" colorSpace="calibratedWhite"/>
                                                     <nil key="highlightedColor"/>
                                                 </label>
                                                 <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Milan" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="pzc-f6-9bY">
-                                                    <rect key="frame" x="15" y="19" width="41" height="20"/>
+                                                    <rect key="frame" x="15" y="15" width="45" height="28"/>
                                                     <fontDescription key="fontDescription" name="Poppins-Regular" family="Poppins" pointSize="17"/>
                                                     <color key="textColor" red="0.0" green="0.0" blue="0.0" alpha="1" colorSpace="calibratedRGB"/>
                                                     <nil key="highlightedColor"/>
                                                 </label>
                                                 <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="comment" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="8oh-Qn-J2m">
-                                                    <rect key="frame" x="15" y="35" width="43" height="12"/>
+                                                    <rect key="frame" x="15" y="39" width="48" height="17"/>
                                                     <fontDescription key="fontDescription" name="Poppins-Light" family="Poppins" pointSize="10"/>
                                                     <color key="textColor" white="0.33333333333333331" alpha="1" colorSpace="calibratedWhite"/>
                                                     <nil key="highlightedColor"/>
@@ -143,31 +143,34 @@
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="252" verticalHuggingPriority="251" text="Role:" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="ldy-QA-0oi">
-                                <rect key="frame" x="37" y="254" width="40" height="20"/>
+                                <rect key="frame" x="37" y="254" width="40" height="28"/>
                                 <fontDescription key="fontDescription" name="Poppins-Light" family="Poppins" pointSize="17"/>
                                 <color key="textColor" red="0.0" green="0.0" blue="0.0" alpha="1" colorSpace="calibratedRGB"/>
                                 <nil key="highlightedColor"/>
                             </label>
                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" horizontalCompressionResistancePriority="751" text="User" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="hdo-Rw-nAq">
-                                <rect key="frame" x="85" y="254" width="270" height="20"/>
+                                <rect key="frame" x="85" y="254" width="270" height="28"/>
                                 <fontDescription key="fontDescription" name="Poppins-Medium" family="Poppins" pointSize="17"/>
                                 <color key="textColor" white="0.33333333333333331" alpha="1" colorSpace="calibratedWhite"/>
                                 <nil key="highlightedColor"/>
                             </label>
                             <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="Cft-Yj-8Ce" userLabel="EndTimeButton">
-                                <rect key="frame" x="85" y="242" width="270" height="44"/>
+                                <rect key="frame" x="85" y="246" width="270" height="44"/>
                                 <constraints>
                                     <constraint firstAttribute="height" constant="44" id="dx1-fs-mfH"/>
                                 </constraints>
+                                <connections>
+                                    <action selector="selectRoleTapped:" destination="srv-2y-4tq" eventType="touchUpInside" id="wCb-hw-qX2"/>
+                                </connections>
                             </button>
                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="252" verticalHuggingPriority="251" text="View trips as:" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="82y-Wh-mH9">
-                                <rect key="frame" x="37" y="294" width="102" height="20"/>
+                                <rect key="frame" x="37" y="302" width="110" height="28"/>
                                 <fontDescription key="fontDescription" name="Poppins-Light" family="Poppins" pointSize="17"/>
                                 <color key="textColor" red="0.0" green="0.0" blue="0.0" alpha="1" colorSpace="calibratedRGB"/>
                                 <nil key="highlightedColor"/>
                             </label>
                             <switch opaque="NO" contentMode="scaleToFill" horizontalHuggingPriority="750" verticalHuggingPriority="750" contentHorizontalAlignment="center" contentVerticalAlignment="center" on="YES" translatesAutoresizingMaskIntoConstraints="NO" id="XjM-cg-U4d">
-                                <rect key="frame" x="289" y="289" width="51" height="31"/>
+                                <rect key="frame" x="289" y="301" width="51" height="31"/>
                             </switch>
                             <textField opaque="NO" clipsSubviews="YES" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" placeholder="Full Name" textAlignment="natural" minimumFontSize="14" translatesAutoresizingMaskIntoConstraints="NO" id="ZoJ-NM-WWp" customClass="UnderlineTextField" customModule="UIComponents">
                                 <rect key="frame" x="37" y="112" width="301" height="34"/>
@@ -245,6 +248,13 @@
                         </barButtonItem>
                     </navigationItem>
                     <simulatedScreenMetrics key="simulatedDestinationMetrics" type="retina47"/>
+                    <connections>
+                        <outlet property="emailField" destination="Y0V-KS-Hgl" id="LWX-5h-Qa5"/>
+                        <outlet property="fullName" destination="ZoJ-NM-WWp" id="UEd-uN-ehZ"/>
+                        <outlet property="passwordField" destination="Hls-3H-JxK" id="roE-B0-vMi"/>
+                        <outlet property="roleLabel" destination="hdo-Rw-nAq" id="25P-G0-3xh"/>
+                        <outlet property="userTripsSwitch" destination="XjM-cg-U4d" id="dDA-Y2-uCH"/>
+                    </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="st2-bB-qy8" sceneMemberID="firstResponder"/>
             </objects>

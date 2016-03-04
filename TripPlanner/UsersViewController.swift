@@ -53,8 +53,9 @@ class UsersViewController: ListViewController {
      */
     override func tableView(tableView: UITableView, cellForRowAtIndexPath indexPath: NSIndexPath) -> UITableViewCell {
         let cell = tableView.getCell(indexPath, ofClass: UserCell.self)
-        let user = objects[indexPath.row]
-        cell.configure(user as! User)
+        let user = objects[indexPath.row] as! User
+        cell.configure(user)
+        cell.accessoryType = user.key == LoginDataStore.sharedInstance.uid ? .Checkmark : .None
         return cell
     }
     
@@ -62,6 +63,19 @@ class UsersViewController: ListViewController {
 
     // In a storyboard-based application, you will often want to do a little preparation before navigation
     override func prepareForSegue(segue: UIStoryboardSegue, sender: AnyObject?) {
+        if let vc = segue.destinationViewController as? UserDetailsViewController {
+            vc.dataStore = dataStore as! UsersDataStore
+            if let indexPath = tableView.indexPathForSelectedRow {
+                // edit
+                vc.user = objects[indexPath.row] as! User
+                vc.onSave = { (user) in
+                    self.tableView.reloadRowsAtIndexPaths([indexPath], withRowAnimation: .Fade)
+                }
+            } else
+            {
+                // create already handled
+            }
+        }
     }
 
 }

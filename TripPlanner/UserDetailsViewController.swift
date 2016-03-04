@@ -17,10 +17,24 @@ import PKHUD
  */
 class UserDetailsViewController: FormViewController {
 
+    /// data store
+    var dataStore: UsersDataStore!
+    
+    /// user to edit
+    var user: User!
+    
+    /// save handler
+    var onSave: ((User) -> Void)?
+    
     /// outlets
     @IBOutlet weak var fullName: UITextField!
     @IBOutlet weak var emailField: UITextField!
     @IBOutlet weak var passwordField: UITextField!
+    @IBOutlet weak var userTripsSwitch: UISwitch!
+    @IBOutlet weak var roleLabel: UILabel!
+    
+    /// is new flag
+    var isNew = false
     
     /**
      view did load
@@ -32,15 +46,33 @@ class UserDetailsViewController: FormViewController {
         addFieldValidation(fullName, validator: String.notEmpty..true)
         addFieldValidation(emailField, errorMessage: "Please enter valid email".localized, validator: String.isEmail)
         addFieldValidation(passwordField, errorMessage: "Password must be at least 8 characters".localized, validator: String.countNotLess..8)
+        
+        // update UI
+        if let user = user {
+            fullName.text = user.name
+            // disable credentials editing
+            passwordField.text = "xxxxxxxx"
+            passwordField.enabled = false
+            emailField.text = user.email
+            emailField.enabled = false
+            // only let admin view trips of others
+            userTripsSwitch.enabled = LoginDataStore.sharedInstance.userInfo.role == .Admin
+        } else
+        {
+            isNew = true
+            user = User()
+            userTripsSwitch.enabled = false
+        }
+        roleLabel.text = user.role.rawValue.localized
     }
     
     /**
-     view did appear
+     select role tap handler
+     
+     - parameter sender: the button
      */
-    override func viewDidAppear(animated: Bool) {
-        super.viewDidAppear(animated)
+    @IBAction func selectRoleTapped(sender: AnyObject) {
         
-        fullName.becomeFirstResponder()
     }
     
     /**
@@ -57,7 +89,7 @@ class UserDetailsViewController: FormViewController {
                 self.fullName.text = ""
                 self.emailField.text = ""
                 self.passwordField.text = ""
-                super.goNext()
+                self.navigationController?.popViewControllerAnimated(true)
             }
         }
     }
