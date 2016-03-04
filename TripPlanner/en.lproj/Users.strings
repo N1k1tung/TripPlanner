@@ -1,15 +1,39 @@
 
+/* Class = "UILabel"; text = "View trips as:"; ObjectID = "82y-Wh-mH9"; */
+"82y-Wh-mH9.text" = "View trips as:";
+
 /* Class = "UILabel"; text = "comment"; ObjectID = "8oh-Qn-J2m"; */
 "8oh-Qn-J2m.text" = "comment";
+
+/* Class = "UITextField"; placeholder = "Password"; ObjectID = "Hls-3H-JxK"; */
+"Hls-3H-JxK.placeholder" = "Password";
 
 /* Class = "UINavigationItem"; title = "Users"; ObjectID = "Lnp-5w-f0M"; */
 "Lnp-5w-f0M.title" = "Users";
 
+/* Class = "UITextField"; placeholder = "Email"; ObjectID = "Y0V-KS-Hgl"; */
+"Y0V-KS-Hgl.placeholder" = "Email";
+
 /* Class = "UISearchBar"; placeholder = "Search"; ObjectID = "Z0q-fn-qU8"; */
 "Z0q-fn-qU8.placeholder" = "Search";
+
+/* Class = "UITextField"; placeholder = "Full Name"; ObjectID = "ZoJ-NM-WWp"; */
+"ZoJ-NM-WWp.placeholder" = "Full Name";
 
 /* Class = "UILabel"; text = "in 5 days"; ObjectID = "ggY-fB-tqh"; */
 "ggY-fB-tqh.text" = "in 5 days";
 
+/* Class = "UILabel"; text = "User"; ObjectID = "hdo-Rw-nAq"; */
+"hdo-Rw-nAq.text" = "User";
+
+/* Class = "UINavigationItem"; title = "User"; ObjectID = "lYv-Pv-4ok"; */
+"lYv-Pv-4ok.title" = "User";
+
+/* Class = "UILabel"; text = "Role:"; ObjectID = "ldy-QA-0oi"; */
+"ldy-QA-0oi.text" = "Role:";
+
 /* Class = "UILabel"; text = "Milan"; ObjectID = "pzc-f6-9bY"; */
 "pzc-f6-9bY.text" = "Milan";
+
+/* Class = "UIBarButtonItem"; title = "Save"; ObjectID = "rKH-Md-Lhi"; */
+"rKH-Md-Lhi.title" = "Save";

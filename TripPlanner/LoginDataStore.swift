@@ -104,6 +104,7 @@ class LoginDataStore {
                                 user.email = email
                                 user.role = UserRole(rawValue: role) ?? .User
                                 user.name = name
+                                user.key = authData.uid
                                 self.userInfo = user
                                 callback?(uid: authData.uid, nil)
                         }

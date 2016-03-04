@@ -108,8 +108,8 @@ class ListViewController: UIViewController {
      - parameter sender: the button
      */
     @IBAction func filterTapped(sender: UIBarButtonItem) {
-        UIPopoverController.showPopover("Filter".localized, filters: filters, selectedFilter: currentFilter, fromBarButtonItem: sender) { (selected) -> Void in
-            self.currentFilter = selected
+        UIPopoverController.showPopover("Filter".localized, values: filters, selectedValue: currentFilter, fromBarButtonItem: sender) { (selected) -> Void in
+            self.currentFilter = selected as! Filter
         }
     }
     

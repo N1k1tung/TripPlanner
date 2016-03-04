@@ -101,6 +101,13 @@ class FormViewController: UIViewController {
     func endEditing() {
         self.view.endEditing(true)
     }
+    
+    /**
+     done tapped on last textfield
+     */
+    func doneTapped() {
+        nextTapped(nil)
+    }
 }
 
 // MARK: - UITextFieldDelegate
@@ -108,7 +115,7 @@ extension FormViewController: UITextFieldDelegate {
     
     func textFieldShouldReturn(textField: UITextField) -> Bool {
         if textField.tag == fieldsToValidate.count-1 {
-            nextTapped(nil)
+            doneTapped()
         } else
         {
             fieldsToValidate[textField.tag+1].0.becomeFirstResponder()

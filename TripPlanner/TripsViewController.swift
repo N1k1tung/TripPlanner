@@ -29,21 +29,21 @@ class TripsViewController: ListViewController {
      initializes filters
      */
     override func initFilters() {
-        let all: Filter = (title: "All".localized, image: nil, filter: { (objs: [AnyObject]) -> [AnyObject] in
+        let all = Filter(title: "All".localized, image: nil, filter: { (objs: [AnyObject]) -> [AnyObject] in
             return objs
         })
-        let started: Filter = (title: "Started".localized, image: nil, filter: { (objs: [AnyObject]) -> [AnyObject] in
+        let started = Filter(title: "Started".localized, image: nil, filter: { (objs: [AnyObject]) -> [AnyObject] in
             return objs.filter { ($0 as! Trip).status == "Started".localized }
         })
-        let ongoing: Filter = (title: "Ongoing".localized, image: nil, filter: { (objs: [AnyObject]) -> [AnyObject] in
+        let ongoing = Filter(title: "Ongoing".localized, image: nil, filter: { (objs: [AnyObject]) -> [AnyObject] in
             return objs.filter { ($0 as! Trip).status != "Started".localized && ($0 as! Trip).status != "Finished".localized }
         })
-        let finished: Filter = (title: "Finished".localized, image: nil, filter: { (objs: [AnyObject]) -> [AnyObject] in
+        let finished = Filter(title: "Finished".localized, image: nil, filter: { (objs: [AnyObject]) -> [AnyObject] in
             return objs.filter { ($0 as! Trip).status == "Finished".localized }
         })
         filters = [all, started, ongoing, finished]
         currentFilter = all
-        searchFilter = (title: "", image: nil, filter: { (objs: [AnyObject]) -> [AnyObject] in
+        searchFilter = Filter(title: "", image: nil, filter: { (objs: [AnyObject]) -> [AnyObject] in
             return objs.filter { (($0 as! Trip).destination?.0 ?? "").contains(self.searchBar.text!, caseSensitive: false) }
         })
     }

@@ -63,6 +63,11 @@ class UserDetailsViewController: FormViewController {
             user = User()
             userTripsSwitch.enabled = false
         }
+        userTripsSwitch.on = user.key == LoginDataStore.sharedInstance.uid
+        // can't unset user as currently displayed if selected already
+        if userTripsSwitch.on {
+            userTripsSwitch.enabled = false
+        }
         roleLabel.text = user.role.rawValue.localized
     }
     
@@ -72,26 +77,65 @@ class UserDetailsViewController: FormViewController {
      - parameter sender: the button
      */
     @IBAction func selectRoleTapped(sender: AnyObject) {
+        let roles = [
+            SimpleValue(title: UserRole.User.rawValue.localized, image: nil),
+            SimpleValue(title: UserRole.Manager.rawValue.localized, image: nil),
+            SimpleValue(title: UserRole.Admin.rawValue.localized, image: nil)
+        ]
+        let selectedRole = SimpleValue(title: user.role.rawValue.localized, image: nil)
+        UIPopoverController.showPopover("Role".localized, values: roles, selectedValue: selectedRole, fromBarButtonItem: UIBarButtonItem()) { (selected) -> Void in
+            self.roleLabel.text = selected.title
+        }
+    }
+    
+    /**
+     save tapped
+     */
+    override func goNext() {
+        HUD.show(.Progress)
+        user.name = fullName.textValue
+        user.role = UserRole(rawValue: roleLabel.text!) ?? .User
+        if isNew {
+            user.email = emailField.textValue
+            // new user - create
+            dataStore.createUser(user, password: passwordField.textValue) { (error) -> Void in
+                HUD.hide(afterDelay: 0, completion: nil)
+                if let error = error {
+                    self.showErrorAlert(error.localizedDescription.stripCodeInfo)
+                } else
+                {
+                    self.onSave?(self.user)
+                    self.navigationController?.popViewControllerAnimated(true)
+                }
+            }
+        } else
+        {
+            // existing - update
+            self.dataStore.upsertObject(user, callback: { (error) -> Void in
+                HUD.hide(afterDelay: 0, completion: nil)
+                if let error = error {
+                    self.showErrorAlert(error.localizedDescription.stripCodeInfo)
+                } else
+                {
+                    self.onSave?(self.user)
+                    self.navigationController?.popViewControllerAnimated(true)
+                }
+            })
+            // set as current user if needed
+            if userTripsSwitch.enabled && userTripsSwitch.on {
+                if let key = user.key {
+                    LoginDataStore.sharedInstance.uid = key
+                }
+            }
+        }
         
     }
     
     /**
-     sign user up
+     done tapped on last textfield
      */
-    override func goNext() {
-        HUD.show(.Progress)
-        LoginDataStore.sharedInstance.createUser(fullName.textValue, email: emailField.textValue, password: passwordField.textValue) { (uid, error) -> () in
-            HUD.hide(afterDelay: 0, completion: nil)
-            if let error = error {
-                self.showErrorAlert(error.localizedDescription.stripCodeInfo)
-            } else
-            {
-                self.fullName.text = ""
-                self.emailField.text = ""
-                self.passwordField.text = ""
-                self.navigationController?.popViewControllerAnimated(true)
-            }
-        }
+    override func doneTapped() {
+        self.endEditing()
     }
 
 }

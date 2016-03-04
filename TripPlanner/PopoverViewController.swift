@@ -8,8 +8,43 @@
 
 import UIKit
 
-/// represents filter
-typealias Filter = (title: String, image: String?, filter: ([AnyObject]) -> [AnyObject])
+/**
+ *  represents value in popover protocol
+ */
+@objc
+protocol Value {
+    var title: String { get set }
+    var image: String? { get set }
+}
+
+/**
+ *  simple value
+ */
+class SimpleValue: NSObject, Value {
+    var title: String
+    var image: String?
+    
+    init(title: String, image: String?) {
+        self.title = title
+        self.image = image
+    }
+}
+
+/**
+ *  represents filter
+ */
+class Filter: NSObject, Value {
+    var title: String
+    var image: String?
+    var filter: ([AnyObject]) -> [AnyObject]
+    
+    init(title: String, image: String?, filter: ([AnyObject]) -> [AnyObject]) {
+        self.title = title
+        self.image = image
+        self.filter = filter
+    }
+}
+
 
 // reference to the last opened popover
 var lastPopover: UIPopoverController?
@@ -29,18 +64,19 @@ extension UIPopoverController {
     displays popover with specifed data from specified bar item
     
     - parameter title: popover title
-    - parameter filters: popover items
+    - parameter values: popover items
+    - parameter selectedValue: selected or nil
     - parameter fromBarButtonItem: anchor bar button
     - parameter onSelect: selection handler
     */
-    class func showPopover(title: String, filters: [Filter], selectedFilter: Filter?,
-        fromBarButtonItem item: UIBarButtonItem, onSelect: (Filter) -> Void) {
+    class func showPopover(title: String, values: [Value], selectedValue: Value?,
+        fromBarButtonItem item: UIBarButtonItem, onSelect: (Value) -> Void) {
             
             // prepare table
             let vc = UIStoryboard(name: "Popovers", bundle: nil).instantiateViewControllerWithIdentifier("PopoverTableVC")
                 as! PopoverTableVC
-            vc.filters = filters
-            vc.selected = selectedFilter
+            vc.values = values
+            vc.selected = selectedValue
             vc.title = title
             
             if IS_IPAD {
@@ -54,7 +90,7 @@ extension UIPopoverController {
                 popover.popoverBackgroundViewClass = PopoverBackgroundView.self
                 popover.popoverContentSize = CGSizeMake(POPOVER_WIDTH, 235)
                 
-                vc.onSelect = { (f: Filter) in
+                vc.onSelect = { (f: Value) in
                     popover.dismissPopoverAnimated(true)
                     onSelect(f)
                 }
@@ -75,7 +111,7 @@ extension UIPopoverController {
                 popover.view.alpha = 0
                 popover.loadChildController(vc, inContentView: popover.contentView)
                 
-                vc.onSelect = { (f: Filter) in
+                vc.onSelect = { (f: Value) in
                     popover.dismiss()
                     onSelect(f)
                 }
@@ -102,13 +138,13 @@ extension UIPopoverController {
 class PopoverTableVC: UITableViewController {
     
     // available filters
-    var filters: [Filter] = []
+    var values: [Value] = []
     
     // currently selected
-    var selected: Filter?
+    var selected: Value?
     
     // on select
-    var onSelect: ((Filter) -> Void)?
+    var onSelect: ((Value) -> Void)?
     
     // outlets
     @IBOutlet weak var titleLabel: UILabel!
@@ -127,14 +163,14 @@ class PopoverTableVC: UITableViewController {
     // MARK: - table view ds & delegate
     
     override func tableView(tableView: UITableView, didSelectRowAtIndexPath indexPath: NSIndexPath) {
-        let filter = filters[indexPath.row]
-        self.selected = filter
+        let value = values[indexPath.row]
+        self.selected = value
         tableView.deselectRowAtIndexPath(indexPath, animated: true)
-        onSelect?(filter)
+        onSelect?(value)
     }
     
     override func tableView(tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
-        return filters.count
+        return values.count
     }
     
     override func tableView(tableView: UITableView, cellForRowAtIndexPath indexPath: NSIndexPath)
@@ -142,13 +178,13 @@ class PopoverTableVC: UITableViewController {
         // configure cell
         let cell = tableView.dequeueReusableCellWithIdentifier("cell", forIndexPath: indexPath) as UITableViewCell
         
-        let filter = filters[indexPath.row]
+        let value = values[indexPath.row]
         
-        if let image = filter.image {
+        if let image = value.image {
             cell.imageView?.image = UIImage(named: image)
         }
-        cell.textLabel?.text = filter.title
-        cell.accessoryType = (filter.title == selected?.title) ? .Checkmark : .None
+        cell.textLabel?.text = value.title
+        cell.accessoryType = (value.title == selected?.title) ? .Checkmark : .None
         
         return cell
     }

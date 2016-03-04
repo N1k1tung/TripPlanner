@@ -39,3 +39,6 @@
 "user" = "User";
 "manager" = "Manager";
 "admin" = "Admin";
+"Enter user's password" = "Enter user's password";
+"Password cannot be empty" = "Password cannot be empty";
+"Role" = "Role";

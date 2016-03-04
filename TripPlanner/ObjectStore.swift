@@ -18,7 +18,7 @@ import Firebase
 class ObjectStore {
 
     /// db ref
-    private var ref: Firebase!
+    var ref: Firebase!
     
     /// objects
     var objects: [StoredObject] = []

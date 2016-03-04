@@ -51,4 +51,47 @@ class UsersDataStore: ObjectStore {
         return User(dictionary: dictionary)
     }
     
+    /**
+     creates account & stores user info
+     
+     - parameter user:     user info
+     - parameter password: password
+     - parameter callback: callback
+     */
+    func createUser(user: User, password: String, callback: ((NSError?) -> Void)?) {
+        ref.createUser(user.email, password: password,
+            withValueCompletionBlock: { error, result in
+                if error != nil {
+                    // There was an error creating the account
+                    callback?(error)
+                } else {
+                    if let uid = result["uid"] as? String {
+                        user.key = uid
+                        self.upsertObject(user, callback: callback)
+                    }
+                }
+        })
+    }
+    
+    /**
+    Removes user
+    
+    - parameter user:     user
+    - parameter password: password
+    - parameter callback: callback
+    */
+    func removeUser(user: User, password: String, callback: ((NSError?) -> Void)?) {
+        if let key = user.key {
+            ref.removeUser(user.email, password: password, withCompletionBlock: { (error) -> Void in
+                if let error = error {
+                    callback?(error)
+                } else
+                {
+                    // remove user info
+                    self.removeObject(key, callback: callback)
+                }
+            })
+        }
+    }
+    
 }
