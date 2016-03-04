@@ -62,14 +62,13 @@ class LoginDataStore {
                     // There was an error creating the account
                     callback?(uid: nil, error)
                 } else {
-                    if let uid = result["uid"] as? String {
-                        // add new user info
-                        let userInfo = ["name": name, "email": email, "role": UserRole.User.rawValue]
-                        self.ref.childByAppendingPath("users").childByAppendingPath(uid).setValue(userInfo)
-                    }
+                    let userInfo = ["name": name, "email": email, "role": UserRole.User.rawValue]
+                    self.userInfo = User(dictionary: userInfo)
                     
                     // log user in
                     self.loginUser(email, password: password) { (uid, error) in
+                        // add new user info
+                        self.ref.childByAppendingPath("users").childByAppendingPath(uid).setValue(userInfo)
                         callback?(uid: uid, error)
                     }
                 }
@@ -96,17 +95,22 @@ class LoginDataStore {
 
                 // wait until user info is loaded
                 self.userInfoStore = UserInfoStore(uid: self.uid)
-                self.userInfoStore?.onChange = { [unowned self] in
-                    if let email = self.userInfoStore?.values["email"],
-                        let role = self.userInfoStore?.values["role"],
-                        let name = self.userInfoStore?.values["name"] {
-                            let user = User()
-                            user.email = email
-                            user.role = UserRole(rawValue: role) ?? .User
-                            user.name = name
-                            self.userInfo = user
-                            callback?(uid: authData.uid, nil)
-                    }
+                if self.userInfo == nil {
+                    self.userInfoStore?.onChange = { [unowned self] in
+                        if let email = self.userInfoStore?.values["email"],
+                            let role = self.userInfoStore?.values["role"],
+                            let name = self.userInfoStore?.values["name"] {
+                                let user = User()
+                                user.email = email
+                                user.role = UserRole(rawValue: role) ?? .User
+                                user.name = name
+                                self.userInfo = user
+                                callback?(uid: authData.uid, nil)
+                        }
+                    }                    
+                } else
+                {
+                    callback?(uid: authData.uid, nil)
                 }
             }
         }
@@ -131,6 +135,7 @@ class LoginDataStore {
         cleanCredentials()
         ref.unauth()
         userInfoStore = nil
+        userInfo = nil
     }
     
     /**

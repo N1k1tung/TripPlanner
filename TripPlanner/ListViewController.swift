@@ -163,7 +163,7 @@ extension ListViewController: UISearchBarDelegate {
 }
 
 // MARK: - UITableViewDelegate, UITableViewDataSource
-extension TripsViewController: UITableViewDelegate, UITableViewDataSource {
+extension ListViewController: UITableViewDelegate, UITableViewDataSource {
     
     func tableView(tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
         return objects.count

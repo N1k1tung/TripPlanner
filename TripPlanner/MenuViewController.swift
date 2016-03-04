@@ -75,7 +75,7 @@ class MenuViewController: UIViewController {
     let menus: [MenuItem: Menu] = [
         .Trips				: Menu(item: .Trips, name: "Trips".localized, controllerName: String.stringFromClass(TripsViewController.self)),
         .MonthPlan          : Menu(item: .MonthPlan, name: "Month plan".localized, controllerName: String.stringFromClass(MonthPlanViewController.self)),
-        .Users              : Menu(item: .Users, name: "Users".localized, controllerName: String.stringFromClass(UsersViewController.self)),
+        .Users              : Menu(item: .Users, name: "Users".localized, controllerName: String.stringFromClass(UsersViewController.self), storyboardName: "Users"),
         .Logout             : Menu(item: .Logout, name: "Logout".localized, controllerName: "")
     ]
 
