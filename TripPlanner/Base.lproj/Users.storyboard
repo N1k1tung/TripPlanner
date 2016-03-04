@@ -84,6 +84,7 @@
                                                 <constraint firstItem="8oh-Qn-J2m" firstAttribute="top" secondItem="pzc-f6-9bY" secondAttribute="bottom" constant="-4" id="vLT-oD-RbG"/>
                                             </constraints>
                                         </tableViewCellContentView>
+                                        <color key="tintColor" red="0.0" green="0.18823529410000001" blue="0.34509803919999998" alpha="1" colorSpace="calibratedRGB"/>
                                         <connections>
                                             <outlet property="subtitleLabel" destination="8oh-Qn-J2m" id="IgN-rJ-Ddf"/>
                                             <outlet property="titleLabel" destination="pzc-f6-9bY" id="5gp-n5-wKf"/>
@@ -163,8 +164,8 @@
                                     <action selector="selectRoleTapped:" destination="srv-2y-4tq" eventType="touchUpInside" id="wCb-hw-qX2"/>
                                 </connections>
                             </button>
-                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="252" verticalHuggingPriority="251" text="View trips as:" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="82y-Wh-mH9">
-                                <rect key="frame" x="37" y="302" width="110" height="28"/>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="252" verticalHuggingPriority="251" text="View user trips:" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="82y-Wh-mH9">
+                                <rect key="frame" x="37" y="302" width="125.5" height="28"/>
                                 <fontDescription key="fontDescription" name="Poppins-Light" family="Poppins" pointSize="17"/>
                                 <color key="textColor" red="0.0" green="0.0" blue="0.0" alpha="1" colorSpace="calibratedRGB"/>
                                 <nil key="highlightedColor"/>

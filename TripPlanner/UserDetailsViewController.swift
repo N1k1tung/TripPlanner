@@ -76,14 +76,24 @@ class UserDetailsViewController: FormViewController {
      
      - parameter sender: the button
      */
-    @IBAction func selectRoleTapped(sender: AnyObject) {
-        let roles = [
+    @IBAction func selectRoleTapped(sender: UIButton) {
+        endEditing()
+        // manager can't change admin's role
+        if user.role == .Admin && LoginDataStore.sharedInstance.userInfo.role != .Admin {
+            return
+        }
+        
+        let roles = LoginDataStore.sharedInstance.userInfo.role == .Admin ? [
             SimpleValue(title: UserRole.User.rawValue.localized, image: nil),
             SimpleValue(title: UserRole.Manager.rawValue.localized, image: nil),
             SimpleValue(title: UserRole.Admin.rawValue.localized, image: nil)
+        ] : // manager can't create admins
+        [
+            SimpleValue(title: UserRole.User.rawValue.localized, image: nil),
+            SimpleValue(title: UserRole.Manager.rawValue.localized, image: nil),
         ]
-        let selectedRole = SimpleValue(title: user.role.rawValue.localized, image: nil)
-        UIPopoverController.showPopover("Role".localized, values: roles, selectedValue: selectedRole, fromBarButtonItem: UIBarButtonItem()) { (selected) -> Void in
+        let selectedRole = SimpleValue(title: roleLabel.text!, image: nil)
+        UIPopoverController.showPopover("Role".localized, values: roles, selectedValue: selectedRole, fromRect: sender.frame, inView: sender.superview!) { (selected) -> Void in
             self.roleLabel.text = selected.title
         }
     }
@@ -94,7 +104,7 @@ class UserDetailsViewController: FormViewController {
     override func goNext() {
         HUD.show(.Progress)
         user.name = fullName.textValue
-        user.role = UserRole(rawValue: roleLabel.text!) ?? .User
+        user.role = UserRole(rawValue: roleLabel.text!.lowercaseString) ?? .User
         if isNew {
             user.email = emailField.textValue
             // new user - create

@@ -152,7 +152,7 @@
 		0C76A7CC1C88D0E400E6EAA9 /* User.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = User.swift; sourceTree = "<group>"; };
 		0C76A7D31C88D39300E6EAA9 /* UserCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = UserCell.swift; sourceTree = "<group>"; };
 		0C76A7D61C88D83D00E6EAA9 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Users.storyboard; sourceTree = "<group>"; };
-		0C76A7DB1C8A3A0D00E6EAA9 /* en */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = en; path = en.lproj/Users.strings; sourceTree = "<group>"; };
+		0C76A7DE1C8A3CB900E6EAA9 /* en */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = en; path = en.lproj/Users.strings; sourceTree = "<group>"; };
 		0C99AC451C87165E00E8C279 /* en */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = en; path = en.lproj/Localizable.strings; sourceTree = "<group>"; };
 		0CB117211C89A2EC008153A2 /* UserInfoStore.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = UserInfoStore.swift; sourceTree = "<group>"; };
 		0CB117231C89A9BD008153A2 /* UserDetailsViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = UserDetailsViewController.swift; sourceTree = "<group>"; };
@@ -752,7 +752,7 @@
 			isa = PBXVariantGroup;
 			children = (
 				0C76A7D61C88D83D00E6EAA9 /* Base */,
-				0C76A7DB1C8A3A0D00E6EAA9 /* en */,
+				0C76A7DE1C8A3CB900E6EAA9 /* en */,
 			);
 			name = Users.storyboard;
 			sourceTree = "<group>";

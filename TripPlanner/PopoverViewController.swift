@@ -63,14 +63,35 @@ extension UIPopoverController {
     /**
     displays popover with specifed data from specified bar item
     
-    - parameter title: popover title
-    - parameter values: popover items
-    - parameter selectedValue: selected or nil
-    - parameter fromBarButtonItem: anchor bar button
-    - parameter onSelect: selection handler
+    - parameter title:              popover title
+    - parameter values:             popover items
+    - parameter selectedValue:      selected or nil
+    - parameter fromBarButtonItem:  anchor bar button
+    - parameter onSelect:           selection handler
     */
     class func showPopover(title: String, values: [Value], selectedValue: Value?,
         fromBarButtonItem item: UIBarButtonItem, onSelect: (Value) -> Void) {
+        self.showPopover(title, values: values, selectedValue: selectedValue, fromBarButtonItem: item, fromRect: CGRect(), inView: nil, onSelect: onSelect)
+    }
+    
+    /**
+     displays popover with specifed data from specified rect in view
+     
+     - parameter title:         popover title
+     - parameter values:        popover items
+     - parameter selectedValue: selected or nil
+     - parameter fromRect:      anchor rect
+     - parameter inView:        anchor view
+     - parameter onSelect:      selection handler
+     */
+    class func showPopover(title: String, values: [Value], selectedValue: Value?,
+                fromRect rect: CGRect, inView view: UIView, onSelect: (Value) -> Void) {
+        self.showPopover(title, values: values, selectedValue: selectedValue, fromBarButtonItem: nil, fromRect: rect, inView: view, onSelect: onSelect)
+    }
+    
+    // combined implementation of the methods above that desides the presentation style
+    private class func showPopover(title: String, values: [Value], selectedValue: Value?,
+        fromBarButtonItem item: UIBarButtonItem!, fromRect rect: CGRect, inView view: UIView!, onSelect: (Value) -> Void) {
             
             // prepare table
             let vc = UIStoryboard(name: "Popovers", bundle: nil).instantiateViewControllerWithIdentifier("PopoverTableVC")
@@ -96,7 +117,13 @@ extension UIPopoverController {
                 }
                 
                 // present
-                popover.presentPopoverFromBarButtonItem(item, permittedArrowDirections: .Any, animated: true)
+                if let item = item {
+                    popover.presentPopoverFromBarButtonItem(item, permittedArrowDirections: .Any, animated: true)
+                } else
+                {
+                    popover.presentPopoverFromRect(rect, inView: view, permittedArrowDirections: .Any, animated: true)
+                }
+                
                 // disable other navigation items while presented
                 dispatch_after(dispatch_time(DISPATCH_TIME_NOW, Int64(0.1 * Double(NSEC_PER_SEC))), dispatch_get_main_queue()) {
                     popover.passthroughViews = nil

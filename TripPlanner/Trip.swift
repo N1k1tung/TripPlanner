@@ -32,8 +32,8 @@ class Trip: StoredObject {
         {
             // count days to start
             let calendar = NSCalendar.currentCalendar()
-            let days = calendar.components(.Day, fromDate: NSDate(), toDate: startDate, options: []).day
-            return "in".localized + " \(days) " + (days == 1 ? "day".localized : "days".localized)
+            let days = calendar.components(.Day, fromDate: calendar.dateBySettingHour(0, minute: 0, second: 0, ofDate: NSDate(), options: [])!, toDate: startDate, options: []).day
+            return days == 0 ? "in less than day".localized : ("in".localized + " \(days) " + (days == 1 ? "day".localized : "days".localized))
         }
     }
     

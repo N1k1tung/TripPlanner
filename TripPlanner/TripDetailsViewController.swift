@@ -61,6 +61,7 @@ class TripDetailsViewController: UIViewController, UITextViewDelegate {
         
         textView.layer.borderColor = UIColor.lightGray().CGColor
         textView.layer.borderWidth = IS_IPAD ? 1 : 0.5
+        textView.keyboardAppearance = .Dark
         
         // update UI
         if let trip = trip {
