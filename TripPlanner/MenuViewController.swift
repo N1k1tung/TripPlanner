@@ -75,13 +75,12 @@ class MenuViewController: UIViewController {
     let menus: [MenuItem: Menu] = [
         .Trips				: Menu(item: .Trips, name: "Trips".localized, controllerName: String.stringFromClass(TripsViewController.self)),
         .MonthPlan          : Menu(item: .MonthPlan, name: "Month plan".localized, controllerName: String.stringFromClass(MonthPlanViewController.self)),
-        .Users              : Menu(item: .Users, name: "Users".localized, controllerName: String.stringFromClass(TripsViewController.self)),
+        .Users              : Menu(item: .Users, name: "Users".localized, controllerName: String.stringFromClass(UsersViewController.self)),
         .Logout             : Menu(item: .Logout, name: "Logout".localized, controllerName: "")
     ]
 
     /// the sections
-    let sections: [MenuSection] = [MenuSection(name: "Trips".localized.uppercaseString, items: [.Trips, .MonthPlan]),
-        MenuSection(name: "Profile".localized.uppercaseString, items: [.Logout])]
+    var sections: [MenuSection] = []
 
     /**
     View did load
@@ -96,6 +95,29 @@ class MenuViewController: UIViewController {
         
         tableView.backgroundColor = .veryLightGray()
         self.view.backgroundColor = .veryLightGray()
+        
+        let userInfo = LoginDataStore.sharedInstance.userInfo
+        usernameLabel.text = userInfo.name
+        switch userInfo.role {
+        case .User:
+            sections = [
+                MenuSection(name: "Trips".localized.uppercaseString, items: [.Trips, .MonthPlan]),
+                MenuSection(name: "Profile".localized.uppercaseString, items: [.Logout])
+            ]
+        case .Manager:
+            sections = [
+                MenuSection(name: "Trips".localized.uppercaseString, items: [.Trips, .MonthPlan]),
+                MenuSection(name: "Users".localized.uppercaseString, items: [.Users]),
+                MenuSection(name: "Profile".localized.uppercaseString, items: [.Logout])
+            ]
+        case .Admin:
+            sections = [
+                MenuSection(name: "Trips".localized.uppercaseString, items: [.Trips, .MonthPlan]),
+                MenuSection(name: "Users".localized.uppercaseString, items: [.Users]),
+                MenuSection(name: "Profile".localized.uppercaseString, items: [.Logout])
+            ]
+        }
+        
     }
 
     /**

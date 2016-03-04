@@ -30,8 +30,14 @@ class LoginDataStore {
     /// user id
     var uid: String = ""
     
+    /// user info
+    var userInfo: User!
+    
     /// secure storage
     private let keychain = Keychain(service: "com.toptal.TripPlanner")
+    
+    /// user info store
+    private var userInfoStore: UserInfoStore?
     
     /**
      initializer
@@ -87,7 +93,21 @@ class LoginDataStore {
                 // store credentials for restoring session
                 self.keychain[kEmailKey] = email
                 self.keychain[email] = password
-                callback?(uid: authData.uid, nil)
+
+                // wait until user info is loaded
+                self.userInfoStore = UserInfoStore(uid: self.uid)
+                self.userInfoStore?.onChange = { [unowned self] in
+                    if let email = self.userInfoStore?.values["email"],
+                        let role = self.userInfoStore?.values["role"],
+                        let name = self.userInfoStore?.values["name"] {
+                            let user = User()
+                            user.email = email
+                            user.role = UserRole(rawValue: role) ?? .User
+                            user.name = name
+                            self.userInfo = user
+                            callback?(uid: authData.uid, nil)
+                    }
+                }
             }
         }
     }
@@ -110,6 +130,7 @@ class LoginDataStore {
     func logout() {
         cleanCredentials()
         ref.unauth()
+        userInfoStore = nil
     }
     
     /**
