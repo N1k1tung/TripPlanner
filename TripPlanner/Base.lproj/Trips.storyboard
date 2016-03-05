@@ -523,30 +523,19 @@
                                     <outlet property="delegate" destination="y51-1K-0hW" id="Nkf-Nm-Up6"/>
                                 </connections>
                             </tableView>
-                            <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="XO0-zV-ozE" userLabel="Shadow">
-                                <rect key="frame" x="375" y="0.0" width="12" height="667"/>
-                                <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
-                                <constraints>
-                                    <constraint firstAttribute="width" constant="12" id="xfF-Q4-qFa"/>
-                                </constraints>
-                            </view>
                         </subviews>
                         <color key="backgroundColor" white="0.0" alpha="1" colorSpace="calibratedWhite"/>
                         <constraints>
                             <constraint firstItem="CCL-Rn-RVy" firstAttribute="top" secondItem="16S-mz-9xX" secondAttribute="top" id="B1I-CO-pRs"/>
                             <constraint firstItem="CCL-Rn-RVy" firstAttribute="leading" secondItem="16S-mz-9xX" secondAttribute="leading" id="BvL-NT-hfF"/>
-                            <constraint firstItem="XO0-zV-ozE" firstAttribute="leading" secondItem="CCL-Rn-RVy" secondAttribute="trailing" id="HhU-jG-Uj9"/>
                             <constraint firstItem="CCL-Rn-RVy" firstAttribute="bottom" secondItem="tuE-Ta-2Dg" secondAttribute="top" id="NTU-f4-wLw"/>
-                            <constraint firstItem="XO0-zV-ozE" firstAttribute="bottom" secondItem="CCL-Rn-RVy" secondAttribute="bottom" id="VdK-x8-lgj"/>
                             <constraint firstAttribute="trailing" secondItem="CCL-Rn-RVy" secondAttribute="trailing" id="g1R-Ml-MdE">
                                 <variation key="heightClass=regular-widthClass=compact" constant="52"/>
                             </constraint>
-                            <constraint firstItem="XO0-zV-ozE" firstAttribute="top" secondItem="CCL-Rn-RVy" secondAttribute="top" id="wMX-wH-emc"/>
                         </constraints>
                     </view>
                     <simulatedScreenMetrics key="simulatedDestinationMetrics" type="retina47"/>
                     <connections>
-                        <outlet property="shadowView" destination="XO0-zV-ozE" id="FDB-7d-vVw"/>
                         <outlet property="tableView" destination="CCL-Rn-RVy" id="KVV-gG-NCu"/>
                         <outlet property="usernameLabel" destination="e5w-fy-53x" id="tT6-aV-NZC"/>
                     </connections>

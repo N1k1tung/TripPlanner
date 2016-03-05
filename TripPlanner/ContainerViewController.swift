@@ -34,8 +34,7 @@ class ContainerViewController: UIViewController {
         let defaultVC = create(TripsViewController)!.wrapInNavigationController()
         slideController = SlideMenuViewController(
             leftSideController: menu!,
-            defaultContent: defaultVC,
-            widthDelegate: menu!
+            defaultContent: defaultVC
         )
         loadChildController(slideController!, inContentView: self.view)
         

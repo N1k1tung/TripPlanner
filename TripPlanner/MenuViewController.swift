@@ -62,7 +62,6 @@ class MenuViewController: UIViewController {
     /// table view
     @IBOutlet weak var usernameLabel: UILabel!
     @IBOutlet weak var tableView: UITableView!
-    @IBOutlet weak var shadowView: UIView!
     
     /// connection status
     var offline = false {
@@ -87,11 +86,6 @@ class MenuViewController: UIViewController {
     */
     override func viewDidLoad() {
         super.viewDidLoad()
-        
-        // show shadow
-        shadowView.layer.shadowRadius = 7
-        shadowView.layer.shadowOffset = CGSizeMake(-6, 0)
-        shadowView.layer.shadowOpacity = 0.7
         
         tableView.backgroundColor = .veryLightGray()
         self.view.backgroundColor = .veryLightGray()
@@ -142,31 +136,17 @@ class MenuViewController: UIViewController {
         if let menu = self.menus[item] {
             if let storyboardName = menu.storyboardName {
                 let controller = UIStoryboard(name: storyboardName, bundle: nil).instantiateViewControllerWithIdentifier(menu.controllerName)
-                return controller.wrapInNavigationController()
+                return controller
             } else {
                 let controller = storyboard?.instantiateViewControllerWithIdentifier(menu.controllerName)
                 if let controller = controller {
-                    return controller.wrapInNavigationController()
+                    return controller
                 }
             }
         }
         return nil
     }
     
-}
-
-// MARK: - SlideMenuSideWidthDelegate
-extension MenuViewController : SlideMenuSideWidthDelegate
-{
-    /**
-    the width of the left side menu
-
-    - returns: the width.
-    */
-    func slideLeftMenuSideWidth() -> CGFloat {
-        return tableView.bounds.width
-    }
-
 }
 
 // MARK: - UITableViewDataSource, UITableViewDelegate

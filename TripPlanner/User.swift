@@ -46,7 +46,7 @@ public class User: StoredObject {
      
      - parameter dictionary: dictionary
      */
-    public convenience init(dictionary: [String: AnyObject]) {
+    public convenience init(dictionary: NSDictionary) {
         self.init()
         
         key = dictionary["key"] as? String

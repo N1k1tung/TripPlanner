@@ -88,10 +88,8 @@ extension UIViewController {
         
         vc.view.translatesAutoresizingMaskIntoConstraints = false
         contentView.addSubview(vc.view)
-        contentView.addConstraints(NSLayoutConstraint.constraintsWithVisualFormat("V:|-0-[view]-0-|",
-            options: [], metrics: nil, views: ["view" : vc.view]))
-        contentView.addConstraints(NSLayoutConstraint.constraintsWithVisualFormat("H:|-0-[view]-0-|",
-            options: [], metrics: nil, views: ["view" : vc.view]))
+        contentView.addConstraints(NSLayoutConstraint.constraintsWithVisualFormat("V:|[view]|", options: [], metrics: nil, views: ["view" : vc.view]))
+        contentView.addConstraints(NSLayoutConstraint.constraintsWithVisualFormat("H:|[view]|", options: [], metrics: nil, views: ["view" : vc.view]))
         
         self.view.layoutIfNeeded()
 
