@@ -8,25 +8,32 @@
 
 import UIKit
 
+// available user roles
+public enum UserRole: String {
+    case User = "user"
+    case Manager = "manager"
+    case Admin = "admin"
+}
+
 /**
  * User info model
  *
  * - author: Nikita Rodin
  * - version: 1.0
  */
-class User: StoredObject {
+public class User: StoredObject {
 
     /// fields
-    var name = ""
-    var email = ""
-    var role: UserRole = .User
+    public var name = ""
+    public var email = ""
+    public var role: UserRole = .User
     
     /**
      exports to dictionary
      
      - returns: dictionary
      */
-    override func toDictionary() -> NSDictionary {
+    public override func toDictionary() -> [String: AnyObject] {
         return [
             "name": name,
             "email": email,
@@ -39,7 +46,7 @@ class User: StoredObject {
      
      - parameter dictionary: dictionary
      */
-    convenience init(dictionary: NSDictionary) {
+    public convenience init(dictionary: [String: AnyObject]) {
         self.init()
         
         key = dictionary["key"] as? String

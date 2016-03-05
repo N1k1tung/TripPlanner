@@ -56,6 +56,10 @@
 		0C76A7CD1C88D0E400E6EAA9 /* User.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0C76A7CC1C88D0E400E6EAA9 /* User.swift */; };
 		0C76A7D41C88D39300E6EAA9 /* UserCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0C76A7D31C88D39300E6EAA9 /* UserCell.swift */; };
 		0C76A7D51C88D83D00E6EAA9 /* Users.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 0C76A7D71C88D83D00E6EAA9 /* Users.storyboard */; };
+		0C822C1F1C8B77CB00B68090 /* StoredObject.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0C76A7C61C88C07C00E6EAA9 /* StoredObject.swift */; };
+		0C822C201C8B77CB00B68090 /* Trip.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0C767C661C86483800484C05 /* Trip.swift */; };
+		0C822C211C8B77CB00B68090 /* User.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0C76A7CC1C88D0E400E6EAA9 /* User.swift */; };
+		0C822C221C8B77F500B68090 /* HelpfulFunctions.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0C225ED81C824120005FCD19 /* HelpfulFunctions.swift */; };
 		0C99AC421C87165800E8C279 /* Localizable.strings in Resources */ = {isa = PBXBuildFile; fileRef = 0C99AC441C87165800E8C279 /* Localizable.strings */; };
 		0CB117221C89A2EC008153A2 /* UserInfoStore.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0CB117211C89A2EC008153A2 /* UserInfoStore.swift */; };
 		0CB117241C89A9BD008153A2 /* UserDetailsViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0CB117231C89A9BD008153A2 /* UserDetailsViewController.swift */; };
@@ -64,7 +68,6 @@
 		0CBFCF9E1C8ADD530041EC78 /* FirebaseWrapper.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 0CBFCF8D1C8ADCD30041EC78 /* FirebaseWrapper.framework */; };
 		0CBFCFAA1C8AE2370041EC78 /* Configuration.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0CBFCFA61C8AE2370041EC78 /* Configuration.swift */; };
 		0CBFCFAB1C8AE2370041EC78 /* Logger.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0CBFCFA71C8AE2370041EC78 /* Logger.swift */; };
-		0CBFCFAC1C8AE2370041EC78 /* NSExtensions.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0CBFCFA81C8AE2370041EC78 /* NSExtensions.swift */; };
 		0CBFCFAD1C8AE2370041EC78 /* ValidationUtils.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0CBFCFA91C8AE2370041EC78 /* ValidationUtils.swift */; };
 		0CBFCFAF1C8AE24B0041EC78 /* Configuration.plist in Resources */ = {isa = PBXBuildFile; fileRef = 0CBFCFAE1C8AE24B0041EC78 /* Configuration.plist */; };
 		0CBFCFB01C8AE24B0041EC78 /* Configuration.plist in Resources */ = {isa = PBXBuildFile; fileRef = 0CBFCFAE1C8AE24B0041EC78 /* Configuration.plist */; };
@@ -173,7 +176,6 @@
 		0CBFCF9D1C8ADD530041EC78 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		0CBFCFA61C8AE2370041EC78 /* Configuration.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Configuration.swift; sourceTree = "<group>"; };
 		0CBFCFA71C8AE2370041EC78 /* Logger.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Logger.swift; sourceTree = "<group>"; };
-		0CBFCFA81C8AE2370041EC78 /* NSExtensions.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = NSExtensions.swift; sourceTree = "<group>"; };
 		0CBFCFA91C8AE2370041EC78 /* ValidationUtils.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ValidationUtils.swift; sourceTree = "<group>"; };
 		0CBFCFAE1C8AE24B0041EC78 /* Configuration.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; path = Configuration.plist; sourceTree = "<group>"; };
 		0CBFCFB11C8AE7A40041EC78 /* FirebaseRequestManager.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = FirebaseRequestManager.swift; sourceTree = "<group>"; };
@@ -477,7 +479,6 @@
 			children = (
 				0CBFCFA61C8AE2370041EC78 /* Configuration.swift */,
 				0CBFCFA71C8AE2370041EC78 /* Logger.swift */,
-				0CBFCFA81C8AE2370041EC78 /* NSExtensions.swift */,
 				0CBFCFA91C8AE2370041EC78 /* ValidationUtils.swift */,
 			);
 			name = Common;
@@ -888,9 +889,12 @@
 			buildActionMask = 2147483647;
 			files = (
 				0CBFCFAD1C8AE2370041EC78 /* ValidationUtils.swift in Sources */,
-				0CBFCFAC1C8AE2370041EC78 /* NSExtensions.swift in Sources */,
+				0C822C1F1C8B77CB00B68090 /* StoredObject.swift in Sources */,
+				0C822C221C8B77F500B68090 /* HelpfulFunctions.swift in Sources */,
 				0CBFCFAA1C8AE2370041EC78 /* Configuration.swift in Sources */,
+				0C822C211C8B77CB00B68090 /* User.swift in Sources */,
 				0CBFCFAB1C8AE2370041EC78 /* Logger.swift in Sources */,
+				0C822C201C8B77CB00B68090 /* Trip.swift in Sources */,
 				0CBFCFB21C8AE7A40041EC78 /* FirebaseRequestManager.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -1142,7 +1146,7 @@
 				DYLIB_INSTALL_NAME_BASE = "@rpath";
 				INFOPLIST_FILE = FirebaseWrapper/Info.plist;
 				INSTALL_PATH = "$(LOCAL_LIBRARY_DIR)/Frameworks";
-				IPHONEOS_DEPLOYMENT_TARGET = 9.2;
+				IPHONEOS_DEPLOYMENT_TARGET = 8.0;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks @loader_path/Frameworks";
 				PRODUCT_BUNDLE_IDENTIFIER = com.toptal.FirebaseWrapper;
 				PRODUCT_NAME = "$(TARGET_NAME)";
@@ -1166,7 +1170,7 @@
 				DYLIB_INSTALL_NAME_BASE = "@rpath";
 				INFOPLIST_FILE = FirebaseWrapper/Info.plist;
 				INSTALL_PATH = "$(LOCAL_LIBRARY_DIR)/Frameworks";
-				IPHONEOS_DEPLOYMENT_TARGET = 9.2;
+				IPHONEOS_DEPLOYMENT_TARGET = 8.0;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks @loader_path/Frameworks";
 				PRODUCT_BUNDLE_IDENTIFIER = com.toptal.FirebaseWrapper;
 				PRODUCT_NAME = "$(TARGET_NAME)";

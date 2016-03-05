@@ -61,8 +61,9 @@ public class FirebaseRequestManager {
     /**
     performs GET request on /users/<uid>
     
-    - parameter success success handler
-    - parameter failure failure handler
+     - parameter uid user id
+     - parameter success success handler
+     - parameter failure failure handler
     */
     public func getUserInfo(uid: String, success: FirebaseRequestSuccessHandler?, failure: FirebaseRequestFailureHandler?) {
         if !ValidationUtils.validateId(uid, failure) {
@@ -72,9 +73,53 @@ public class FirebaseRequestManager {
     }
     
     /**
+     performs PATCH request on /users/<uid>
+     
+     - parameter uid user id
+     - parameter data user data
+     - parameter success success handler
+     - parameter failure failure handler
+     */
+    public func updateUserInfo(uid: String, data: User, success: FirebaseRequestSuccessHandler?, failure: FirebaseRequestFailureHandler?) {
+        if !ValidationUtils.validateId(uid, failure) || !ValidationUtils.validateUser(data, failure) {
+            return
+        }
+        self.performRequest("/users/\(uid)", method: .PATCH, parameters: data.toDictionary(), success: success, failure: failure)
+    }
+    
+    /**
+     performs POST request on /users
+     
+     - parameter data user data
+     - parameter success success handler
+     - parameter failure failure handler
+     */
+    public func createUserInfo(data: User, success: FirebaseRequestSuccessHandler?, failure: FirebaseRequestFailureHandler?) {
+        if !ValidationUtils.validateUser(data, failure) {
+            return
+        }
+        self.performRequest("/users", method: .POST, parameters: data.toDictionary(), success: success, failure: failure)
+    }
+    
+    /**
+     performs DELETE request on /users/<uid>
+     
+     - parameter uid user id
+     - parameter data user data
+     - parameter success success handler
+     - parameter failure failure handler
+     */
+    public func deleteUserInfo(uid: String, success: FirebaseRequestSuccessHandler?, failure: FirebaseRequestFailureHandler?) {
+        if !ValidationUtils.validateId(uid, failure) {
+            return
+        }
+        self.performRequest("/users/\(uid)", method: .DELETE, success: success, failure: failure)
+    }
+    
+    /**
      performs GET request on /trips/<uid>
      
-     - parameter parameters parameters to add
+     - parameter uid user id
      - parameter success success handler
      - parameter failure failure handler
      */
@@ -83,6 +128,68 @@ public class FirebaseRequestManager {
             return
         }
         self.performRequest("/trips/\(uid)", success: success, failure: failure)
+    }
+    
+    /**
+     performs GET request on /trips/<uid>/<tripID>
+     
+     - parameter uid user id
+     - parameter tripID trip id
+     - parameter success success handler
+     - parameter failure failure handler
+     */
+    public func getUserTrip(uid: String, withID tripID: String, success: FirebaseRequestSuccessHandler?, failure: FirebaseRequestFailureHandler?) {
+        if !ValidationUtils.validateIds([uid, tripID], failure) {
+            return
+        }
+        self.performRequest("/trips/\(uid)/\(tripID)", success: success, failure: failure)
+    }
+    
+    /**
+     performs PATCH request on /trips/<uid>/<tripID>
+     
+     - parameter uid user id
+     - parameter tripID trip id
+     - parameter data trip data
+     - parameter success success handler
+     - parameter failure failure handler
+     */
+    public func updateUserTrip(uid: String, withID tripID: String, data: Trip, success: FirebaseRequestSuccessHandler?, failure: FirebaseRequestFailureHandler?) {
+        if !ValidationUtils.validateIds([uid, tripID], failure) || !ValidationUtils.validateTrip(data, failure) {
+            return
+        }
+        self.performRequest("/trips/\(uid)/\(tripID)", method: .PATCH, parameters: data.toDictionary(), success: success, failure: failure)
+    }
+    
+    /**
+     performs POST request on /trips/<uid>
+     
+     - parameter uid user id
+     - parameter data trip data
+     - parameter success success handler
+     - parameter failure failure handler
+     */
+    public func createUserTrip(uid: String, data: Trip, success: FirebaseRequestSuccessHandler?, failure: FirebaseRequestFailureHandler?) {
+        if !ValidationUtils.validateId(uid, failure) || !ValidationUtils.validateTrip(data, failure) {
+            return
+        }
+        self.performRequest("/trips/\(uid)/", method: .POST, parameters: data.toDictionary(), success: success, failure: failure)
+    }
+    
+    /**
+     performs DELETE request on /trips/<uid>/<tripID>
+     
+     - parameter uid user id
+     - parameter tripID trip id
+     - parameter data trip data
+     - parameter success success handler
+     - parameter failure failure handler
+     */
+    public func deleteUserTrip(uid: String, withID tripID: String, success: FirebaseRequestSuccessHandler?, failure: FirebaseRequestFailureHandler?) {
+        if !ValidationUtils.validateIds([uid, tripID], failure) {
+            return
+        }
+        self.performRequest("/trips/\(uid)/\(tripID)", method: .DELETE, success: success, failure: failure)
     }
     
     

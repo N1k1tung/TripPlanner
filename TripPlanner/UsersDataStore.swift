@@ -9,13 +9,6 @@
 import UIKit
 import Firebase
 
-// available user roles
-enum UserRole: String {
-    case User = "user"
-    case Manager = "manager"
-    case Admin = "admin"
-}
-
 /**
  * Firebase wrapper for users
  *

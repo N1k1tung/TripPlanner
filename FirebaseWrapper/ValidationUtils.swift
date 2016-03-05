@@ -81,5 +81,36 @@ public class ValidationUtils {
             }
             return true
     }
+ 
+    /**
+     Check trip if it has empty destination or wrong dates and callback failure if it has.
+     
+     - parameter dict:      the dictionary to check
+     - parameter failure:   the closure to invoke if validation fails
+     
+     - returns: true if string is not empty
+     */
+    public class func validateTrip(trip: Trip?, _ failure:FirebaseRequestFailureHandler?) -> Bool {
+        if trip == nil || trip!.destination == nil || trip!.startDate.compare(trip!.endDate) == .OrderedDescending {
+            failure?(NSError.FirebaseError("Invalid Trip"))
+            return false
+        }
+        return true
+    }
     
+    /**
+     Check user if it has empty fields
+     
+     - parameter dict:      the dictionary to check
+     - parameter failure:   the closure to invoke if validation fails
+     
+     - returns: true if string is not empty
+     */
+    public class func validateUser(user: User?, _ failure:FirebaseRequestFailureHandler?) -> Bool {
+        if user == nil || user!.name.trim().isEmpty || user!.email.trim().isEmpty {
+            failure?(NSError.FirebaseError("Invalid User Info"))
+            return false
+        }
+        return true
+    }
 }

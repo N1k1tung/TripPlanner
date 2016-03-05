@@ -14,17 +14,17 @@ import UIKit
  * - author: Nikita Rodin
  * - version: 1.0
  */
-class StoredObject: NSObject {
+public class StoredObject: NSObject {
 
     /// fields
-    var key: String?
+    public var key: String?
 
     /**
      exports to dictionary
      
      - returns: dictionary
      */
-    func toDictionary() -> NSDictionary {
+    public func toDictionary() -> [String: AnyObject] {
         return [:]
     }
     
@@ -40,7 +40,7 @@ class StoredObject: NSObject {
      
      - parameter dictionary: dictionary
      */
-    convenience init(dictionary: NSDictionary) {
+    public convenience init(dictionary: [String: AnyObject]) {
         self.init()
         
         key = dictionary["key"] as? String

@@ -15,16 +15,16 @@ import CoreLocation
  * - author: Nikita Rodin
  * - version: 1.0
  */
-class Trip: StoredObject {
+public class Trip: StoredObject {
 
     /// fields
-    var destination: (String, CLLocationCoordinate2D)?
-    var startDate: NSDate = NSDate()
-    var endDate: NSDate = NSDate()
-    var comment: String?
+    public var destination: (String, CLLocationCoordinate2D)?
+    public var startDate: NSDate = NSDate()
+    public var endDate: NSDate = NSDate()
+    public var comment: String?
     
     /// calculates status
-    var status: String {
+    public var status: String {
         if startDate.timeIntervalSinceNow < 0 {
             // already started
             return endDate.timeIntervalSinceNow < 0 ? "Finished".localized : "Started".localized
@@ -42,7 +42,7 @@ class Trip: StoredObject {
      
      - returns: dictionary
      */
-    override func toDictionary() -> NSDictionary {
+    public override func toDictionary() -> [String: AnyObject] {
         return [
             "destinationName": destination?.0 ?? "",
             "destinationLat": destination?.1.latitude ?? 0,
@@ -58,7 +58,7 @@ class Trip: StoredObject {
      
      - parameter dictionary: dictionary
      */
-    convenience init(dictionary: NSDictionary) {
+    public convenience init(dictionary: [String: AnyObject]) {
         self.init()
         
         key = dictionary["key"] as? String
