@@ -35,7 +35,6 @@
 		0C4FF3D81C81ABA500EB935F /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 0C4FF3D61C81ABA500EB935F /* Main.storyboard */; };
 		0C4FF3DA1C81ABA500EB935F /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 0C4FF3D91C81ABA500EB935F /* Assets.xcassets */; };
 		0C4FF3DD1C81ABA500EB935F /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 0C4FF3DB1C81ABA500EB935F /* LaunchScreen.storyboard */; };
-		0C4FF3E81C81ABA500EB935F /* TripPlannerUITests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0C4FF3E71C81ABA500EB935F /* TripPlannerUITests.swift */; };
 		0C767C471C83099800484C05 /* Poppins-Bold.ttf in Resources */ = {isa = PBXBuildFile; fileRef = 0C767C3F1C83099800484C05 /* Poppins-Bold.ttf */; };
 		0C767C481C83099800484C05 /* Poppins-Light.ttf in Resources */ = {isa = PBXBuildFile; fileRef = 0C767C401C83099800484C05 /* Poppins-Light.ttf */; };
 		0C767C491C83099800484C05 /* Poppins-Medium.ttf in Resources */ = {isa = PBXBuildFile; fileRef = 0C767C411C83099800484C05 /* Poppins-Medium.ttf */; };
@@ -82,13 +81,6 @@
 			proxyType = 1;
 			remoteGlobalIDString = 0C225EEF1C82422A005FCD19;
 			remoteInfo = UIComponents;
-		};
-		0C4FF3E41C81ABA500EB935F /* PBXContainerItemProxy */ = {
-			isa = PBXContainerItemProxy;
-			containerPortal = 0C4FF3C71C81ABA500EB935F /* Project object */;
-			proxyType = 1;
-			remoteGlobalIDString = 0C4FF3CE1C81ABA500EB935F;
-			remoteInfo = TripPlanner;
 		};
 		0CBFCF9F1C8ADD530041EC78 /* PBXContainerItemProxy */ = {
 			isa = PBXContainerItemProxy;
@@ -144,9 +136,6 @@
 		0C4FF3D91C81ABA500EB935F /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		0C4FF3DC1C81ABA500EB935F /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
 		0C4FF3DE1C81ABA500EB935F /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
-		0C4FF3E31C81ABA500EB935F /* TripPlannerUITests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = TripPlannerUITests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
-		0C4FF3E71C81ABA500EB935F /* TripPlannerUITests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TripPlannerUITests.swift; sourceTree = "<group>"; };
-		0C4FF3E91C81ABA500EB935F /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		0C767C3C1C83099800484C05 /* DESCRIPTION.en_us.html */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.html; path = DESCRIPTION.en_us.html; sourceTree = "<group>"; };
 		0C767C3D1C83099800484C05 /* METADATA.json */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.json; path = METADATA.json; sourceTree = "<group>"; };
 		0C767C3E1C83099800484C05 /* OFL.txt */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text; path = OFL.txt; sourceTree = "<group>"; };
@@ -212,13 +201,6 @@
 			files = (
 				0C225EF71C82422A005FCD19 /* UIComponents.framework in Frameworks */,
 				94E88394A25019D0F7604FBF /* Pods_TripPlanner.framework in Frameworks */,
-			);
-			runOnlyForDeploymentPostprocessing = 0;
-		};
-		0C4FF3E01C81ABA500EB935F /* Frameworks */ = {
-			isa = PBXFrameworksBuildPhase;
-			buildActionMask = 2147483647;
-			files = (
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -299,7 +281,6 @@
 			isa = PBXGroup;
 			children = (
 				0C4FF3D11C81ABA500EB935F /* TripPlanner */,
-				0C4FF3E61C81ABA500EB935F /* TripPlannerUITests */,
 				0C225EF11C82422A005FCD19 /* UIComponents */,
 				0CBFCF8E1C8ADCD30041EC78 /* FirebaseWrapper */,
 				0CBFCF9A1C8ADD530041EC78 /* FirebaseWrapperTests */,
@@ -313,7 +294,6 @@
 			isa = PBXGroup;
 			children = (
 				0C4FF3CF1C81ABA500EB935F /* TripPlanner.app */,
-				0C4FF3E31C81ABA500EB935F /* TripPlannerUITests.xctest */,
 				0C225EF01C82422A005FCD19 /* UIComponents.framework */,
 				0CBFCF8D1C8ADCD30041EC78 /* FirebaseWrapper.framework */,
 				0CBFCF991C8ADD530041EC78 /* FirebaseWrapperTests.xctest */,
@@ -331,15 +311,6 @@
 				0C767C591C8381D700484C05 /* Resources */,
 			);
 			path = TripPlanner;
-			sourceTree = "<group>";
-		};
-		0C4FF3E61C81ABA500EB935F /* TripPlannerUITests */ = {
-			isa = PBXGroup;
-			children = (
-				0C4FF3E71C81ABA500EB935F /* TripPlannerUITests.swift */,
-				0C4FF3E91C81ABA500EB935F /* Info.plist */,
-			);
-			path = TripPlannerUITests;
 			sourceTree = "<group>";
 		};
 		0C767C3A1C83099800484C05 /* Fonts */ = {
@@ -605,24 +576,6 @@
 			productReference = 0C4FF3CF1C81ABA500EB935F /* TripPlanner.app */;
 			productType = "com.apple.product-type.application";
 		};
-		0C4FF3E21C81ABA500EB935F /* TripPlannerUITests */ = {
-			isa = PBXNativeTarget;
-			buildConfigurationList = 0C4FF3EF1C81ABA500EB935F /* Build configuration list for PBXNativeTarget "TripPlannerUITests" */;
-			buildPhases = (
-				0C4FF3DF1C81ABA500EB935F /* Sources */,
-				0C4FF3E01C81ABA500EB935F /* Frameworks */,
-				0C4FF3E11C81ABA500EB935F /* Resources */,
-			);
-			buildRules = (
-			);
-			dependencies = (
-				0C4FF3E51C81ABA500EB935F /* PBXTargetDependency */,
-			);
-			name = TripPlannerUITests;
-			productName = TripPlannerUITests;
-			productReference = 0C4FF3E31C81ABA500EB935F /* TripPlannerUITests.xctest */;
-			productType = "com.apple.product-type.bundle.ui-testing";
-		};
 		0CBFCF8C1C8ADCD30041EC78 /* FirebaseWrapper */ = {
 			isa = PBXNativeTarget;
 			buildConfigurationList = 0CBFCF941C8ADCD40041EC78 /* Build configuration list for PBXNativeTarget "FirebaseWrapper" */;
@@ -681,10 +634,6 @@
 						CreatedOnToolsVersion = 7.2.1;
 						DevelopmentTeam = P4U27N5P3S;
 					};
-					0C4FF3E21C81ABA500EB935F = {
-						CreatedOnToolsVersion = 7.2.1;
-						TestTargetID = 0C4FF3CE1C81ABA500EB935F;
-					};
 					0CBFCF8C1C8ADCD30041EC78 = {
 						CreatedOnToolsVersion = 7.2.1;
 					};
@@ -707,7 +656,6 @@
 			projectRoot = "";
 			targets = (
 				0C4FF3CE1C81ABA500EB935F /* TripPlanner */,
-				0C4FF3E21C81ABA500EB935F /* TripPlannerUITests */,
 				0C225EEF1C82422A005FCD19 /* UIComponents */,
 				0CBFCF8C1C8ADCD30041EC78 /* FirebaseWrapper */,
 				0CBFCF981C8ADD530041EC78 /* FirebaseWrapperTests */,
@@ -740,13 +688,6 @@
 				0C767C4B1C83099800484C05 /* Poppins-SemiBold.ttf in Resources */,
 				0C4FF3D81C81ABA500EB935F /* Main.storyboard in Resources */,
 				0C767C491C83099800484C05 /* Poppins-Medium.ttf in Resources */,
-			);
-			runOnlyForDeploymentPostprocessing = 0;
-		};
-		0C4FF3E11C81ABA500EB935F /* Resources */ = {
-			isa = PBXResourcesBuildPhase;
-			buildActionMask = 2147483647;
-			files = (
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -942,14 +883,6 @@
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
-		0C4FF3DF1C81ABA500EB935F /* Sources */ = {
-			isa = PBXSourcesBuildPhase;
-			buildActionMask = 2147483647;
-			files = (
-				0C4FF3E81C81ABA500EB935F /* TripPlannerUITests.swift in Sources */,
-			);
-			runOnlyForDeploymentPostprocessing = 0;
-		};
 		0CBFCF881C8ADCD30041EC78 /* Sources */ = {
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
@@ -977,11 +910,6 @@
 			isa = PBXTargetDependency;
 			target = 0C225EEF1C82422A005FCD19 /* UIComponents */;
 			targetProxy = 0C225EF51C82422A005FCD19 /* PBXContainerItemProxy */;
-		};
-		0C4FF3E51C81ABA500EB935F /* PBXTargetDependency */ = {
-			isa = PBXTargetDependency;
-			target = 0C4FF3CE1C81ABA500EB935F /* TripPlanner */;
-			targetProxy = 0C4FF3E41C81ABA500EB935F /* PBXContainerItemProxy */;
 		};
 		0CBFCFA01C8ADD530041EC78 /* PBXTargetDependency */ = {
 			isa = PBXTargetDependency;
@@ -1202,30 +1130,6 @@
 			};
 			name = Release;
 		};
-		0C4FF3F01C81ABA500EB935F /* Debug */ = {
-			isa = XCBuildConfiguration;
-			buildSettings = {
-				INFOPLIST_FILE = TripPlannerUITests/Info.plist;
-				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks @loader_path/Frameworks";
-				PRODUCT_BUNDLE_IDENTIFIER = com.toptal.TripPlannerUITests;
-				PRODUCT_NAME = "$(TARGET_NAME)";
-				TEST_TARGET_NAME = TripPlanner;
-				USES_XCTRUNNER = YES;
-			};
-			name = Debug;
-		};
-		0C4FF3F11C81ABA500EB935F /* Release */ = {
-			isa = XCBuildConfiguration;
-			buildSettings = {
-				INFOPLIST_FILE = TripPlannerUITests/Info.plist;
-				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks @loader_path/Frameworks";
-				PRODUCT_BUNDLE_IDENTIFIER = com.toptal.TripPlannerUITests;
-				PRODUCT_NAME = "$(TARGET_NAME)";
-				TEST_TARGET_NAME = TripPlanner;
-				USES_XCTRUNNER = YES;
-			};
-			name = Release;
-		};
 		0CBFCF921C8ADCD30041EC78 /* Debug */ = {
 			isa = XCBuildConfiguration;
 			baseConfigurationReference = 09C5BA76ABF56773D18CE370 /* Pods-FirebaseWrapper.debug.xcconfig */;
@@ -1323,15 +1227,6 @@
 			buildConfigurations = (
 				0C4FF3ED1C81ABA500EB935F /* Debug */,
 				0C4FF3EE1C81ABA500EB935F /* Release */,
-			);
-			defaultConfigurationIsVisible = 0;
-			defaultConfigurationName = Release;
-		};
-		0C4FF3EF1C81ABA500EB935F /* Build configuration list for PBXNativeTarget "TripPlannerUITests" */ = {
-			isa = XCConfigurationList;
-			buildConfigurations = (
-				0C4FF3F01C81ABA500EB935F /* Debug */,
-				0C4FF3F11C81ABA500EB935F /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
 			defaultConfigurationName = Release;
