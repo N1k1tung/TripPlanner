@@ -48,6 +48,7 @@ public class FirebaseRequestManager {
 
     // MARK: - interface
 
+    // MARK: users
     /**
     performs GET request on /users
     
@@ -115,6 +116,8 @@ public class FirebaseRequestManager {
         }
         self.performRequest("/users/\(uid)", method: .DELETE, success: success, failure: failure)
     }
+    
+    // MARK: trips
     
     /**
      performs GET request on /trips/<uid>

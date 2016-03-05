@@ -107,7 +107,7 @@ public class ValidationUtils {
      - returns: true if string is not empty
      */
     public class func validateUser(user: User?, _ failure:FirebaseRequestFailureHandler?) -> Bool {
-        if user == nil || user!.name.trim().isEmpty || user!.email.trim().isEmpty {
+        if user == nil || user!.name.trim().isEmpty || !user!.email.isEmail() {
             failure?(NSError.FirebaseError("Invalid User Info"))
             return false
         }
