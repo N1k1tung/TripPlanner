@@ -3,14 +3,14 @@
 <plist version="1.0">
 <dict>
 	<key>logLevel</key>
-	<integer>2</integer>
-	<key>vimeoAccessToken</key>
-	<string>84541abbf0232ef2d06923c6089d909e</string>
-	<key>cacheExpiration</key>
-	<integer>7200</integer>
-	<key>userInfoCacheExpiration</key>
-	<integer>86400</integer>
+	<integer>3</integer>
+	<key>firebaseAccessToken</key>
+	<string>UwfXzUHqRzNDkQK18L4vaTvX54uz4kqIATJW0oZG</string>
 	<key>endpoint</key>
-	<string>https://api.vimeo.com</string>
+	<string>https://shining-fire-122.firebaseio.com</string>
+	<key>testUID</key>
+	<string>60864a8a-5ba3-441e-a07c-d32a464587c7</string>
+	<key>testTripID</key>
+	<string>-KC0WV89vLvReaW_QzIN</string>
 </dict>
 </plist>

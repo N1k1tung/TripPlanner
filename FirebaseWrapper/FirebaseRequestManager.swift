@@ -47,64 +47,46 @@ public class FirebaseRequestManager {
     }
 
     // MARK: - interface
-    
+
     /**
-    performs GET request on /me
+    performs GET request on /users
     
     - parameter success success handler
     - parameter failure failure handler
     */
-    public func getUserInfo(success: FirebaseRequestSuccessHandler?, failure: FirebaseRequestFailureHandler?) {
-        self.performGet("/me", parameters: nil, success: success, failure: failure)
+    public func getUsers(success: FirebaseRequestSuccessHandler?, failure: FirebaseRequestFailureHandler?) {
+        self.performRequest("/users", success: success, failure: failure)
     }
     
     /**
-     performs GET request on /me/albums
-     
-     - parameter parameters parameters to add
-     - parameter success success handler
-     - parameter failure failure handler
-     */
-    public func getAlbums(parameters: [String : AnyObject]? = nil, success: FirebaseRequestSuccessHandler?, failure: FirebaseRequestFailureHandler?) {
-        self.performGet("/me/albums", parameters: parameters, success: success, failure: failure)
-    }
+    performs GET request on /users/<uid>
     
-    /**
-     performs GET request on /me/albums/{albumID}/videos
-     
-     - parameter albumID the albumID
-     - parameter parameters parameters to add
-     - parameter success success handler
-     - parameter failure failure handler
-     */
-    public func getVideosInAlbum(albumID: String, parameters: [String : AnyObject]? = nil, success: FirebaseRequestSuccessHandler?, failure: FirebaseRequestFailureHandler?) {
-        if !ValidationUtils.validateId(albumID, failure) {
+    - parameter success success handler
+    - parameter failure failure handler
+    */
+    public func getUserInfo(uid: String, success: FirebaseRequestSuccessHandler?, failure: FirebaseRequestFailureHandler?) {
+        if !ValidationUtils.validateId(uid, failure) {
             return
         }
-        self.performGet("/me/albums/\(albumID)/videos", parameters: parameters, success: success, failure: failure)
+        self.performRequest("/users/\(uid)", success: success, failure: failure)
     }
     
     /**
-     performs GET request on /me/videos with query
+     performs GET request on /trips/<uid>
      
-     - parameter query search query
      - parameter parameters parameters to add
      - parameter success success handler
      - parameter failure failure handler
      */
-    public func searchVideos(query: String, parameters: [String : AnyObject]? = nil, success: FirebaseRequestSuccessHandler?, failure: FirebaseRequestFailureHandler?) {
-        if !ValidationUtils.validateStringNotEmpty(query, failure) {
+    public func getUserTrips(uid: String, success: FirebaseRequestSuccessHandler?, failure: FirebaseRequestFailureHandler?) {
+        if !ValidationUtils.validateId(uid, failure) {
             return
         }
-        var params = parameters ?? [:]
-        params["query"] = query
-        self.performGet("/me/videos", parameters: params, success: success, failure: failure)
+        self.performRequest("/trips/\(uid)", success: success, failure: failure)
     }
+    
     
     // MARK: - private
-    
-    /// basic authorization headers
-    private var authHeaders: [String: String] = ["Authorization": "Bearer \(Configuration.FirebaseAccessToken)"]
     
     /**
     creates full request path
@@ -114,50 +96,28 @@ public class FirebaseRequestManager {
     :returns: full request path
     */
     private func getFullPath(path: String) -> String {
-        return Configuration.endpoint + path
+        return Configuration.endpoint + path + ".json?auth=\(Configuration.firebaseAccessToken)"
     }
     
     /**
-    performs GET request on specified path
+    performs request on specified path
     
-    - parameter path subpath
-    - parameter parameters parameters to add
-    - parameter success success handler
-    - parameter failure failure handler
-    */
-    private func performGet(path: String, parameters: [String : AnyObject]? = nil, success: FirebaseRequestSuccessHandler?, failure: FirebaseRequestFailureHandler?) {
-        // reachability check
-        if !FirebaseRequestManager.isReachable {
-            let e = NSError.FirebaseError("No Internet connection")
-            failure?(e)
-            return
-        }
-        Logger.log(.Debug, "Performing GET from \(path) with parameters: \(parameters)")
-        // perform request
-        Alamofire.request(.GET, getFullPath(path), parameters: parameters, headers: authHeaders)
-            .response { (request, response, data, error) -> Void in
-                self.processJSONResponse(response, data: data, error: error, success: success, failure: failure)
-        }
-    }
-    
-    /**
-    performs POST request on specified path
-    
+    - parameter method method
     - parameter path subpath
     - parameter parameters parameters to put into body
     - parameter success success handler
     - parameter failure failure handler
     */
-    private func performPost(path: String, parameters: [String : AnyObject]? = nil, success: FirebaseRequestSuccessHandler?, failure: FirebaseRequestFailureHandler?) {
+    private func performRequest(path: String, method: Alamofire.Method = .GET, parameters: [String : AnyObject]? = nil, success: FirebaseRequestSuccessHandler?, failure: FirebaseRequestFailureHandler?) {
         // reachability check
         if !FirebaseRequestManager.isReachable {
             let e = NSError.FirebaseError("No Internet connection")
             failure?(e)
             return
         }
-        Logger.log(.Debug, "Performing POST to \(path) with parameters: \(parameters)")
+        Logger.log(.Debug, "Performing \(method.rawValue) to \(path) with parameters: \(parameters)")
         // perform request
-        Alamofire.request(.POST, getFullPath(path), parameters: parameters, headers: authHeaders, encoding: .JSON)
+        Alamofire.request(method, getFullPath(path), parameters: parameters, headers: nil, encoding: method == .GET ? .URL : .JSON)
             .response { (request, response, data, error) -> Void in
                 self.processJSONResponse(response, data: data, error: error, success: success, failure: failure)
         }

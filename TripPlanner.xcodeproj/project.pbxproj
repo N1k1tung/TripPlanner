@@ -70,7 +70,6 @@
 		0CBFCFAF1C8AE24B0041EC78 /* Configuration.plist in Resources */ = {isa = PBXBuildFile; fileRef = 0CBFCFAE1C8AE24B0041EC78 /* Configuration.plist */; };
 		0CBFCFB01C8AE24B0041EC78 /* Configuration.plist in Resources */ = {isa = PBXBuildFile; fileRef = 0CBFCFAE1C8AE24B0041EC78 /* Configuration.plist */; };
 		0CBFCFB21C8AE7A40041EC78 /* FirebaseRequestManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0CBFCFB11C8AE7A40041EC78 /* FirebaseRequestManager.swift */; };
-		0CBFCFB31C8AE7A40041EC78 /* FirebaseRequestManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0CBFCFB11C8AE7A40041EC78 /* FirebaseRequestManager.swift */; };
 		1D0A94595E9EEFF6E5FFCC89 /* Pods_FirebaseWrapperTests.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = B03FE9D93B9EAE8D51CFD53E /* Pods_FirebaseWrapperTests.framework */; };
 		1E3990A75146E86E49512B72 /* Pods_FirebaseWrapper.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = E9950EC6E1DDA9F3866E7B69 /* Pods_FirebaseWrapper.framework */; };
 		94E88394A25019D0F7604FBF /* Pods_TripPlanner.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 46068CB9476AE3C5555A826A /* Pods_TripPlanner.framework */; };
@@ -967,7 +966,6 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				0CBFCFB31C8AE7A40041EC78 /* FirebaseRequestManager.swift in Sources */,
 				0CBFCF9C1C8ADD530041EC78 /* FirebaseWrapperTests.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;

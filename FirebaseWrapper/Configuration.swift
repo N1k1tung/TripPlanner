@@ -44,8 +44,20 @@ class Configuration: NSObject {
     }
     
     /// access token
-    class var vimeoAccessToken: String {
-        return self.sharedInstance.dict!["vimeoAccessToken"] as! String
+    class var firebaseAccessToken: String {
+        return self.sharedInstance.dict!["firebaseAccessToken"] as! String
     }
+
+    // MARK: - test data
+    /// test UID
+    class var testUID: String {
+        return self.sharedInstance.dict!["testUID"] as! String
+    }
+    
+    /// test trip ID
+    class var testTripID: String {
+        return self.sharedInstance.dict!["testTripID"] as! String
+    }
+
     
 }
