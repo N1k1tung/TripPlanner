@@ -1,0 +1,16 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE plist PUBLIC "-//Apple//DTD PLIST 1.0//EN" "http://www.apple.com/DTDs/PropertyList-1.0.dtd">
+<plist version="1.0">
+<dict>
+	<key>logLevel</key>
+	<integer>2</integer>
+	<key>vimeoAccessToken</key>
+	<string>84541abbf0232ef2d06923c6089d909e</string>
+	<key>cacheExpiration</key>
+	<integer>7200</integer>
+	<key>userInfoCacheExpiration</key>
+	<integer>86400</integer>
+	<key>endpoint</key>
+	<string>https://api.vimeo.com</string>
+</dict>
+</plist>
