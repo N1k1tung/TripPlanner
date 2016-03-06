@@ -1,9 +1,9 @@
 //
 //  Configuration.swift
-//  VimeoWrapper
+//  FirebaseWrapper
 //
-//  Created by Nikita Rodin on 1/24/16.
-//  Copyright (c) 2016 Nikita Rodin. All rights reserved.
+//  Created by Nikita Rodin on 3/5/16.
+//  Copyright © 2016 Toptal. All rights reserved.
 //
 
 import UIKit
