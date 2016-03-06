@@ -62,3 +62,7 @@ Configuration values are:
 ## Notes
 
 The Firebase REST API is supposed to be used for server-side backend code, so there's no practical way to implement auth on client with it: [https://www.firebase.com/docs/rest/guide/user-auth.html](https://www.firebase.com/docs/rest/guide/user-auth.html). Hence I used the actual Firebase SDK for iOS to integrate with Firebase and made a separate test suite against a REST API wrapper which allows similar CRUD operations 
+
+## Verification Steps
+
+Please follow the provided Verification Guide.pdf

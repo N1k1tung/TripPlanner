@@ -233,7 +233,7 @@ class SlideMenuViewController: UIViewController, UIGestureRecognizerDelegate {
      */
     func gestureRecognizer(gestureRecognizer: UIGestureRecognizer, shouldReceiveTouch touch: UITouch) -> Bool {
         if gestureRecognizer.state == .Possible && collapsed {
-            return touch.locationInView(gestureRecognizer.view).x < (IS_IPAD ? 250 : 100)
+            return touch.locationInView(gestureRecognizer.view).x < (IS_IPAD ? 250 : 160)
         }
         return true
     }
