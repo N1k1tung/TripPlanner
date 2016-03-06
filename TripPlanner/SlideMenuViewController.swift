@@ -14,7 +14,7 @@ import UIKit
  * - author: Nikita Rodin
  * - version: 1.0
  */
-class SlideMenuViewController: UIViewController {
+class SlideMenuViewController: UIViewController, UIGestureRecognizerDelegate {
 
     /// root navigation controller
     let containerNavigationController : UINavigationController
@@ -47,6 +47,7 @@ class SlideMenuViewController: UIViewController {
         // pan gesture
         panGestureRecognizer.addTarget(self, action: "handlePan:")
         containerNavigationController.view.addGestureRecognizer(panGestureRecognizer)
+        panGestureRecognizer.delegate = self
         
         // add invisible cover
         containerNavigationController.view.addSubview(coverView)
@@ -72,6 +73,13 @@ class SlideMenuViewController: UIViewController {
         self.view.addConstraint(NSLayoutConstraint(item: shadowView, attribute: .Leading, relatedBy: .Equal, toItem: containerNavigationController.view, attribute: .Leading, multiplier: 1, constant: 0))
         self.view.bringSubviewToFront(containerNavigationController.view)
 
+    }
+    
+    /**
+     allows delete cell recognizer to fire
+     */
+    func gestureRecognizer(gestureRecognizer: UIGestureRecognizer, shouldRecognizeSimultaneouslyWithGestureRecognizer otherGestureRecognizer: UIGestureRecognizer) -> Bool {
+        return true
     }
     
     /**
@@ -141,8 +149,15 @@ class SlideMenuViewController: UIViewController {
     func handlePan(gestureRecognizer: UIPanGestureRecognizer) {
         switch(gestureRecognizer.state) {
         case .Began:
-            containerNavigationController.view.bringSubviewToFront(coverView)
+            break
         case .Changed:
+            if containerNavigationController.view.frame.origin.x > 0 {
+                containerNavigationController.view.bringSubviewToFront(coverView)
+            } else
+            {
+                containerNavigationController.view.sendSubviewToBack(coverView)
+            }
+            
             let newCenterX = gestureRecognizer.view!.center.x + gestureRecognizer.translationInView(view).x
             if newCenterX > self.view.center.x {
                 gestureRecognizer.view!.center.x = gestureRecognizer.view!.center.x + gestureRecognizer.translationInView(view).x
